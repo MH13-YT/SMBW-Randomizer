@@ -1,0 +1,2 @@
+python SMBW_Randomizer.py
+pause
