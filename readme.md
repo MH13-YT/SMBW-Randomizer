@@ -22,11 +22,8 @@ A complete dump of the Super Mario Bros Wonder romfs file, google is your friend
 ### Windows
 Simply run the install.bat file to install all the files required for the software to work properly. A list of installed programs and their sources is given before installation.
 
-### Mac OS
-Sorry actually this platform isn't supported (due to dependances), you can try to use Wine for install it
-
-### Linux
-Sorry actually this platform isn't supported (due to dependances), you can try to use Wine for install it
+### Mac OS and Linux
+Install python and libyaml, after that run pip install -r requirements.txt for install dependances
 
 ## How to Run
 ### Run with default settings (from run.bat file)
