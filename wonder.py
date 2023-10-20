@@ -9,55 +9,82 @@ ressources = [
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World001.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World002.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World003.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World004.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World005.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World006.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World007.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World008.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
     },
     {
         "type": "world_file",
         "romfs": "romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
         "worktable": "worktable/World009.game__stage__WorldMapInfo.yml",
-        "output": "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml"
+        "output_SMM": "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
+        "output_romfs": "output/ROMFS/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
+        "output_yuzu": "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
+        "output_ryujinx": "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
     },
 ]
 
@@ -73,7 +100,10 @@ class file_converter:
             subprocess.run(["byml_to_yml"] + [args_pair["romfs"],args_pair["worktable"]], check=True)
     def compile():
         for args_pair in ressources:
-            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output"]], check=True)
+            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output_SMM"]], check=True)
+            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output_romfs"]], check=True)
+            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output_yuzu"]], check=True)
+            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output_ryujinx"]], check=True)
     def clean():
         for args_pair in ressources:
             print(f"Cleaning: {args_pair['worktable']}")

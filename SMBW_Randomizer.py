@@ -24,7 +24,10 @@ class Randomise:
     def __init__(self):
         self.path_list = [
             "worktable",
-            "output/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo"
+            "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo",
+            "output/ROMFS/romfs/Stage/WorldMapInfo",
+            "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo",
+            "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo",
         ]
         self.validate = {
             "Check files and folders": False,
