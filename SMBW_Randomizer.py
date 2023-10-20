@@ -179,10 +179,9 @@ class Randomise:
             print(f"Cannot compile patched files: {error}")
             worktable_is_cleaned = False
         self.validate["Cleaning Worktable folder"] = worktable_is_cleaned
+        print("Randomisation Complete, Randomized Files are on 'output' folder")
+        print("Randomized files are packaged for multiples platforms (Simple Mod Manager, Atmosphere RomFS, Yuzu and Ryujinx)")
         return worktable_is_cleaned
-    
-    print("Randomisation Complete, Randomized Files are on 'output' folder")
-    print("Randomized files are packaged for multiples platforms (Simple Mod Manager, Atmosphere RomFS, Yuzu and Ryujinx)")
 
     def main(self,args):
         (
