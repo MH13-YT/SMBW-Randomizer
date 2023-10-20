@@ -182,7 +182,7 @@ class Randomise:
         return worktable_is_cleaned
     
     print("Randomisation Complete, Randomized Files are on 'output' folder")
-    print("Randomized files are packaged for SimpleModManager Homebrew")
+    print("Randomized files are packaged for multiples platforms (Simple Mod Manager, Atmosphere RomFS, Yuzu and Ryujinx)")
 
     def main(self,args):
         (
