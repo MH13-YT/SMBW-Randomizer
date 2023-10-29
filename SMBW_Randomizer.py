@@ -1,217 +1,384 @@
-import os
-import argparse
+import importlib
 import json
-import sys
-from wonder import file_converter, levels_manager
-from randomizer import world_profiles
+import os
+import shutil
+from tkinter import ttk
+import uuid
+import logging
+import logging_config  # Importez la configuration de journalisation
+
+# Import CLI Tools
+import argparse
+
+# Import GUI Tools
+import tkinter as tk
+from tkinter import messagebox
+
+# Import SMBW_R Modules Lister
+import SMBW_R.modules.list
+
+# ------------------------------
+
+# Dictionnaire pour stocker les instances de modules
+modules = {}
+# Importez automatiquement les modules à partir de chaque dossier
+for module_name in SMBW_R.modules.list.get_module_list():
+    try:
+        module_path = f"SMBW_R.modules.{module_name}"
+        module = importlib.import_module(module_path)
+        module_instance = getattr(
+            module, f"{module_name}_module"
+        )()  # Assurez-vous que le nom de la classe est correct
+        modules[module_name] = module_instance
+        print(f"Module '{module_name}' importé avec succès.")
+    except (ImportError, AttributeError) as e:
+        print(f"Impossible d'importer le module '{module_name}': {e}")
 
 
+def save_configuration(mode):
+    if mode == "CLI":
+        print("The settings of randomizer has been modified")
+        for module_name in SMBW_R.modules.list.get_module_list():
+            if hasattr(args, module_name) and getattr(args, module_name) != None:
+                print(f"Module : {module_name}")
+                print(f"        Enabled : {True}")
+                print(f"        Method  : {getattr(args, module_name)}")
+            else:
+                print(f"Module : {module_name}")
+                print(f"        Enabled : {False}")
+                print(f"        Method  : ''")
+            if (
+                input(
+                    "Do you want to continue and save the modifications in config file ? (Y/N) : "
+                )
+                == "Y"
+            ):
+                with open("config.json", "w") as fichier:
+                    for module_name in SMBW_R.modules.list.get_module_list():
+                        if (
+                            hasattr(args, module_name)
+                            and getattr(args, module_name) != None
+                        ):
+                            data[module_name] = {
+                                "enable": True,
+                                "method": str(getattr(args, module_name)),
+                            }
+                        else:
+                            data[module_name] = {"enable": False, "method": ""}
+                    json.dump(data, fichier)
+                print("Modification Saved in configuration file : Starting")
+            else:
+                input("Modifications has been aborted : Exit App")
+                exit()
+    elif mode == "GUI":
+        for module_name in module_checkboxes:
+            try:
+                if (
+                    int(fenetre.tk.getvar(module_checkboxes[module_name]["variable"]))
+                    == 1
+                    and str(module_methods[module_name].get()) != ""
+                ):
+                    data[module_name] = {
+                        "enable": True,
+                        "method": module_methods[module_name].get(),
+                    }
+                else:
+                    data[module_name] = {"enable": False, "method": ""}
+            except:
+                data[module_name] = {"enable": False, "method": ""}
+        with open("config.json", "w") as fichier:
+            json.dump(data, fichier)
+        messagebox.showinfo(
+            "Sauvegarde", "La configuration a été enregistrée avec succès."
+        )
+        fenetre.destroy()
 
-config_file_path = 'config.json'
-config_world_method = ""
-try:
-    with open(config_file_path, 'r') as config_file:
-        world_config_data = json.load(config_file)["randomizer_default_method"]
-        config_world_method = world_config_data.get('world_method')
-except Exception as error:
-    print(f"Unable to read '{config_file_path}' : {error}")
 
-class CustomHelpFormatter(argparse.RawDescriptionHelpFormatter):
-    def _split_lines(self, text, width):
-        return text.splitlines()
-    
-class Randomise:
+def module_merger(output_folder):
+    for root, dirs, files in os.walk(output_folder):
+        for file in files:
+            source_path = os.path.join(root, file)
+            destination_path = os.path.join(
+                "output/romfs", os.path.relpath(source_path, output_folder)
+            )
+            os.makedirs(os.path.dirname(destination_path), exist_ok=True)
+            shutil.copy2(source_path, destination_path)
+
+
+def module_cleaner(output_folder):
+    # Supprimez tous les fichiers et sous-répertoires du répertoire
+    for root, dirs, files in os.walk(output_folder, topdown=False):
+        for file in files:
+            fichier_path = os.path.join(root, file)
+            os.remove(fichier_path)
+        for rep in dirs:
+            rep_path = os.path.join(root, rep)
+            os.rmdir(rep_path)
+    # Supprimez le répertoire lui-même
+    os.rmdir(output_folder)
+
+
+class SMBW_Randomizer:
     def __init__(self):
         self.path_list = [
-            "worktable",
-            "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs/Stage/WorldMapInfo",
-            "output/ROMFS/romfs/Stage/WorldMapInfo",
-            "output/YUZU/load/010015100B514000/Randomized/romfs/Stage/WorldMapInfo",
-            "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs/Stage/WorldMapInfo",
+            "output/SMM/mods/Super Mario Bros Wonder/Randomized/contents/010015100B514000/romfs",
+            "output/YUZU/load/010015100B514000/Randomized/romfs",
+            "output/RYUJINX/mods/contents/010015100B514000/Randomized/romfs",
         ]
+        self.logger = logging.getLogger("SMBW_Randomizer")
         self.validate = {
-            "Check files and folders": False,
-            "Decompile and copy necessary games files": False,
-            "Read game data from game files": False,
-            "Randomize game data": False,
-            "Generating patched game files": False,
-            "Game files recompilation and packaging as a mod": False,
-            "Cleaning Worktable folder":False
+            "Check config file": False,
+            "Randomizing game with selected modules and config": False,
+            "Merge output from modules": False,
+            "Packaging as a mod for all platforms": False,
         }
 
-        self.levels = {}
+    def check_config(self, config):
+        self.logger.info("STEP 1 : Config Check")
+        self.logger.info("Verify config and found potential module conflicts")
+        config_is_checked = True
+        impacted_files = []
+        active_module = 0
+        if (not os.path.exists('output')):
+            os.mkdir("output")
+        for root, dirs, files in os.walk("output", topdown=False):
+            for file in files:
+                fichier_path = os.path.join(root, file)
+                os.remove(fichier_path)
+            for rep in dirs:
+                rep_path = os.path.join(root, rep)
+                os.rmdir(rep_path)
+        for module_name in SMBW_R.modules.list.get_module_list():
+            if config[module_name]["enable"] == True:
+                active_module = active_module + 1
+                if module_name in modules:
+                    module = modules[module_name]
+                    for file in module.get_used_files():
+                        module_file = {"module_name": module_name, "file_name": file}
+                        # Vérifiez si le fichier est déjà utilisé par un autre module
+                        verify_pass = True
+                        for item in impacted_files:
+                            if item["file_name"] == file:
+                                verify_pass = False
+                                self.logger.error(
+                                    f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file}'"
+                                )
+                                print("Config Check: Module Conflict")
+                                print(
+                                    "Two different modules need to edit the same file"
+                                )
+                                print("Please disable one of the concerned modules")
+                                config_is_checked = False
+                                break
+                        if verify_pass == True:
+                            self.logger.info(f"Adding '{file}' to impacted_file_list")
+                            impacted_files.append(module_file)
+        if active_module == 0:
+            config_is_checked = False
+            self.logger.error("All randomization modules are inactive")
+            print("All randomization modules are inactive")
+            print(
+                "Please modify your configuration with --configure or by modifying config.json"
+            )
+        self.validate["Check config file"] = config_is_checked
+        return config_is_checked
 
-    def check_files(self):
-        print("")
-        print("STEP 1: Check files and folders")
-        files_is_created = True
-        print("Verify folders required to run the application")
-        for folder in self.path_list:
-            if not os.path.exists(f"{os.curdir}/{folder}"):
-                print(f"{os.curdir}/{folder} isn't exist, trying to create it")
-                try:
-                    os.makedirs(f"{os.curdir}/{folder}", exist_ok=True)
-                    print(f"{os.curdir}/{folder} is created")
-                except Exception as error:
-                    print(f"Cannot create necessary folders {os.curdir}/{folder}:")
-                    input(f"{error}")
-                    files_is_created = False
-            else:
-                print(f"{os.curdir}/{folder} folder : OK")
-        print("Verify 'Super Mario Bros Wonder' romfs files")
-        if not file_converter.verify_files():
-            input("Unable to find 'Super Mario Bros Wonder' romfs files"
-                  "please place a valid romfs dump of 'Super Mario Bros Wonder' in the same location as the executable.")
-            files_is_created = False
-        
-        self.validate["Check files and folders"] = files_is_created
-        return files_is_created
-
-    def decompilation(self):
-        print("")
-        print("STEP 2: Decompile and copy necessary games files")
-        decompilation_is_work = True
-        try:
-            print(f"Starting World Files Decompilation")
-            file_converter.decompile()
-
-            print(f"World Files Decompilation is Finished")
-
-        except Exception as error:
-            print(f"Cannot Decompile World Files: {error}")
-            decompilation_is_work = False
-
-        self.validate["Decompile and copy necessary games files"] = decompilation_is_work
-        return decompilation_is_work
-
-    def get_levels(self):
-        print("")
-        print("STEP 3: Read game data from game files")
-        levels_is_get = True
-        print("Get levels data from decompiled files")
-
-        try:
-            if not os.path.exists("worktable/levels.json"):
-                with open("worktable/levels.json", "w") as levels_file:
-                    print("Starting game level dump from YML")
-                    self.levels = levels_manager.dump()
-                    json.dump(self.levels, levels_file, indent=4)
-
-            else:
-                with open("worktable/levels.json", "r") as levels_file:
-                    print("Loading levels dump from levels.json file")
-                    self.levels = json.load(levels_file)
-
-        except Exception as error:
-            print(f"Levels dump is corrupted or levels data cannot be dumped: {error}")
-            levels_is_get = False
-
-        self.validate["Read game data from game files"] = levels_is_get
-        return levels_is_get
-
-    def randomizing(self, args):
-        print("")
-        print("STEP 4: Randomize game data")
-        game_is_randomized = True
-
-        try:
-            print("Starting randomisation of Levels")
-
-            with open("worktable/random_levels.json", "w") as file:
-                print("Creating Random Levels JSON File")
-                json.dump(
-                    levels_manager.shuffle(self.levels, args.world_method, args.seed),
-                    file,
-                    indent=4
+    def starting_selected_modules(self, config, seed):
+        self.logger.info("STEP 2 : Randomizing game with selected modules and config")
+        print(f"Randomization will use Seed : '{seed}'")
+        self.logger.info(f"Randomization will use Seed : {seed}")
+        modules_process_ended_without_error = True
+        for module_name in SMBW_R.modules.list.get_module_list():
+            if config[module_name]["enable"] == True:
+                self.logger.info(
+                    f"Starting {module_name} module with method '{config[module_name]['method']}'"
                 )
-                print("Randomisation of Levels Complete")
+                if module_name in modules:
+                    module = modules[module_name]
+                    module.start(config[module_name]["method"], seed)
+        self.validate[
+            "Randomizing game with selected modules and config"
+        ] = modules_process_ended_without_error
+        return modules_process_ended_without_error
 
-                
+    def merge_module_outputs(self, config):
+        self.logger.info("STEP 3 : Merge output from modules")
+        merged_with_success = True
+        for module_name in SMBW_R.modules.list.get_module_list():
+            if config[module_name]["enable"] == True:
+                self.logger.info("Starting Process for {module}")
+                try:
+                    self.logger.info(f"{ module_name} Starting Module Output Merging")
+                    module_merger(f"SMBW_R/modules/{module_name}/output/romfs")
+                    self.logger.info(f"{ module_name} Finished Module Output Merging")
+                    self.logger.info(f"{ module_name} Starting Module Output Cleaning")
+                    module_cleaner(f"SMBW_R/modules/{module_name}/output/romfs")
+                    self.logger.info(f"{module_name} Finished Module Output Cleaning")
+                except Exception as error:
+                    self.logger.error(f"Unable to copy folder : {error}")
+                    print(f"Unable to copy folder : {error}")
+                    merged_with_success = False
+                self.logger.info(f"End of process for {module_name}")
+        self.validate["Merge output from modules"] = merged_with_success
+        return merged_with_success
 
-        except Exception as error:
-            print(f"Error occured on file randomizing: {error}")
-            game_is_randomized = False
-        self.validate["Randomize game data"] = game_is_randomized
-        return game_is_randomized
-        
-    def patching(self):
-        print("")
-        print("STEP 5: Generating patched game files")
-        game_is_patched = True
-        try:
-            with open("worktable/random_levels.json", "r") as random_levels_file:
-                data = json.load(random_levels_file)
-                print("Starting Patched Level Restoration to YML")
-                levels_manager.restore(data)
-                print("Patched Levels are Restored to YML")
+    def packaging_output(self):
+        self.logger.info("STEP 4 : Packaging as a mod for all platforms")
+        for folder in self.path_list:
+            shutil.copytree("output/romfs", folder)
+        packaged_with_success = True
+        self.validate["Packaging as a mod for all platforms"] = packaged_with_success
+        return packaged_with_success
 
-        except Exception as error:
-            print(f"Cannot patch files: {error}")
-            game_is_patched = False
-
-        self.validate["Generating patched game files"] = game_is_patched
-        return game_is_patched
-    
-    def recompilation(self):
-        print("")
-        print("STEP 6: Game files recompilation and packaging as a mod")
-        patched_game_files_are_compiled = True
-        try:
-            print(f"Starting Patched World Files Compilation")
-            file_converter.compile()
-            print(f"Patched World Files Compilation is Finished")
-            print("")
-        except Exception as error:
-            print(f"Cannot compile patched files: {error}")
-            patched_game_files_are_compiled = False
-        self.validate["Game files recompilation and packaging as a mod"] = patched_game_files_are_compiled
-        return patched_game_files_are_compiled
-    
-    def cleaning(self):
-        print("")
-        print("STEP 7: Cleaning Worktable")
-        worktable_is_cleaned = True
-        try:
-            print(f"Starting Worktable Cleaning")
-            file_converter.clean()
-            print(f"Worktable Has Been Cleaned with success")
-        except Exception as error:
-            print(f"Cannot compile patched files: {error}")
-            worktable_is_cleaned = False
-        self.validate["Cleaning Worktable folder"] = worktable_is_cleaned
-        print("Randomisation Complete, Randomized Files are on 'output' folder")
-        print("Randomized files are packaged for multiples platforms (Simple Mod Manager, Atmosphere RomFS, Yuzu and Ryujinx)")
-        return worktable_is_cleaned
-
-    def main(self,args):
+    def main(self, config, seed):
         (
-            self.check_files() and
-            self.decompilation() and
-            self.get_levels() and
-            self.randomizing(args) and
-            self.patching() and
-            self.recompilation() and
-            self.cleaning()
+            self.check_config(config)
+            and self.starting_selected_modules(config, seed)
+            and self.merge_module_outputs(config)
+            and self.packaging_output()
         )
-
         print("\nSummary of randomization process:")
         for key, value in enumerate(self.validate):
             if self.validate[value]:
                 print(f"Step {key + 1}: {value} => SUCCESS")
-            else: 
+            else:
                 print(f"Step {key + 1}: {value} => FAIL")
 
-parser = argparse.ArgumentParser(description='A randomizer for Super Mario Bros Wonder Game', formatter_class=CustomHelpFormatter)
 
-# Ajout de l'argument optionnel pour la méthode "world"
-world_method_choices = [profile["method"] for profile in world_profiles.list()]
-world_method_choices_str = ', '.join(world_method_choices)
-parser.add_argument('-w_m', type=str, dest='world_method',metavar='world_method', choices=world_method_choices, help=f"define 'world' method to use. [{world_method_choices_str}]")
-parser.add_argument('-s', type=str, dest='seed', metavar='seed', help="define a seed for randomization")
+randomise = SMBW_Randomizer()
 
+# Create ArgParse and Read Arguments
+
+parser = argparse.ArgumentParser(
+    description="Description générale de votre programme",
+    formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=100),
+)
+parser.add_argument("--seed", help="Choisir une Seed a utiliser pour la randomization")
+parser.add_argument(
+    "--configure", action="store_true", help="Configurer le randomiseur avec la GUI"
+)
+parser.add_argument(
+    "--configure_cli",
+    action="store_true",
+    help="Configurer le randomiseur avant de le lancer",
+)
+dependant_group = parser.add_argument_group("--configure_cli : Available modules")
+for module_name in SMBW_R.modules.list.get_module_list():
+    if module_name in modules:
+        module = modules[module_name]
+        dependant_group.add_argument(
+            f"--{module_name}",
+            choices=module.list_method(),
+            help=f"Activer le module {module_name} avec la methode choisie",
+        )
 args = parser.parse_args()
-if args.world_method is None:
-    args.world_method = config_world_method
+module_list = SMBW_R.modules.list.get_module_list()
+if args.seed is None:
+    args.seed = uuid.uuid4()
+if not os.path.exists("config.json"):
+    print("Cannot found config.json file. Opening Configuration UI")
+    args.configure = "FORCE"
+if not args.configure or args.configure_cli:
+    with open("config.json", "r") as fichier:
+        data = json.load(fichier)
+        # Module Status Checker : verify if at least 1 module is active 
+        active_modules = 0
+        for module_name in module_list:
+            # Verify if module are enabled 
+            if module_name in modules and data[module_name]["enable"] == True:
+                active_modules = active_modules + 1
+            if active_modules == 0:
+                # If 0 Module are enabled : Open Configuration GUI Automatically
+                print("0 Modules are enabled in current configuration. Opening Configuration UI")
+                args.configure = "FORCE"
+if args.configure_cli:
+    save_configuration("CLI")
+if args.configure:
+    # Créer une fenêtre principale
+    fenetre = tk.Tk()
+    fenetre.title("SMBW_Randomizer : Configuration")
 
-randomise = Randomise()
-randomise.main(args)
+    # Ajustez la largeur minimale (100 dans cet exemple)
+    fenetre.minsize(
+        400, 25 + 25 * len(module_list)
+    )  # Ajustez les valeurs à vos besoins
+
+    # Charger la configuration depuis un fichier (ou créez un fichier de configuration par défaut)
+    try:
+        with open("config.json", "r") as fichier:
+            data = json.load(fichier)
+    except FileNotFoundError:
+        data = {}
+
+    # Créer des cases à cocher pour activer/désactiver les modules (juste à côté)
+    module_checkboxes = {}
+    module_methods = {}
+
+    row = 0
+
+    for module_name in module_list:
+        if module_name in modules:
+            module = modules[module_name]
+
+            status_var = tk.BooleanVar()  # Utilisez BooleanVar pour les cases à cocher
+            method_var = tk.StringVar()
+            try:
+                if data[module_name] != None:
+                    method_var.set(module.list_method()[0])
+                    status_var.initialize(False)
+            except:
+                method_var.set(module.list_method()[0])
+                status_var.initialize(False)
+            for i in range(3):
+                fenetre.grid_columnconfigure(i, weight=1)
+            # Créez un cadre pour chaque module qui occupera 2 lignes
+            module_frame = tk.Frame(fenetre, borderwidth=1, relief="solid")
+            module_frame.grid(row=row, column=0, columnspan=3, sticky="we")
+            module_frame.grid_columnconfigure(0, minsize=200)
+            module_frame.grid_columnconfigure(3, minsize=50)
+            for i in range(3):
+                module_frame.grid_columnconfigure(i, weight=1)
+            # Colonne 0 du cadre : Case à cocher pour activer/désactiver le module
+            module_checkboxes[module_name] = tk.Checkbutton(
+                module_frame, text=module_name, variable=status_var
+            )
+            module_checkboxes[module_name].grid(
+                row=row, column=0,sticky="w"
+            )
+            
+            # Colonne 1 du cadre : Étiquette "Méthode:"
+            method_label = tk.Label(module_frame, text="Method:")
+            method_label.grid(row=row, column=1, sticky="e")
+
+            # Colonne 2 du cadre : Menu déroulant pour la méthode
+            method_options = (
+                module.list_method()
+            )  # Vous devez ajuster cette ligne en fonction de votre structure de module
+            method_option_menu = tk.OptionMenu(
+                module_frame, method_var, *method_options
+            )
+            method_option_menu.config(width=20)
+            method_option_menu.grid(row=row, column=2,sticky="w")
+            module_methods[module_name] = method_var
+
+            row += 1
+
+            # Colonne 0 du cadre de la deuxième ligne : Label pour la description du module
+            description_label = tk.Label(
+                module_frame, text=module.get_description()
+            )  # Assurez-vous d'ajuster la source de description
+            description_label.grid(
+                row=row, column=0,columnspan=4,sticky="w"
+            )
+    # Bouton de sauvegarde en bas
+    bouton_enregistrer = tk.Button(
+        fenetre,
+        text="Save configuration and exit",
+        command=lambda: save_configuration("GUI"),
+    )
+    bouton_enregistrer.grid(row=row, column=0, columnspan=3, sticky="we")
+    # Lancer la boucle principale de l'application
+    fenetre.mainloop()
+
+# Starting Randomization
+randomise.main(data, args.seed)

@@ -2,4 +2,6 @@ __pycache__
 .vscode
 output
 romfs
-worktable
+latest.log
+SMBW_R/modules/level_order/worktable/levels.json
+config.json
