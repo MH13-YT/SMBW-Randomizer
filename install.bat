@@ -16,7 +16,7 @@ if %errorlevel%==0 (
     echo byml_to_yml : Test Passed
 ) else (
     echo byml_to_yml : Test Failed
-    echo Installation Failed, please retry with automated installation
+    echo Installation Failed, please retry with manual installation
     pause
     exit
 )
@@ -25,7 +25,7 @@ if %errorlevel%==0 (
     echo yml_to_byml : Test Passed
 ) else (
     echo yml_to_byml : Test Failed
-    echo Installation Failed, please retry with automated installation
+    echo Installation Failed, please retry with manual installation
     pause
     exit
 )
