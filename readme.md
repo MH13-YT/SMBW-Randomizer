@@ -6,11 +6,14 @@ SMBW Randomizer is a randomizer for the Super Mario Bros Wonder game.
 ## Features
 ### Main Features
 - Seed-based randomization: Share a seed for speed competitions on a randomized version of the game
-- Randomization profiles: Create, share and choose different randomization methods to create different experiments.
-- Automatic export to SimpleModManager format: files are exported to SimpleModManager standard for simplified installation.
+- Module Based Randomization : Developpers / Modders can create modules for randomizing more features on the game (use exemple_module as base), feel free to create pull requests for share modules
+- Profiles : Every Modules has their own profiles, feel free to create pull requests for improve profiles
+- Automatic packaging for Famous Mod Managers: Files are exported to Yuzu, Ryujinx and Simple Mod Manager file structure for simplify installation
 
-### Randomized elements in the game
-- Levels
+### Current Randomization Modules (Things randomized on the game)
+- Levels Order : Randomize Every Levels position
+- Random Badges : Set a random badge at the start of a level
+
 More game ressources will be randomized in future versions.
 
 
@@ -27,11 +30,19 @@ Install python and libyaml, after that run pip install -r requirements.txt for i
 
 ## How to Run
 ### Run with default settings (from run.bat file)
-Simply run the run.bat file, it will use a random seed and default settings (stored in config.json file)
+Simply run the run.bat file, it will use a random seed and default settings (stored in config.json file), if this file isn't present or invalid the configuration UI will open automatically
 
 ### Run with default settings (from command line)
-open a terminal in the directory of the randomizer and run "python SMBW_Randomizer.py" it will use a random seed and default settings (stored in config.json file)
+Open a terminal in the directory of the randomizer and run "python SMBW_Randomizer.py" it will use a random seed and default settings (stored in config.json file), if this file isn't present or invalid the configuration UI will open automatically
 
-### Run with custom settings
-open a terminal in the directory of the randomizer and run "python SMBW_Randomizer.py -h" for obtain randomizer help document
+## How to Configure
+### From Configuration GUI
+Open a terminal in the directory of the randomizer and run "python SMBW_Randomizer.py --configure" for open configuration GUI
+### From Configuration CLI
+Open a terminal in the directory of the randomizer and run "python SMBW_Randomizer.py -h" for open help
+
+## How to develop modules
+- Copy and rename exemple_module with your module name (the module name DOES not have spaces)
+- In every files of the module rename 'exemple' to your module name
+- Develop every steps and write an description
 
