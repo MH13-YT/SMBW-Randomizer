@@ -274,7 +274,7 @@ for module_name in SMBW_R.modules.list.get_module_list():
 args = parser.parse_args()
 module_list = SMBW_R.modules.list.get_module_list()
 if args.seed is None:
-    args.seed = uuid.uuid4()
+    args.seed = str(uuid.uuid4())
 if not os.path.exists("config.json"):
     print("Cannot found config.json file. Opening Configuration UI")
     args.configure = "FORCE"

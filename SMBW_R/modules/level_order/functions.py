@@ -72,10 +72,10 @@ class file_converter:
         return True
     def decompile():
         for args_pair in ressources:
-            subprocess.run(["py -m byml_to_yml"] + [args_pair["romfs"],args_pair["worktable"]], check=True)
+            subprocess.run(["byml_to_yml"] + [args_pair["romfs"],args_pair["worktable"]], check=True)
     def compile():
         for args_pair in ressources:
-            subprocess.run(["py -m yml_to_byml"] + [args_pair["worktable"],args_pair["output"]], check=True)
+            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output"]], check=True)
     def clean():
         for args_pair in ressources:
             os.remove(args_pair["worktable"])
