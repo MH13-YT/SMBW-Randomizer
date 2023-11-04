@@ -134,6 +134,12 @@ class levels_manager:
         if method == "full":
             levels_dump = profiles.full(levels_dump,seed)
             shuffle = True
+        if method == "lite_secured":
+            levels_dump = profiles.lite(levels_dump,seed)
+            shuffle = True
+        if method == "full_secured":
+            levels_dump = profiles.full(levels_dump,seed)
+            shuffle = True
         
         if shuffle == True:
             return levels_dump
