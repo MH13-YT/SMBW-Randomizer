@@ -35,28 +35,28 @@ class randomisation_scripts:
                 niveaux_monde = levels_dump[monde_a_randomiser]
                 all_levels.extend(niveaux_monde)
 
-            # Extrayez les stage_paths des niveaux à ignorer
-            stage_paths_ignored = [course["StagePath"] for course in all_levels if course["StagePath"] in ignored_stages_files]
+                # Extrayez les stage_paths des niveaux à ignorer
+                stage_paths_ignored = [course["StagePath"] for course in all_levels if course["StagePath"] in ignored_stages_files]
 
-            # Filtrer les stage_paths à randomiser (ceux qui ne sont pas dans la liste des ignore)
-            stage_paths_randomises = [course["StagePath"] for course in all_levels if course["StagePath"] not in ignored_stages_files]
+                # Filtrer les stage_paths à randomiser (ceux qui ne sont pas dans la liste des ignore)
+                stage_paths_randomises = [course["StagePath"] for course in all_levels if course["StagePath"] not in ignored_stages_files]
 
-            # Mélangez les stage_paths à randomiser
-            random.shuffle(stage_paths_randomises)
+                # Mélangez les stage_paths à randomiser
+                random.shuffle(stage_paths_randomises)
 
-            # Reconstruct the courses list with the shuffled stage_paths and the ignored stage_paths in their original order
-            for course in all_levels:
-                if course["StagePath"] in stage_paths_ignored:
-                    continue  # Ignorez les niveaux à ignorer
-                course["StagePath"] = stage_paths_randomises.pop(0)
+                # Reconstruct the courses list with the shuffled stage_paths and the ignored stage_paths in their original order
+                for course in all_levels:
+                    if course["StagePath"] in stage_paths_ignored:
+                        continue  # Ignorez les niveaux à ignorer
+                    course["StagePath"] = stage_paths_randomises.pop(0)
 
-            # Répartissez les niveaux randomisés dans leurs mondes d'origine
-            index = 0
-            for monde_num in range(1, 10):
-                monde_a_randomiser = f"World{monde_num}"
-                if monde_a_randomiser in levels_dump:
-                    niveaux_monde = levels_dump[monde_a_randomiser]
-                    num_levels = len(niveaux_monde)
-                    levels_dump[monde_a_randomiser] = all_levels[index : index + num_levels]
-                    index += num_levels
-            return levels_dump
+                # Répartissez les niveaux randomisés dans leurs mondes d'origine
+        index = 0
+        for monde_num in range(1, 10):
+            monde_a_randomiser = f"World{monde_num}"
+            if monde_a_randomiser in levels_dump:
+                niveaux_monde = levels_dump[monde_a_randomiser]
+                num_levels = len(niveaux_monde)
+                levels_dump[monde_a_randomiser] = all_levels[index : index + num_levels]
+                index += num_levels
+        return levels_dump

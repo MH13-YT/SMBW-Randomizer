@@ -135,10 +135,10 @@ class levels_manager:
             levels_dump = profiles.full(levels_dump,seed)
             shuffle = True
         if method == "lite_secured":
-            levels_dump = profiles.lite(levels_dump,seed)
+            levels_dump = profiles.lite_secured(levels_dump,seed)
             shuffle = True
         if method == "full_secured":
-            levels_dump = profiles.full(levels_dump,seed)
+            levels_dump = profiles.full_secured(levels_dump,seed)
             shuffle = True
         
         if shuffle == True:
