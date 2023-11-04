@@ -1,7 +1,7 @@
 import subprocess
 import os
 import yaml
-import uuid
+import random
 from .profiles import profiles
 
 ressources = [

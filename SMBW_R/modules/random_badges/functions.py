@@ -1,7 +1,6 @@
 import subprocess
 import os
 import yaml
-import uuid
 from .profiles import profiles
 
 ressources = [
