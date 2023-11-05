@@ -14,7 +14,7 @@ if %errorlevel%==0 (
     REM Installing Python dependencies from requirements.txt
     pip install -r requirements.txt
 
-    echo Installation completed. Please check if Python executables are startable.
+    echo Installation completed, checking if required Python executables are startable.
 
     REM Checking the byml_to_yml executable
     where byml_to_yml > nul
@@ -37,9 +37,7 @@ if %errorlevel%==0 (
         pause
         exit /b 1
     )
-)
-else
-(
+) else (
     echo Python is not installed, or installed without PATH please install from Python Website or modify your installation
 )
 
