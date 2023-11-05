@@ -1,0 +1,122 @@
+{
+    "Parachute Cap": {
+        "id": "BadgeId35",
+        "type": "Action",
+        "enabled": false
+    },
+    "Floating High Jump": {
+        "id": "BadgeId00",
+        "type": "Action",
+        "enabled": false
+    },
+    "Fast Dash": {
+        "id": "BadgeId08",
+        "type": "Action",
+        "enabled": false
+    },
+    "Coin Reward": {
+        "id": "BadgeId09",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "Safety Bounce": {
+        "id": "BadgeId49",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "Coin Magnet": {
+        "id": "BadgeId40",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "All Bubble Power": {
+        "id": "BadgeId58",
+        "type": "Bonus",
+        "enabled": true
+    },
+    "Spring Feet": {
+        "id": "BadgeId04",
+        "type": "Expert",
+        "enabled": false
+    },
+    "Wall-Climb Jump": {
+        "id": "BadgeId34",
+        "type": "Action",
+        "enabled": false
+    },
+    "Crouching High Jump": {
+        "id": "BadgeId39",
+        "type": "Action",
+        "enabled": false
+    },
+    "Grappling Vine": {
+        "id": "BadgeId53",
+        "type": "Action",
+        "enabled": false
+    },
+    "Empty": {
+        "id": "Invalid",
+        "type": "Empty",
+        "enabled": false
+    },
+    "Rhythm Jump": {
+        "id": "BadgeId47",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "All Elephant Power": {
+        "id": "BadgeId55",
+        "type": "Bonus",
+        "enabled": true
+    },
+    "All Drill Power": {
+        "id": "BadgeId57",
+        "type": "Bonus",
+        "enabled": true
+    },
+    "Invisiblity": {
+        "id": "BadgeId38",
+        "type": "Expert",
+        "enabled": false
+    },
+    "Dolphin Kick": {
+        "id": "BadgeId29",
+        "type": "Action",
+        "enabled": false
+    },
+    "Timed High Jump": {
+        "id": "BadgeId42",
+        "type": "Action",
+        "enabled": false
+    },
+    "Boosting Spin Jump": {
+        "id": "BadgeId14",
+        "type": "Action",
+        "enabled": false
+    },
+    "Add ! Blocks": {
+        "id": "BadgeId28",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "Sensor": {
+        "id": "BadgeId32",
+        "type": "Bonus",
+        "enabled": false
+    },
+    "All Fire Power": {
+        "id": "BadgeId54",
+        "type": "Bonus",
+        "enabled": true
+    },
+    "Jet Run": {
+        "id": "BadgeId19",
+        "type": "Expert",
+        "enabled": false
+    },
+    "Sound Off?": {
+        "id": "BadgeId33",
+        "type": "Expert",
+        "enabled": false
+    }
+}

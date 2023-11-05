@@ -162,8 +162,8 @@ class level_order_module:
 
     def start(self,method,seed):
         self.logger.info("Starting process")
-        print("\n[LEVEL_ORDER]: Starting process")
-        (
+        print("\n[level_order]: Starting process")
+        result = (
             self.check_files() and
             self.decompilation() and
             self.get_levels() and
@@ -182,7 +182,8 @@ class level_order_module:
                 self.logger.warn(f"Step {key + 1}: {value} => FAIL")
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
-        print("[LEVEL_ORDER]: End of process")
+        print("[level_order]: End of process")
+        return result
     def get_description(self):  
         return(module_description)
     def list_method(self):

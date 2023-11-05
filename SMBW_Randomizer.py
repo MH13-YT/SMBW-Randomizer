@@ -195,7 +195,8 @@ class SMBW_Randomizer:
                 )
                 if module_name in modules:
                     module = modules[module_name]
-                    module.start(config[module_name]["method"], seed)
+                    if (module.start(config[module_name]["method"], seed) == False):
+                        modules_process_ended_without_error = False
         self.validate[
             "Randomizing game with selected modules and config"
         ] = modules_process_ended_without_error

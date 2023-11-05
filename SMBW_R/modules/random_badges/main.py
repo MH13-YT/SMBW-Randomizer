@@ -152,7 +152,7 @@ class random_badges_module:
     def start(self,method,seed):
         self.logger.info("Starting process")
         print("\n[random_badges]: Starting process")
-        (
+        result = (
             self.check_files() and
             self.decompilation() and
             self.get_data() and
@@ -172,6 +172,7 @@ class random_badges_module:
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
         print("[random_badges]: End of process")
+        return result
     def get_description(self):  
         return(module_description)
     def list_method(self):

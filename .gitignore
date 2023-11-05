@@ -4,4 +4,4 @@ output
 romfs
 latest.log
 SMBW_R/modules/level_order/worktable/levels.json
-config.json
+/config.json

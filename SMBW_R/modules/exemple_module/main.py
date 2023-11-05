@@ -163,7 +163,7 @@ class exemple_module:
     def start(self,method,seed):
         self.logger.info("Starting process")
         print("\n[exemple_module]: Starting process")
-        (
+        result = (
             self.check_files() and
             self.decompilation() and
             self.get_data() and
@@ -183,6 +183,7 @@ class exemple_module:
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
         print("[exemple_module]: End of process")
+        return result
     def get_description(self):  
         return(module_description)
     def list_method(self):

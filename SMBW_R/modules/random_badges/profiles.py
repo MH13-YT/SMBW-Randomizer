@@ -1,22 +1,58 @@
+import json
 from .randomizer import randomisation_functions
+from .gui import custom_badges_gui
 
+def custom_badge_selector():
+    try:
+        with open('SMBW_R/modules/random_badges/config.json', 'r') as json_file:
+            data = json.load(json_file)
+            badges = []
+
+            for badge_name, badge_data in data.items():
+                if badge_data.get('enabled', False):
+                    badges.append(badge_data['id'])
+
+            return badges
+    except FileNotFoundError:
+        print("Le fichier JSON n'a pas été trouvé.")
+        return []
+    
+def badge_filter(type):
+    try:
+        with open('SMBW_R/modules/random_badges/config.json', 'r') as json_file:
+            data = json.load(json_file)
+            badges = []
+
+            for badge_name, badge_data in data.items():
+                if badge_data.get('type', "") == type or type == 'All':
+                    badges.append(badge_data['id'])
+
+            return badges
+    except FileNotFoundError:
+        print("Le fichier JSON n'a pas été trouvé.")
+        return []
+        
 class profiles:
 
     def list():
         return [
-            'start_with',
+            'all',
+            'action_only',
+            'bonus_only',
+            'expert_only',
+            'custom',
             ]
 
-    def start_with(data_dump, seed):
-        ignored_files = [
-        ]
-        badges = set([]) # Add Badges id who are not forced on a level (Shop Badges and 100% Reward Badge)
-        for data in data_dump["levels"]:
-            if "level_data" in data and isinstance(data["level_data"], dict):
-                try:
-                    if data["level_data"]["NeedBadgeIdEnterCourse"] != "Invalid":
-                        badges.add(data["level_data"]["NeedBadgeIdEnterCourse"])
-                except:
-                    pass
-        return randomisation_functions.badge_shuffler(data_dump,list(badges),seed)
+    def all(data_dump, seed):
+        return randomisation_functions.badge_shuffler(data_dump,badge_filter('All'),seed)
+    def action_only(data_dump, seed):
+        return randomisation_functions.badge_shuffler(data_dump,badge_filter('Action'),seed)
+    def bonus_only(data_dump, seed):
+        return randomisation_functions.badge_shuffler(data_dump,badge_filter('Bonus'),seed)
+    def expert_only(data_dump, seed):
+        return randomisation_functions.badge_shuffler(data_dump,badge_filter('Expert'),seed)
+    def custom(data_dump, seed):
+        custom_badges_gui.custom_badge_list_configurator()
+        if len(custom_badge_selector()) > 0:
+            return randomisation_functions.badge_shuffler(data_dump,custom_badge_selector(),seed)
 
