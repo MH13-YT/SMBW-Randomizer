@@ -288,10 +288,10 @@ if not args.configure or args.configure_cli:
             # Verify if module are enabled 
             if module_name in modules and data[module_name]["enable"] == True:
                 active_modules = active_modules + 1
-            if active_modules == 0:
-                # If 0 Module are enabled : Open Configuration GUI Automatically
-                print("0 Modules are enabled in current configuration. Opening Configuration UI")
-                args.configure = "FORCE"
+        if active_modules == 0:
+            # If 0 Module are enabled : Open Configuration GUI Automatically
+            print("0 Modules are enabled in current configuration. Opening Configuration UI")
+            args.configure = "FORCE"
 if args.configure_cli:
     save_configuration("CLI")
 if args.configure:
