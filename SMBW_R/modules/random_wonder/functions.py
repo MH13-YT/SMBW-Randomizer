@@ -9,40 +9,16 @@ ressources = [
     {
 
         "romfs": "romfs/BancMapUnit",
-        "worktable": "SMBW_R/modules/random_morph/worktable/BancMapUnit",
-        "output": "SMBW_R/modules/random_morph/output/romfs/BancMapUnit",
+        "worktable": "SMBW_R/modules/random_wonder/worktable/BancMapUnit",
+        "output": "SMBW_R/modules/random_wonder/output/romfs/BancMapUnit",
     },
     {
 
         "romfs": "romfs/Stage/CourseInfo",
-        "worktable": "SMBW_R/modules/random_morph/worktable/CourseInfo",
-        "output": "SMBW_R/modules/random_morph/output/romfs/Stage/CourseInfo",
+        "worktable": "SMBW_R/modules/random_wonder/worktable/CourseInfo",
+        "output": "SMBW_R/modules/random_wonder/output/romfs/Stage/CourseInfo",
     },
 ]
-
-
-def convert_value(value):
-    if isinstance(value, list):
-        # Si la valeur est une liste, convertissez chaque élément de la liste
-        return [convert_value(v) for v in value]
-    elif isinstance(value, int):
-        return value  # Pas besoin de spécifier byml.Int ici
-    elif isinstance(value, float):
-        return value  # Pas besoin de spécifier byml.Float ici
-    else:
-        return value
-
-def convert_dict(dictionary):
-    return {k: convert_value(v) for k, v in dictionary.items()}
-
-def convert_links(links):
-    converted_links = []
-    for link in links:
-        converted_link = {}
-        for k, v in link.items():
-            converted_link[k] = convert_value(v)
-        converted_links.append(converted_link)
-    return converted_links
 
 class file_converter:
     def get_used_files():
@@ -67,7 +43,7 @@ class file_converter:
             fichiers = os.listdir(args_pair["romfs"])
             for fichier in fichiers:
                 chemin_complet = os.path.join(args_pair["romfs"], fichier)
-                if os.path.isfile(chemin_complet) and "BancMapUnit" in chemin_complet and "World" not in chemin_complet and os.path.splitext(chemin_complet)[1] == '.zs':
+                if os.path.isfile(chemin_complet) and "BancMapUnit" in chemin_complet and "World" not in chemin_complet and "Course.bcett" not in chemin_complet and os.path.splitext(chemin_complet)[1] == '.zs':
                     zs_file_manager.decompress_zs(f'{args_pair["romfs"]}/{fichier}',f'{args_pair["worktable"]}/{fichier.replace(".zs", "")}')
                     #os.remove(f'{args_pair["worktable"]}/{fichier.replace(".zs", "")}')
                 if os.path.isfile(chemin_complet) and "CourseInfo" in chemin_complet and os.path.splitext(chemin_complet)[1] == '.bgyml':
@@ -79,8 +55,9 @@ class file_converter:
             fichiers = os.listdir(args_pair["worktable"])
             for fichier in fichiers:
                 chemin_complet = os.path.join(args_pair["worktable"], fichier)
-                if os.path.isfile(chemin_complet) and "BancMapUnit" in chemin_complet and os.path.splitext(chemin_complet)[1] == '.byml':
-                    zs_file_manager.compress_zs(f'{args_pair["worktable"]}/{fichier}',f'{args_pair["output"]}/{fichier.replace(".byml", ".byml.zs")}')
+                if os.path.isfile(chemin_complet) and "BancMapUnit" in chemin_complet and "Course.bcett" not in chemin_complet and os.path.splitext(chemin_complet)[1] == '.byml':
+                    if not zs_file_manager.compress_zs(f'{args_pair["worktable"]}/{fichier}',f'{args_pair["output"]}/{fichier.replace(".byml", ".byml.zs")}'):
+                       raise ValueError(f"Cannot compress file : {chemin_complet}") 
                 if os.path.isfile(chemin_complet) and "CourseInfo" in chemin_complet and os.path.splitext(chemin_complet)[1] == '.bgyml':
                     shutil.copy(f'{args_pair["worktable"]}/{fichier}', f'{args_pair["output"]}/{fichier}')
                     pass
@@ -92,8 +69,7 @@ class file_converter:
                 chemin_complet = os.path.join(args_pair["worktable"], fichier)
                 if os.path.isfile(chemin_complet) and os.path.splitext(chemin_complet)[1] != '.json':
                     pass
-                    #os.remove(chemin_complet)
-        #os.remove("SMBW_R/modules/random_morph/worktable/random_data.json")
+                    os.remove(chemin_complet)
 
 class data_manager:
     def dump():
@@ -133,6 +109,21 @@ class data_manager:
         shuffle = False
         if method == "all":
             data_dump = profiles.all(data_dump,seed)
+            shuffle = True
+        if method == "all_exclude_goomba":
+            data_dump = profiles.all_exclude_goomba(data_dump,seed)
+            shuffle = True
+        if method == "morph_only":
+            data_dump = profiles.morph_only(data_dump,seed)
+            shuffle = True
+        if method == "morph_only_exclude_goomba":
+            data_dump = profiles.morph_only_exclude_goomba(data_dump,seed)
+            shuffle = True
+        if method == "effect_only":
+            data_dump = profiles.effect_only(data_dump,seed)
+            shuffle = True
+        if method == "custom":
+            data_dump = profiles.custom(data_dump,seed)
             shuffle = True
         if shuffle == True:
             return data_dump

@@ -1,0 +1,54 @@
+{
+    "Effect1": {
+        "id": 1,
+        "enabled": false
+    },
+    "Effect2": {
+        "id": 2,
+        "enabled": false
+    },
+    "Effect3": {
+        "id": 3,
+        "enabled": false
+    },
+    "Effect4": {
+        "id": 4,
+        "enabled": false
+    },
+    "Effect5": {
+        "id": 5,
+        "enabled": false
+    },
+    "Effect6": {
+        "id": 6,
+        "enabled": false
+    },
+    "Effect7": {
+        "id": 7,
+        "enabled": false
+    },
+    "Effect8": {
+        "id": 8,
+        "enabled": false
+    },
+    "Effect9": {
+        "id": 9,
+        "enabled": false
+    },
+    "Effect10": {
+        "id": 10,
+        "enabled": false
+    },
+    "Effect11": {
+        "id": 11,
+        "enabled": false
+    },
+    "Effect12": {
+        "id": 12,
+        "enabled": false
+    },
+    "No Effects": {
+        "id": 0,
+        "enabled": false
+    }
+}

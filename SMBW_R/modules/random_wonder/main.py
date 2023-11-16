@@ -1,20 +1,21 @@
 import logging
 import os
 import json
-from SMBW_R.modules.random_morph.profiles import profiles
+import traceback
+from SMBW_R.modules.random_wonder.profiles import profiles
 import logging_config  # Importez la configuration de journalisation
 from .functions import data_manager, file_converter
 
-module_description = "Choose a random badge at Level Start (You can change it but is cheating)"
+module_description = "Each wonder flower has an additional random effect (player transformation and/or player effect), Warning: data conflicts may occur with potential softlocks."
 
-class random_morph_module:
+class random_wonder_module:
     def __init__(self):
-        self.logger = logging.getLogger('SMBW_R Module : random_morph')
+        self.logger = logging.getLogger('SMBW_R Module : random_wonder')
         self.path_list = [
-            "SMBW_R/modules/random_morph/worktable/BancMapUnit",
-            "SMBW_R/modules/random_morph/worktable/CourseInfo",
-            "SMBW_R/modules/random_morph/output/romfs/Stage/CourseInfo",
-            "SMBW_R/modules/random_morph/output/romfs/BancMapUnit"
+            "SMBW_R/modules/random_wonder/worktable/BancMapUnit",
+            "SMBW_R/modules/random_wonder/worktable/CourseInfo",
+            "SMBW_R/modules/random_wonder/output/romfs/Stage/CourseInfo",
+            "SMBW_R/modules/random_wonder/output/romfs/BancMapUnit"
         ]
         self.validate = {
             "Check files and folders": False,
@@ -107,7 +108,7 @@ class random_morph_module:
 
         except Exception as error:
             self.logger.error(f"Cannot patch files: {error}")
-            print(f"Cannot patch files: {error}")
+            print(traceback(error))
             game_is_patched = False
 
         self.validate["Generating patched game files"] = game_is_patched
@@ -146,7 +147,7 @@ class random_morph_module:
 
     def start(self,method,seed):
         self.logger.info("Starting process")
-        print("\n[random_morph]: Starting process")
+        print("\n[random_wonder]: Starting process")
         result = (
             self.check_files() and
             self.decompilation() and
@@ -166,7 +167,7 @@ class random_morph_module:
                 self.logger.warn(f"Step {key + 1}: {value} => FAIL")
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
-        print("[random_morph]: End of process")
+        print("[random_wonder]: End of process")
         return result
     def get_description(self):  
         return(module_description)

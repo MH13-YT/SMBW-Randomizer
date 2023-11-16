@@ -1,0 +1,42 @@
+{
+    "Slime": {
+        "id": 1,
+        "codename": "Slime",
+        "enabled": false
+    },
+    "Spike Ball": {
+        "id": 2,
+        "codename": "Ball",
+        "enabled": true
+    },
+    "Baloon": {
+        "id": 3,
+        "codename": "BalloonKiller",
+        "enabled": false
+    },
+    "Goomba": {
+        "id": 4,
+        "codename": "Kuribo",
+        "enabled": false
+    },
+    "Cake": {
+        "id": 5,
+        "codename": "SinkBlock",
+        "enabled": false
+    },
+    "Bondis": {
+        "id": 6,
+        "codename": "Hoppin",
+        "enabled": false
+    },
+    "Stretch": {
+        "id": 7,
+        "codename": "Biyon",
+        "enabled": false
+    },
+    "None": {
+        "id": 0,
+        "codename": "None",
+        "enabled": false
+    }
+}
