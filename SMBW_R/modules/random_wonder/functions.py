@@ -1,36 +1,27 @@
 import shutil
 import os
 import byml
-import zstandard as zstd
 from .profiles import profiles
-from ..tools import zs_file_manager
+from ...tools.zstandard import zs_file_manager
 
 ressources = [
     {
 
         "romfs": "romfs/BancMapUnit",
-        "worktable": "SMBW_R/modules/random_wonder/worktable/BancMapUnit",
+        "worktable": "SMBW_R/modules/random_wonder/worktable/romfs/BancMapUnit",
         "output": "SMBW_R/modules/random_wonder/output/romfs/BancMapUnit",
     },
     {
 
         "romfs": "romfs/Stage/CourseInfo",
-        "worktable": "SMBW_R/modules/random_wonder/worktable/CourseInfo",
+        "worktable": "SMBW_R/modules/random_wonder/worktable/romfs/Stage/CourseInfo",
         "output": "SMBW_R/modules/random_wonder/output/romfs/Stage/CourseInfo",
     },
 ]
 
 class file_converter:
-    def get_used_files():
-        file_list = []
-        for filepath in ressources:
-            file_list.append(filepath["romfs"])
-        return file_list
-    def get_output_files():
-        file_list = []
-        for filepath in ressources:
-            file_list.append(filepath["output"])
-        return file_list
+    def get_ressources():
+        return ressources
     def verify_files():
         for filepath in ressources:
             target = filepath["romfs"]
@@ -45,10 +36,8 @@ class file_converter:
                 chemin_complet = os.path.join(args_pair["romfs"], fichier)
                 if os.path.isfile(chemin_complet) and "BancMapUnit" in chemin_complet and "World" not in chemin_complet and "Course.bcett" not in chemin_complet and os.path.splitext(chemin_complet)[1] == '.zs':
                     zs_file_manager.decompress_zs(f'{args_pair["romfs"]}/{fichier}',f'{args_pair["worktable"]}/{fichier.replace(".zs", "")}')
-                    #os.remove(f'{args_pair["worktable"]}/{fichier.replace(".zs", "")}')
                 if os.path.isfile(chemin_complet) and "CourseInfo" in chemin_complet and os.path.splitext(chemin_complet)[1] == '.bgyml':
                     shutil.copy(f'{args_pair["romfs"]}/{fichier}', f'{args_pair["worktable"]}/{fichier}')
-                    #subprocess.run(["byml_to_yml"] + [f'{args_pair["romfs"]}/{fichier}',f'{args_pair["worktable"]}/{fichier.replace("bgyml", "yml")}'], check=True)
                     pass
     def compile():
         for args_pair in ressources:
@@ -73,7 +62,7 @@ class file_converter:
 
 class data_manager:
     def dump():
-        informations = []
+        data = []
         for ressource in ressources:
             print(f'Processing : {ressource["worktable"]}')
             fichiers = os.listdir(ressource["worktable"])
@@ -83,19 +72,19 @@ class data_manager:
                         with open(f'{ressource["worktable"]}/{fichier}', "rb") as fichier_byml:
                             parser = byml.Byml(fichier_byml.read())
                             document = parser.parse()
-                            informations.append({
+                            data.append({
                                 "file_name": fichier,
                                 "ressource_type": ressource["worktable"],
-                                "level_data": document
+                                "file_data": document
                             })
-        return informations
+        return data
 
     def restore(data):
-        for level in data[0]:
-            if "file_name" in level and "ressource_type" in level and "level_data" in level:
-                file_name = level["file_name"]
-                ressources_type = level["ressource_type"]
-                level_data = level["level_data"]
+        for file in data[0]:
+            if "file_name" in file and "ressource_type" in file and "file_data" in file:
+                file_name = file["file_name"]
+                ressources_type = file["ressource_type"]
+                level_data = file["file_data"]
                 file_path = os.path.join(ressources_type, file_name)
                 with open(file_path, 'wb') as fichier:
                     writer = byml.Writer(level_data, be=False, version=4)

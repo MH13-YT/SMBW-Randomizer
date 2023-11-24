@@ -10,7 +10,7 @@ class random_badges_module:
     def __init__(self):
         self.logger = logging.getLogger('SMBW_R Module : random_badges')
         self.path_list = [
-            "SMBW_R/modules/random_badges/worktable/",
+            "SMBW_R/modules/random_badges/worktable/romfs/Stage/CourseInfo",
             "SMBW_R/modules/random_badges/output/romfs/Stage/CourseInfo"
         ]
         self.validate = {
@@ -22,8 +22,6 @@ class random_badges_module:
             "Game files recompilation": False,
             "Cleaning Worktable folder":False
         }
-
-        self.data = {}
 
     def check_files(self):
         self.logger.info("STEP 1 : Check Required Files and folder")
@@ -83,15 +81,9 @@ class random_badges_module:
         self.logger.info("STEP 4: Randomize game data")
         game_is_randomized = True
         try:
-            self.logger.info("Starting data randomization")
-            with open("SMBW_R/modules/random_badges/worktable/random_data.json", "w") as file:
-                self.logger.info("Creating Random Data JSON File")
-                json.dump(
-                    data_manager.shuffle(self.data,method,seed),
-                    file,
-                    indent=4
-                )
-                self.logger.info("Data Randomisation Complete")
+            self.logger.info("Starting data randomisation")
+            self.data = data_manager.shuffle(self.data,method,seed),
+            self.logger.info("Randomisation Complete")
         except Exception as error:
             self.logger.error(f"Error occured on file randomizing: {error}")
             print(f"Error occured on file randomizing: {error}")
@@ -104,15 +96,12 @@ class random_badges_module:
         self.logger.info("STEP 5: Generating patched game files")
         game_is_patched = True
         try:
-            with open("SMBW_R/modules/random_badges/worktable/random_data.json", "r") as random_data_file:
-                data = json.load(random_data_file)
-                self.logger.info("Starting Patched data Restoration to YML")
-                data_manager.restore(data)
-                self.logger.info("Patched data are restored to YML")
+            self.logger.info("Starting Patched data Restoration to YML")
+            data_manager.restore(self.data)
+            self.logger.info("Patched data are restored to YML")
 
         except Exception as error:
             self.logger.error(f"Cannot patch files: {error}")
-            print(f"Cannot patch files: {error}")
             game_is_patched = False
 
         self.validate["Generating patched game files"] = game_is_patched
@@ -177,8 +166,6 @@ class random_badges_module:
         return(module_description)
     def list_method(self):
         return(profiles.list())
-    def get_used_files(self):
-        return(file_converter.get_used_files())
-    def get_output_files(self):
-        return(file_converter.get_output_files())
+    def get_ressources(self):
+        return(file_converter.get_ressources())
     

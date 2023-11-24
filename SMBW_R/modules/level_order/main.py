@@ -3,27 +3,25 @@ import os
 import json
 from SMBW_R.modules.level_order.profiles import profiles
 import logging_config  # Importez la configuration de journalisation
-from .functions import file_converter, levels_manager
+from .functions import file_converter, data_manager
 
 module_description = "Change all levels positions"
 class level_order_module:
     def __init__(self):
         self.logger = logging.getLogger('SMBW_R Module : level_order')
         self.path_list = [
-            "SMBW_R/modules/level_order/worktable/",
+            "SMBW_R/modules/level_order/worktable/romfs/Stage/WorldMapInfo",
             "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo"
         ]
         self.validate = {
             "Check files and folders": False,
             "Decompile and copy necessary games files": False,
-            "Read game data from game files": False,
+            "Read data from game files": False,
             "Randomize game data": False,
             "Generating patched game files": False,
             "Game files recompilation and packaging as a mod": False,
             "Cleaning Worktable folder":False
         }
-
-        self.levels = {}
 
     def check_files(self):
         self.logger.info("STEP 1 : Check Required Files and folder")
@@ -65,44 +63,29 @@ class level_order_module:
         self.logger.info("")
         return decompilation_is_work
 
-    def get_levels(self):
-        self.logger.info("STEP 3: Read game data from game files")
-        levels_is_get = True
-        self.logger.info("Get levels data from decompiled files")
+    def get_data(self):
+        self.logger.info("STEP 3: Read data from game files")
+        data_is_get = True
+        self.logger.info("Get data from decompiled files")
         try:
-            if not os.path.exists("SMBW_R/modules/level_order/worktable/levels.json"):
-                with open("SMBW_R/modules/level_order/worktable/levels.json", "w") as levels_file:
-                    self.logger.info("Starting game level dump from YML")
-                    self.levels = levels_manager.dump()
-                    json.dump(self.levels, levels_file, indent=4)
-
-            else:
-                with open("SMBW_R/modules/level_order/worktable/levels.json", "r") as levels_file:
-                    self.logger.info("Loading levels dump from levels.json file")
-                    self.levels = json.load(levels_file)
-
+            self.logger.info("Starting game data dump")
+            self.data = data_manager.dump()
         except Exception as error:
-            self.logger.error(f"Levels dump is corrupted or levels data cannot be dumped: {error}")
-            print(f"Levels dump is corrupted or levels data cannot be dumped: {error}")
-            levels_is_get = False
+            self.logger.error(f"Data cannot be dumped: {error}")
+            print(f"Data cannot be dumped: {error}")
+            data_is_get = False
 
-        self.validate["Read game data from game files"] = levels_is_get
+        self.validate["Read data from game files"] = data_is_get
         self.logger.info("")
-        return levels_is_get
+        return data_is_get
 
     def randomizing(self,method,seed):
         self.logger.info("STEP 4: Randomize game data")
         game_is_randomized = True
         try:
-            self.logger.info("Starting randomisation of Levels")
-            with open("SMBW_R/modules/level_order/worktable/random_levels.json", "w") as file:
-                self.logger.info("Creating Random Levels JSON File")
-                json.dump(
-                    levels_manager.shuffle(self.levels,method,seed),
-                    file,
-                    indent=4
-                )
-                self.logger.info("Randomisation of Levels Complete")
+            self.logger.info("Starting data randomisation")
+            self.data = data_manager.shuffle(self.data,method,seed),
+            self.logger.info("Randomisation Complete")
         except Exception as error:
             self.logger.error(f"Error occured on file randomizing: {error}")
             print(f"Error occured on file randomizing: {error}")
@@ -115,15 +98,12 @@ class level_order_module:
         self.logger.info("STEP 5: Generating patched game files")
         game_is_patched = True
         try:
-            with open("SMBW_R/modules/level_order/worktable/random_levels.json", "r") as random_levels_file:
-                data = json.load(random_levels_file)
-                self.logger.info("Starting Patched Level Restoration to YML")
-                levels_manager.restore(data)
-                self.logger.info("Patched Levels are Restored to YML")
+            self.logger.info("Starting Patched data Restoration to YML")
+            data_manager.restore(self.data)
+            self.logger.info("Patched data are restored to YML")
 
         except Exception as error:
             self.logger.error(f"Cannot patch files: {error}")
-            print(f"Cannot patch files: {error}")
             game_is_patched = False
 
         self.validate["Generating patched game files"] = game_is_patched
@@ -166,7 +146,7 @@ class level_order_module:
         result = (
             self.check_files() and
             self.decompilation() and
-            self.get_levels() and
+            self.get_data() and
             self.randomizing(method,seed) and
             self.patching() and
             self.recompilation() and
@@ -188,8 +168,6 @@ class level_order_module:
         return(module_description)
     def list_method(self):
         return(profiles.list())
-    def get_used_files(self):
-        return(file_converter.get_used_files())
-    def get_output_files(self):
-        return(file_converter.get_output_files())
+    def get_ressources(self):
+        return(file_converter.get_ressources())
     

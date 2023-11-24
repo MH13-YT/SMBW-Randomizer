@@ -1,3 +1,4 @@
+import json
 import random
 import byml
 
@@ -7,22 +8,22 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "level_data" in data and isinstance(data["level_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
                     morph_type = 0
-                    for actors in data["level_data"]["Actors"]:
+                    for actors in data["file_data"]["Actors"]:
                         try:
                             if "MorphPlayerType" in actors["Dynamic"] and actors["Dynamic"]["MorphPlayerType"] == 0:
                                 random.shuffle(morph_list)
                                 list[data["file_name"].split('_')[0]] = {"BancMapUnit":False,"CourseInfo":False, "data":morph_list[0]}
                         except:
                             pass
-            if "level_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["level_data"], dict) and "CourseInfo" in data["ressource_type"]:
-                data["level_data"].setdefault("CoursePlayerMorphType", "None")
-                data["level_data"]["CoursePlayerMorphType"] = list[data["file_name"].split("_")[0]]["data"]["morph_name"]
+            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "CourseInfo" in data["ressource_type"]:
+                data["file_data"].setdefault("CoursePlayerMorphType", "None")
+                data["file_data"]["CoursePlayerMorphType"] = list[data["file_name"].split("_")[0]]["data"]["morph_name"]
                 list[data["file_name"].split("_")[0]]["CourseInfo"] = True
-            if "level_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["level_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
                 morph_type = 0
-                for actors in data["level_data"]["Actors"]:
+                for actors in data["file_data"]["Actors"]:
                     try:
                         if "MorphPlayerType" in actors["Dynamic"]:
                             morph_type = actors["Dynamic"]["MorphPlayerType"]
@@ -37,23 +38,20 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "level_data" in data and isinstance(data["level_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
                     try:
-                        for actors in data["level_data"]["Actors"]:
+                        for actors in data["file_data"]["Actors"]:
                             if "PlayerWonderType" in actors["Dynamic"]:
                                 random.shuffle(effect_list)
                                 list[data["file_name"].split('_')[0]] = {"BancMapUnit":False, "data":effect_list[0]}
                     except:
                         pass
-            if "level_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["level_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
                     try:
-                        for actors in data["level_data"]["Actors"]:
+                        for actors in data["file_data"]["Actors"]:
                             if "PlayerWonderType" in actors["Dynamic"]:
                                 actors["Dynamic"]["PlayerWonderType"] = byml.Int(list[data["file_name"].split("_")[0]]["data"]["effect_id"])
                                 list[data["file_name"].split("_")[0]]["BancMapUnit"] = True
                     except:
                         pass
-        print(f"Effects Data Modified")
-        for course in list.items():
-            print(course)
         return data_dump

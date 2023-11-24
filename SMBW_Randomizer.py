@@ -15,14 +15,14 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Import SMBW_R Modules Lister
-import SMBW_R.modules.list
+import SMBW_R.tools.main
 
 # ------------------------------
 
 # Dictionnaire pour stocker les instances de modules
 modules = {}
 # Importez automatiquement les modules à partir de chaque dossier
-for module_name in SMBW_R.modules.list.get_module_list():
+for module_name in SMBW_R.tools.main.get_module_list():
     try:
         module_path = f"SMBW_R.modules.{module_name}"
         module = importlib.import_module(module_path)
@@ -38,7 +38,7 @@ for module_name in SMBW_R.modules.list.get_module_list():
 def save_configuration(mode):
     if mode == "CLI":
         print("The settings of randomizer has been modified")
-        for module_name in SMBW_R.modules.list.get_module_list():
+        for module_name in SMBW_R.tools.main.get_module_list():
             if hasattr(args, module_name) and getattr(args, module_name) != None:
                 print(f"Module : {module_name}")
                 print(f"        Enabled : {True}")
@@ -54,7 +54,7 @@ def save_configuration(mode):
                 == "Y"
             ):
                 with open("config.json", "w") as fichier:
-                    for module_name in SMBW_R.modules.list.get_module_list():
+                    for module_name in SMBW_R.tools.main.get_module_list():
                         if (
                             hasattr(args, module_name)
                             and getattr(args, module_name) != None
@@ -148,13 +148,13 @@ class SMBW_Randomizer:
             for rep in dirs:
                 rep_path = os.path.join(root, rep)
                 os.rmdir(rep_path)
-        for module_name in SMBW_R.modules.list.get_module_list():
+        for module_name in SMBW_R.tools.main.get_module_list():
             if config[module_name]["enable"] == True:
                 active_module = active_module + 1
                 if module_name in modules:
                     module = modules[module_name]
-                    for file in module.get_used_files():
-                        module_file = {"module_name": module_name, "file_name": file}
+                    for file in module.get_ressources():
+                        module_file = {"module_name": module_name, "file_name": file['romfs']}
                         # Vérifiez si le fichier est déjà utilisé par un autre module
                         verify_pass = True
                         for item in impacted_files:
@@ -188,7 +188,7 @@ class SMBW_Randomizer:
         print(f"Randomization will use Seed : '{seed}'")
         self.logger.info(f"Randomization will use Seed : {seed}")
         modules_process_ended_without_error = True
-        for module_name in SMBW_R.modules.list.get_module_list():
+        for module_name in SMBW_R.tools.main.get_module_list():
             if config[module_name]["enable"] == True:
                 self.logger.info(
                     f"Starting {module_name} module with method '{config[module_name]['method']}'"
@@ -205,7 +205,7 @@ class SMBW_Randomizer:
     def merge_module_outputs(self, config):
         self.logger.info("STEP 3 : Merge output from modules")
         merged_with_success = True
-        for module_name in SMBW_R.modules.list.get_module_list():
+        for module_name in SMBW_R.tools.main.get_module_list():
             if config[module_name]["enable"] == True:
                 self.logger.info("Starting Process for {module}")
                 try:
@@ -264,7 +264,7 @@ parser.add_argument(
     help="Configurer le randomiseur avant de le lancer",
 )
 dependant_group = parser.add_argument_group("--configure_cli : Available modules")
-for module_name in SMBW_R.modules.list.get_module_list():
+for module_name in SMBW_R.tools.main.get_module_list():
     if module_name in modules:
         module = modules[module_name]
         dependant_group.add_argument(
@@ -273,7 +273,7 @@ for module_name in SMBW_R.modules.list.get_module_list():
             help=f"Activer le module {module_name} avec la methode choisie",
         )
 args = parser.parse_args()
-module_list = SMBW_R.modules.list.get_module_list()
+module_list = SMBW_R.tools.main.get_module_list()
 if args.seed is None:
     args.seed = str(uuid.uuid4())
 if not os.path.exists("config.json"):

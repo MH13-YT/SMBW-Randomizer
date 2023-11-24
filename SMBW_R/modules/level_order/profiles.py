@@ -10,7 +10,7 @@ class profiles:
             'lite_secured',
             ]
 
-    def full_secured(levels_dump, seed):
+    def full_secured(data, seed):
         ignored_stages_files = [
             "Work/Stage/StageParam/Course150_Course.game__stage__StageParam.gyml", # W1
             "Work/Stage/StageParam/Course151_Course.game__stage__StageParam.gyml", # W2
@@ -20,14 +20,15 @@ class profiles:
             "Work/Stage/StageParam/Course153_Course.game__stage__StageParam.gyml", # W6
             # "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
         ]
-        return randomisation_scripts.full(levels_dump,seed,ignored_stages_files)
+        
+        return randomisation_scripts.full(data,seed,ignored_stages_files)
     
-    def full(levels_dump, seed):
+    def full(data, seed):
         ignored_stages_files = []
-        return randomisation_scripts.full(levels_dump,seed,ignored_stages_files)
+        return randomisation_scripts.full(data,seed,ignored_stages_files)
     
     
-    def lite_secured(levels_dump, seed):
+    def lite_secured(data, seed):
         ignored_stages_files = [
             "Work/Stage/StageParam/Course150_Course.game__stage__StageParam.gyml", # W1
             "Work/Stage/StageParam/Course151_Course.game__stage__StageParam.gyml", # W2
@@ -38,10 +39,10 @@ class profiles:
             # "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
 
         ]
-        return randomisation_scripts.lite(levels_dump,seed,ignored_stages_files)
+        return randomisation_scripts.lite(data,seed,ignored_stages_files)
     
-    def lite(levels_dump, seed):
+    def lite(data, seed):
         ignored_stages_files = []
-        return randomisation_scripts.lite(levels_dump,seed,ignored_stages_files)
+        return randomisation_scripts.lite(data,seed,ignored_stages_files)
 
         

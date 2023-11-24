@@ -12,8 +12,8 @@ class random_wonder_module:
     def __init__(self):
         self.logger = logging.getLogger('SMBW_R Module : random_wonder')
         self.path_list = [
-            "SMBW_R/modules/random_wonder/worktable/BancMapUnit",
-            "SMBW_R/modules/random_wonder/worktable/CourseInfo",
+            "SMBW_R/modules/random_wonder/worktable/romfs/BancMapUnit",
+            "SMBW_R/modules/random_wonder/worktable/romfs/Stage/CourseInfo",
             "SMBW_R/modules/random_wonder/output/romfs/Stage/CourseInfo",
             "SMBW_R/modules/random_wonder/output/romfs/BancMapUnit"
         ]
@@ -26,8 +26,6 @@ class random_wonder_module:
             "Game files recompilation": False,
             "Cleaning Worktable folder":False
         }
-
-        self.data = {}
 
     def check_files(self):
         self.logger.info("STEP 1 : Check Required Files and folder")
@@ -87,9 +85,9 @@ class random_wonder_module:
         self.logger.info("STEP 4: Randomize game data")
         game_is_randomized = True
         try:
-            self.logger.info("Starting data randomization")
+            self.logger.info("Starting data randomisation")
             self.data = data_manager.shuffle(self.data,method,seed),
-            self.logger.info("Data Randomisation Complete")
+            self.logger.info("Randomisation Complete")
         except Exception as error:
             self.logger.error(f"Error occured on file randomizing: {error}")
             print(f"Error occured on file randomizing: {error}")
@@ -108,7 +106,6 @@ class random_wonder_module:
 
         except Exception as error:
             self.logger.error(f"Cannot patch files: {error}")
-            print(traceback(error))
             game_is_patched = False
 
         self.validate["Generating patched game files"] = game_is_patched
@@ -173,8 +170,6 @@ class random_wonder_module:
         return(module_description)
     def list_method(self):
         return(profiles.list())
-    def get_used_files(self):
-        return(file_converter.get_used_files())
-    def get_output_files(self):
-        return(file_converter.get_output_files())
+    def get_ressources(self):
+        return(file_converter.get_ressources())
     

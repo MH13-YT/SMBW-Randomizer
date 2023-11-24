@@ -23,9 +23,7 @@ class exemple_module:
             "Cleaning Worktable folder":False
         }
 
-        self.levels = {}
-
-    def check_files(self):
+    def check_files(self): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 1 : Check Required Files and folder")
         files_is_created = True
         for folder in self.path_list:
@@ -49,7 +47,7 @@ class exemple_module:
         self.logger.info("")
         return files_is_created
 
-    def decompilation(self):
+    def decompilation(self): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 2 : Decompile and copy necessary games files")
         decompilation_is_work = True
         try:
@@ -65,44 +63,29 @@ class exemple_module:
         self.logger.info("")
         return decompilation_is_work
 
-    def get_data(self):
-        self.logger.info("STEP 3: Read game data from game files")
-        levels_is_get = True
+    def get_data(self): #DO NOT EDIT, These script are preconfigured
+        self.logger.info("STEP 3: Read data from game files")
+        data_is_get = True
         self.logger.info("Get data from decompiled files")
         try:
-            if not os.path.exists("SMBW_R/modules/exemple_module/worktable/data.json"):
-                with open("SMBW_R/modules/exemple_module/worktable/data.json", "w") as levels_file:
-                    self.logger.info("Starting game data dump from YML")
-                    self.levels = data_manager.dump()
-                    json.dump(self.levels, levels_file, indent=4)
-
-            else:
-                with open("SMBW_R/modules/exemple_module/worktable/data.json", "r") as levels_file:
-                    self.logger.info("Loading levels dump from data.json file")
-                    self.levels = json.load(levels_file)
-
+            self.logger.info("Starting game data dump")
+            self.data = data_manager.dump()
         except Exception as error:
-            self.logger.error(f"Data dump is corrupted or cannot be dumped: {error}")
-            print(f"Data dump is corrupted or cannot be dumped: {error}")
-            levels_is_get = False
+            self.logger.error(f"Data cannot be dumped: {error}")
+            print(f"Data cannot be dumped: {error}")
+            data_is_get = False
 
-        self.validate["Read game data from game files"] = levels_is_get
+        self.validate["Read data from game files"] = data_is_get
         self.logger.info("")
-        return levels_is_get
+        return data_is_get
 
-    def randomizing(self,method,seed):
+    def randomizing(self,method,seed): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 4: Randomize game data")
         game_is_randomized = True
         try:
-            self.logger.info("Starting data randomization")
-            with open("SMBW_R/modules/exemple_module/worktable/random_data.json", "w") as file:
-                self.logger.info("Creating Random Data JSON File")
-                json.dump(
-                    data_manager.shuffle(self.levels,method,seed),
-                    file,
-                    indent=4
-                )
-                self.logger.info("Data Randomisation Complete")
+            self.logger.info("Starting data randomisation")
+            self.data = data_manager.shuffle(self.data,method,seed),
+            self.logger.info("Randomisation Complete")
         except Exception as error:
             self.logger.error(f"Error occured on file randomizing: {error}")
             print(f"Error occured on file randomizing: {error}")
@@ -111,26 +94,23 @@ class exemple_module:
         self.logger.info("")
         return game_is_randomized
         
-    def patching(self):
+    def patching(self): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 5: Generating patched game files")
         game_is_patched = True
         try:
-            with open("SMBW_R/modules/exemple_module/worktable/random_data.json", "r") as random_levels_file:
-                data = json.load(random_levels_file)
-                self.logger.info("Starting Patched data Restoration to YML")
-                data_manager.restore(data)
-                self.logger.info("Patched data are restored to YML")
+            self.logger.info("Starting Patched data Restoration to YML")
+            data_manager.restore(self.data)
+            self.logger.info("Patched data are restored to YML")
 
         except Exception as error:
             self.logger.error(f"Cannot patch files: {error}")
-            print(f"Cannot patch files: {error}")
             game_is_patched = False
 
         self.validate["Generating patched game files"] = game_is_patched
         self.logger.info("")
         return game_is_patched
     
-    def recompilation(self):
+    def recompilation(self): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 6: Game files recompilation")
         patched_game_files_are_compiled = True
         try:
@@ -145,7 +125,7 @@ class exemple_module:
         self.logger.info("")
         return patched_game_files_are_compiled
     
-    def cleaning(self):
+    def cleaning(self): #DO NOT EDIT, These script are preconfigured
         self.logger.info("STEP 7: Cleaning Worktable")
         worktable_is_cleaned = True
         try:
@@ -160,7 +140,7 @@ class exemple_module:
         self.logger.info("")
         return worktable_is_cleaned
 
-    def start(self,method,seed):
+    def start(self,method,seed): #DO NOT EDIT, These script are preconfigured
         self.logger.info("Starting process")
         print("\n[exemple_module]: Starting process")
         result = (
@@ -188,8 +168,4 @@ class exemple_module:
         return(module_description)
     def list_method(self):
         return(profiles.list())
-    def get_used_files(self):
-        return(file_converter.get_used_files())
-    def get_output_files(self):
-        return(file_converter.get_output_files())
     

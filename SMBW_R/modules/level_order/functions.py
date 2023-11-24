@@ -1,70 +1,19 @@
-import random
-import subprocess
+import shutil
 import os
-import yaml
-import uuid
+import byml
 from .profiles import profiles
 
 ressources = [
     {
-        "romfs": "romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World001.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World001.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World002.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World002.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World003.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World003.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World004.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World004.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World005.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World005.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World006.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World006.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World007.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World007.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-        "romfs": "romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World008.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World008.game__stage__WorldMapInfo.bgyml",
-    },
-    {
-
-        "romfs": "romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
-        "worktable": "SMBW_R/modules/level_order/worktable/World009.game__stage__WorldMapInfo.yml",
-        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo/World009.game__stage__WorldMapInfo.bgyml",
+        "romfs": "romfs/Stage/WorldMapInfo",
+        "worktable": "SMBW_R/modules/level_order/worktable/romfs/Stage/WorldMapInfo",
+        "output": "SMBW_R/modules/level_order/output/romfs/Stage/WorldMapInfo",
     },
 ]
 
 class file_converter:
-    def get_used_files():
-        file_list = []
-        for filepath in ressources:
-            file_list.append(filepath["romfs"])
-        return file_list
-    def get_output_files():
-        file_list = []
-        for filepath in ressources:
-            file_list.append(filepath["output"])
-        return file_list
+    def get_ressources():
+        return ressources
     def verify_files():
         for filepath in ressources:
             target = filepath["romfs"]
@@ -73,75 +22,75 @@ class file_converter:
         return True
     def decompile():
         for args_pair in ressources:
-            subprocess.run(["byml_to_yml"] + [args_pair["romfs"],args_pair["worktable"]], check=True)
+            fichiers = os.listdir(args_pair["romfs"])
+            for fichier in fichiers:
+                chemin_complet = os.path.join(args_pair["romfs"], fichier)
+                if os.path.isfile(chemin_complet):
+                    shutil.copy(f'{args_pair["romfs"]}/{fichier}', f'{args_pair["worktable"]}/{fichier}')
     def compile():
         for args_pair in ressources:
-            subprocess.run(["yml_to_byml"] + [args_pair["worktable"],args_pair["output"]], check=True)
+            fichiers = os.listdir(args_pair["worktable"])
+            for fichier in fichiers:
+                chemin_complet = os.path.join(args_pair["worktable"], fichier)
+                if os.path.isfile(chemin_complet):
+                    shutil.copy(f'{args_pair["worktable"]}/{fichier}', f'{args_pair["output"]}/{fichier}')
     def clean():
         for args_pair in ressources:
-            os.remove(args_pair["worktable"])
-        os.remove("SMBW_R/modules/level_order/worktable/random_levels.json")
+            fichiers = os.listdir(args_pair["worktable"])
+            for fichier in fichiers:
+                chemin_complet = os.path.join(args_pair["worktable"], fichier)
+                os.remove(chemin_complet)
 
-class levels_manager:
+class data_manager:
     def dump():
-        # Initialiser un dictionnaire pour stocker les informations
-        informations = {}
-        count = 0
+        data = []
         for ressource in ressources:
-            count = count + 1
-            world_id = f"World{count}"  # Utilisation de World-ID formaté
-            if world_id not in informations:
-                informations[world_id] = []  # Crée une liste vide pour chaque World-ID
+            print(f'Processing : {ressource["worktable"]}')
+            fichiers = os.listdir(ressource["worktable"])
+            for fichier in fichiers:
+                chemin_complet = os.path.join(ressource["worktable"], fichier)
+                if os.path.isfile(chemin_complet):
+                        with open(f'{ressource["worktable"]}/{fichier}', "rb") as fichier_byml:
+                            parser = byml.Byml(fichier_byml.read())
+                            document = parser.parse()
+                            data.append({
+                                "file_name": fichier,
+                                "ressource_type": ressource["worktable"],
+                                "file_data": document
+                            })
+        return data
 
-            with open(ressource["worktable"], "r") as fichier_yaml:  # Vous n'avez pas besoin de os.path.join ici
-                data = yaml.safe_load(fichier_yaml)
-                for item in data.get("CourseTable", []):
-                    key = item.get("Key", None)
-                    stage_path = item.get("StagePath", None)
-                    if key is not None and stage_path is not None:
-                        # Ajoutez les informations à la liste correspondante
-                        if stage_path != "Work/Stage/StageParam/Course900_Course.game__stage__StageParam.gyml":
-                            informations[world_id].append({"Key": key, "StagePath": stage_path})               
-        return informations
-    
     def restore(data):
-        # Initialiser un compteur
-        count = 0
-        # Parcourir chaque monde
-        for world_id, courses in data.items():
-            count = count + 1
-            ressource = ressources[count - 1]  # Les indices en Python commencent à 0
-            with open(ressource["worktable"], "r") as fichier_yaml:  # Vous n'avez pas besoin de os.path.join ici
-                yml_data = yaml.safe_load(fichier_yaml)
-                for i, item in enumerate(yml_data.get("CourseTable", [])):
-                    # Définir les nouvelles valeurs pour "Key" et "StagePath"
-                    if i < len(courses):  # Vérifiez que nous n'excédons pas la longueur de courses
-                        for course in courses:
-                            if course["Key"] == item["Key"]:  # Utilisez item["Key"] pour rechercher un correspondant dans courses
-                                item["Key"] = course["Key"]
-                                item["StagePath"] = course["StagePath"]
-                                break
-            with open(ressource["worktable"], "w") as fichier_yaml:
-                yaml.safe_dump(yml_data, fichier_yaml)
+        for file in data[0]:
+            if "file_name" in file and "ressource_type" in file and "file_data" in file:
+                file_name = file["file_name"]
+                ressources_type = file["ressource_type"]
+                level_data = file["file_data"]
+                file_path = os.path.join(ressources_type, file_name)
+                with open(file_path, 'wb') as fichier:
+                    writer = byml.Writer(level_data, be=False, version=4)
+                    writer.write(fichier)
+            else:
+                print("Missing necessary information in level_info.")
 
    
-    def shuffle(levels_dump, method, seed):
+    def shuffle(data_dump, method, seed):
         shuffle = False
         method = str(method)
         if method == "lite":
-            levels_dump = profiles.lite(levels_dump,seed)
+            data_dump = profiles.lite(data_dump,seed)
             shuffle = True
         if method == "full":
-            levels_dump = profiles.full(levels_dump,seed)
+            data_dump = profiles.full(data_dump,seed)
             shuffle = True
         if method == "lite_secured":
-            levels_dump = profiles.lite_secured(levels_dump,seed)
+            data_dump = profiles.lite_secured(data_dump,seed)
             shuffle = True
         if method == "full_secured":
-            levels_dump = profiles.full_secured(levels_dump,seed)
+            data_dump = profiles.full_secured(data_dump,seed)
             shuffle = True
         
         if shuffle == True:
-            return levels_dump
+            return data_dump
         else:
             raise Exception("Unknown Randomisation Method")
