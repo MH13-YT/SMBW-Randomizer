@@ -13,6 +13,7 @@ SMBW Randomizer is a randomizer for the Super Mario Bros Wonder game.
 ### Current Randomization Modules (Things randomized on the game)
 - Levels Order : Randomize Every Levels position
 - Random Badges : Set a random badge at the start of a level
+- Random Wonder : Randomize Wonder Effect (Morph and Player Effects)
 
 More game ressources will be randomized in future versions.
 
