@@ -158,12 +158,12 @@ class SMBW_Randomizer:
                         # Vérifiez si le fichier est déjà utilisé par un autre module
                         verify_pass = True
                         for item in impacted_files:
-                            if item["file_name"] == file:
+                            if item["file_name"] == file['romfs']:
                                 verify_pass = False
                                 self.logger.error(
-                                    f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file}'"
+                                    f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file['romfs']}'"
                                 )
-                                print("Config Check: Module Conflict")
+                                print(f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file['romfs']}'")
                                 print(
                                     "Two different modules need to edit the same file"
                                 )
@@ -171,7 +171,7 @@ class SMBW_Randomizer:
                                 config_is_checked = False
                                 break
                         if verify_pass == True:
-                            self.logger.info(f"Adding '{file}' to impacted_file_list")
+                            self.logger.info(f"Adding '{file['romfs']}' to impacted_file_list")
                             impacted_files.append(module_file)
         if active_module == 0:
             config_is_checked = False
