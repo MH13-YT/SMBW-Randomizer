@@ -6,7 +6,6 @@ from tkinter import ttk
 import uuid
 import logging
 import logging_config  # Importez la configuration de journalisation
-from deepmerge import always_merger
 
 # Import CLI Tools
 import argparse
@@ -281,7 +280,7 @@ class SMBW_Randomizer:
                                 if ressource in file_data["ressource_type"]:
                                     for file in self.ressources_data[ressource]:
                                         if file["file_name"] == file_data["file_name"]:
-                                            file["file_data"] = always_merger.merge(file["file_data"], file_data["file_data"])
+                                            file["file_data"] = file_data["file_data"]
         self.validate[
             "Randomizing game with selected modules and config"
         ] = modules_process_ended_without_error

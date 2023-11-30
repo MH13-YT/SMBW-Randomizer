@@ -4,8 +4,8 @@ ressources = [
     {
 
         "romfs": "romfs/Stage/CourseInfo",
-        "worktable": "SMBW_R/modules/random_badges/worktable/romfs/Stage/CourseInfo",
-        "output": "SMBW_R/modules/random_badges/output/romfs/Stage/CourseInfo",
+        "worktable": "worktable/romfs/Stage/CourseInfo",
+        "output": "output/romfs/Stage/CourseInfo",
     },
 ]
 
