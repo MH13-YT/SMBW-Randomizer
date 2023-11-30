@@ -32,12 +32,12 @@
     "All Bubble Power": {
         "id": "BadgeId58",
         "type": "Bonus",
-        "enabled": true
+        "enabled": false
     },
     "Spring Feet": {
         "id": "BadgeId04",
         "type": "Expert",
-        "enabled": false
+        "enabled": true
     },
     "Wall-Climb Jump": {
         "id": "BadgeId34",
@@ -67,12 +67,12 @@
     "All Elephant Power": {
         "id": "BadgeId55",
         "type": "Bonus",
-        "enabled": true
+        "enabled": false
     },
     "All Drill Power": {
         "id": "BadgeId57",
         "type": "Bonus",
-        "enabled": true
+        "enabled": false
     },
     "Invisiblity": {
         "id": "BadgeId38",
@@ -107,12 +107,12 @@
     "All Fire Power": {
         "id": "BadgeId54",
         "type": "Bonus",
-        "enabled": true
+        "enabled": false
     },
     "Jet Run": {
         "id": "BadgeId19",
         "type": "Expert",
-        "enabled": false
+        "enabled": true
     },
     "Sound Off?": {
         "id": "BadgeId33",

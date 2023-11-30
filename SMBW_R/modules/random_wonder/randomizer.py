@@ -8,7 +8,7 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                     morph_type = 0
                     for actors in data["file_data"]["Actors"]:
                         try:
@@ -21,7 +21,7 @@ class randomisation_functions:
                 data["file_data"].setdefault("CoursePlayerMorphType", "None")
                 data["file_data"]["CoursePlayerMorphType"] = list[data["file_name"].split("_")[0]]["data"]["morph_name"]
                 list[data["file_name"].split("_")[0]]["CourseInfo"] = True
-            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                 morph_type = 0
                 for actors in data["file_data"]["Actors"]:
                     try:
@@ -38,7 +38,7 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                     try:
                         for actors in data["file_data"]["Actors"]:
                             if "PlayerWonderType" in actors["Dynamic"]:
@@ -46,7 +46,7 @@ class randomisation_functions:
                                 list[data["file_name"].split('_')[0]] = {"BancMapUnit":False, "data":effect_list[0]}
                     except:
                         pass
-            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+            if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                     try:
                         for actors in data["file_data"]["Actors"]:
                             if "PlayerWonderType" in actors["Dynamic"]:
