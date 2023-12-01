@@ -37,7 +37,6 @@ class random_wonder_module:
         result = (
             self.randomizing(method,seed)
         )
-        data = self.data
         self.logger.info("Summary of module process:")
         print("Summary of module process:")
         for key, value in enumerate(self.validate):
@@ -49,7 +48,7 @@ class random_wonder_module:
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
         print("[random_wonder]: End of process")
-        return {"result":result, "data":data}
+        return {"result":result, "data":self.data}
     def get_description(self):  
         return(module_description)
     def list_method(self):

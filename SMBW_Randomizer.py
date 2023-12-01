@@ -1,3 +1,4 @@
+import copy
 import importlib
 import json
 import os
@@ -178,7 +179,7 @@ def get_ressource_data(files_metadata):
             }) 
     return files_data
 
-def set_ressource_data(files_metadata, files_data):
+def set_ressource_data(files_metadata, files_data, modified_files_list):
     for file_metadata in files_metadata:
         # Write Data to Worktable
         for file_data in files_data:
@@ -186,15 +187,16 @@ def set_ressource_data(files_metadata, files_data):
                 if file_metadata['data_file_extension'] == ".byml" or file_metadata['data_file_extension'] == ".bgyml":
                     SMBW_R.tools.byml.byml_tools.restore(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}",file_data["file_data"])
         # Copy Files to Output
-        if not os.path.exists(f"{os.curdir}/{file_metadata['output_file_folder']}"):
-            os.makedirs(f"{os.curdir}/{file_metadata['output_file_folder']}", exist_ok=True)
-        if file_metadata["compressed"] == True:
-            # Decompression Required
-            if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
-                # Use ZStandard Decompression Algorithm
-                SMBW_R.tools.zstandard.zstandard_tools.compress(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}")
-        else:
-            shutil.copy(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}") 
+        if f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}" in modified_files_list:
+            if not os.path.exists(f"{os.curdir}/{file_metadata['output_file_folder']}"):
+                os.makedirs(f"{os.curdir}/{file_metadata['output_file_folder']}", exist_ok=True)
+            if file_metadata["compressed"] == True:
+                # Decompression Required
+                if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
+                    # Use ZStandard Decompression Algorithm
+                    SMBW_R.tools.zstandard.zstandard_tools.compress(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}")
+            else:
+                shutil.copy(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}") 
     return files_data                
     
 
@@ -215,6 +217,7 @@ class SMBW_Randomizer:
         }
         self.ressources_metadata = {}
         self.ressources_data = {}
+        self.modified_files_list = set()
 
     def check_config(self, config):
         self.logger.info("STEP 1 : Config Check")
@@ -252,8 +255,6 @@ class SMBW_Randomizer:
         for ressource, metadata in self.ressources_metadata.items():
             self.ressources_data[ressource] = get_ressource_data(metadata)
         self.validate["Data is dumped"] = data_is_dumped
-        with open("file_data.json", "w") as file_data:
-            json.dump(self.ressources_data, file_data)
         return data_is_dumped
 
     def starting_selected_modules(self, config, seed):
@@ -270,17 +271,23 @@ class SMBW_Randomizer:
                     module = modules[module_name]
                     module_data = []
                     for ressource in module.get_ressources():
-                        module_data.extend(self.ressources_data[ressource['romfs']]) 
-                    module_result = module.start(config[module_name]["method"], seed, module_data)   
+                        with open(f"{module_name}_{str(ressource['romfs']).replace('/','.')}-input.json", "w") as file_data:
+                            json.dump(self.ressources_data[ressource['romfs']], file_data)
+                        module_data.extend(copy.deepcopy(self.ressources_data[ressource['romfs']]))
+                    module_result = module.start(config[module_name]["method"], seed, copy.deepcopy(module_data))   
                     if module_result['result'] == False:
                         modules_process_ended_without_error = False
                     else:
-                        for file_data in module_data:
-                            for ressource, data in self.ressources_data.items():
-                                if ressource in file_data["ressource_type"]:
-                                    for file in self.ressources_data[ressource]:
-                                        if file["file_name"] == file_data["file_name"]:
-                                            file["file_data"] = file_data["file_data"]
+                        for file_data in module_result['data'][0]:
+                            for file in self.ressources_data[file_data['ressource_type'].replace("worktable/", "")]:
+                                if file["file_name"] == file_data["file_name"]:
+                                    if file["file_data"] != file_data["file_data"]:
+                                        self.modified_files_list.add(f"{file['ressource_type']}/{file['file_name']}")
+                                        file["file_data"] = copy.deepcopy(file_data["file_data"])
+                        for ressource in module.get_ressources():
+                            with open(f"{module_name}_{str(ressource['romfs']).replace('/','.')}-output.json", "w") as file_data:
+                                json.dump(self.ressources_data[ressource['romfs']], file_data)
+                                            
         self.validate[
             "Randomizing game with selected modules and config"
         ] = modules_process_ended_without_error
@@ -289,10 +296,8 @@ class SMBW_Randomizer:
     def restore_data(self):
         data_is_restored = True
         for ressource, metadata in self.ressources_metadata.items():
-            set_ressource_data(metadata, self.ressources_data[ressource])
+            set_ressource_data(metadata, self.ressources_data[ressource], list(self.modified_files_list))
         self.validate["Data is restored"] = data_is_restored
-        with open("file_data_patched.json", "w") as file_data:
-            json.dump(self.ressources_data, file_data)
         return data_is_restored
 
     def packaging_output(self):

@@ -8,7 +8,7 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "901" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                     morph_type = 0
                     for actors in data["file_data"]["Actors"]:
                         try:
@@ -18,9 +18,15 @@ class randomisation_functions:
                         except:
                             pass
             if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "CourseInfo" in data["ressource_type"]:
-                data["file_data"].setdefault("CoursePlayerMorphType", "None")
-                data["file_data"]["CoursePlayerMorphType"] = list[data["file_name"].split("_")[0]]["data"]["morph_name"]
-                list[data["file_name"].split("_")[0]]["CourseInfo"] = True
+                test_course_kind = False
+                try:
+                    test_course_kind = data["file_data"]["CourseKind"] == "StaffCredit" or data["file_data"]["CourseKind"] == "StoryTeller" or data["file_data"]["CourseKind"] == "DemoCourse" or data["file_data"]["CourseKind"] == "Opening"
+                except:
+                    pass
+                if test_course_kind == False:
+                    data["file_data"].setdefault("CoursePlayerMorphType", "None")
+                    data["file_data"]["CoursePlayerMorphType"] = list[data["file_name"].split("_")[0]]["data"]["morph_name"]
+                    list[data["file_name"].split("_")[0]]["CourseInfo"] = True
             if "file_data" in data and data["file_name"].split('_')[0] in list and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                 morph_type = 0
                 for actors in data["file_data"]["Actors"]:

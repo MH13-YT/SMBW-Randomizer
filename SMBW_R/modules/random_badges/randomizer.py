@@ -11,7 +11,7 @@ class randomisation_functions:
                     course_type = data["file_data"]["CourseKind"]
                 except:
                     pass
-                if course_type != "BadgeChallenge" and course_type != "BadgeMedley":
+                if course_type != "BadgeChallenge" and course_type != "BadgeMedley" and course_type != "StaffCredit" and course_type != "StoryTeller" and course_type != "DemoCourse" or data["file_data"]["CourseKind"] == "Opening":
                     data["file_data"].setdefault("NeedBadgeIdEnterCourse", "Invalid")
                     data["file_data"]["NeedBadgeIdEnterCourse"] = badges_list[0]
         return data_dump
