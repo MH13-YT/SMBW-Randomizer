@@ -240,6 +240,12 @@ class SMBW_Randomizer:
                     module = modules[module_name]
                     for ressource in module.get_ressources():
                         self.ressources_metadata[ressource['romfs']] = get_resource_metadata(ressource)
+                        if not os.path.exists(ressource['romfs']):
+                            self.logger.error(f"Unable to find 'Super Mario Bros Wonder' romfs files")
+                            input("Unable to find 'Super Mario Bros Wonder' romfs files, please place a valid romfs dump of 'Super Mario Bros Wonder' in the same location as the executable.")
+                            config_is_checked = False
+                            self.validate["Check config file"] = config_is_checked
+                            return config_is_checked
         if active_module == 0:
             config_is_checked = False
             self.logger.error("All randomization modules are inactive")
