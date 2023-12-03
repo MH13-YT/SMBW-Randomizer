@@ -4,7 +4,8 @@ echo SMBW Randomizer, dependencies installer
 echo -----------------------------------------
 echo The following packages will be installed on your computer and are necessary to run the SMBW Randomizer:
 echo - PyYAML: Python Module: Source PIP "https://pypi.org/project/PyYAML/"
-echo - byml: Python Module with executables: Source PIP "https://pypi.org/project/byml/"
+echo - byml: Python Module: Source PIP "https://pypi.org/project/byml/"
+echo - zstandard: Python Module: Source PIP "https://pypi.org/project/zstandard/"
 echo.
 echo Before start script please 
 pause

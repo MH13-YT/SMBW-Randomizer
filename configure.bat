@@ -14,11 +14,11 @@ if %errorlevel% neq 0 (
     pause
     exit
 )
-echo Starting SMBW_Randomizer
+echo Starting SMBW_Randomizer in configuration mode
 set /p seed=Enter the seed (leave blank to use a random_seed) :
 if "%seed%"=="" (
-    python SMBW_Randomizer.py
+    python SMBW_Randomizer.py --configure
 ) else (
-    python SMBW_Randomizer.py --seed %seed%
+    python SMBW_Randomizer.py --configure --seed %seed%
 )
 pause
