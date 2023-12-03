@@ -1,19 +1,19 @@
 import json
 import random
 import byml
-
 class randomisation_functions:
     def morph_shuffler(data_dump,morph_list,seed):
         list = {}
         random.seed(seed)
         for data in data_dump:
             if not data["file_name"].split('_')[0] in list:
-                if "file_data" in data and isinstance(data["file_data"], dict) and "BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "901" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
+                if "file_data" in data and isinstance(data["file_data"], dict) and "Stage/BancMapUnit" in data["ressource_type"] and "World" not in data["file_name"] and "Course.bcett" not in data["file_name"]:
                     morph_type = 0
                     for actors in data["file_data"]["Actors"]:
                         try:
                             if "MorphPlayerType" in actors["Dynamic"] and actors["Dynamic"]["MorphPlayerType"] == 0:
                                 random.shuffle(morph_list)
+                                print({"BancMapUnit":False,"CourseInfo":False, "data":morph_list[0]})
                                 list[data["file_name"].split('_')[0]] = {"BancMapUnit":False,"CourseInfo":False, "data":morph_list[0]}
                         except:
                             pass

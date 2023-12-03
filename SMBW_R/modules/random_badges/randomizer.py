@@ -5,7 +5,7 @@ class randomisation_functions:
         random.seed(seed)
         for data in data_dump:
             random.shuffle(badges_list)
-            if "file_data" in data and isinstance(data["file_data"], dict):
+            if "file_data" in data and isinstance(data["file_data"], dict) and "Stage/CourseInfo" in data["ressource_type"]:
                 course_type = ""
                 try:
                     course_type = data["file_data"]["CourseKind"]

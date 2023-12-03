@@ -269,12 +269,10 @@ class SMBW_Randomizer:
                 )
                 if module_name in modules:
                     module = modules[module_name]
-                    module_data = []
-                    for ressource in module.get_ressources():
-                        with open(f"{module_name}_{str(ressource['romfs']).replace('/','.')}-input.json", "w") as file_data:
-                            json.dump(self.ressources_data[ressource['romfs']], file_data)
-                        module_data.extend(copy.deepcopy(self.ressources_data[ressource['romfs']]))
-                    module_result = module.start(config[module_name]["method"], seed, copy.deepcopy(module_data))   
+                    module_data_input = []
+                    for name,metadata in self.ressources_data.items():
+                        module_data_input.extend(copy.deepcopy(metadata))
+                    module_result = module.start(config[module_name]["method"], seed, copy.deepcopy(module_data_input))   
                     if module_result['result'] == False:
                         modules_process_ended_without_error = False
                     else:
@@ -284,9 +282,6 @@ class SMBW_Randomizer:
                                     if file["file_data"] != file_data["file_data"]:
                                         self.modified_files_list.add(f"{file['ressource_type']}/{file['file_name']}")
                                         file["file_data"] = copy.deepcopy(file_data["file_data"])
-                        for ressource in module.get_ressources():
-                            with open(f"{module_name}_{str(ressource['romfs']).replace('/','.')}-output.json", "w") as file_data:
-                                json.dump(self.ressources_data[ressource['romfs']], file_data)
                                             
         self.validate[
             "Randomizing game with selected modules and config"
@@ -301,7 +296,7 @@ class SMBW_Randomizer:
         return data_is_restored
 
     def packaging_output(self):
-        self.logger.info("STEP 4 : Packaging as a mod for all platforms")
+        self.logger.info("STEP 3 : Packaging as a mod for all platforms")
         for folder in self.path_list:
             shutil.copytree("output/romfs", folder)
         packaged_with_success = True

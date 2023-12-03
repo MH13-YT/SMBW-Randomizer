@@ -14,7 +14,7 @@ class exemple_module:
         }
 
     def randomizing(self,method,seed): #DO NOT EDIT, These script are preconfigured
-        self.logger.info("STEP 4: Randomize game data")
+        
         game_is_randomized = True
         try:
             self.logger.info("Starting data randomisation")

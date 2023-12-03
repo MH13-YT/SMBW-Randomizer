@@ -14,7 +14,7 @@ class random_badges_module:
         }
 
     def randomizing(self,method,seed):
-        self.logger.info("STEP 4: Randomize game data")
+        
         game_is_randomized = True
         try:
             self.logger.info("Starting data randomisation")
