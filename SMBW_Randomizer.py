@@ -1,3 +1,4 @@
+import copy
 import importlib
 import json
 import os
@@ -14,8 +15,10 @@ import argparse
 import tkinter as tk
 from tkinter import messagebox
 
-# Import SMBW_R Modules Lister
+# Import SMBW_R Tools
 import SMBW_R.tools.main
+import SMBW_R.tools.zstandard
+import SMBW_R.tools.byml
 
 # ------------------------------
 
@@ -117,6 +120,85 @@ def module_cleaner(output_folder):
     # Supprimez le répertoire lui-même
     os.rmdir(output_folder)
 
+def get_resource_metadata(ressource):
+    if os.path.isdir(ressource['romfs']):
+        files_metadata = []
+        for filename in os.listdir(ressource['romfs']):
+            romfs_file_path = os.path.join(ressource['romfs'], filename)
+            worktable_file_path = os.path.join(ressource['worktable'], filename)
+            output_file_path = os.path.join(ressource['output'], filename)
+            if os.path.isfile(romfs_file_path):
+                # Utiliser os.path.splitext pour séparer le nom du fichier et l'extension
+                file_name, file_extension = os.path.splitext(filename)
+                compression_extension = ""
+                if file_extension == '.zs':
+                    compression_extension = '.zs'
+                    file_name = os.path.splitext(os.path.splitext(os.path.basename(romfs_file_path))[0])[0]
+                    decompressed_file_name, file_extension = os.path.splitext(worktable_file_path.replace(".zs", ""))
+                
+                if compression_extension == "":
+                    file_name = os.path.splitext(os.path.basename(romfs_file_path))[0]
+
+                file_metadata = {
+                    "file_name":file_name,
+                    "romfs_file_folder": os.path.dirname(romfs_file_path),
+                    "output_file_folder": os.path.dirname(output_file_path),
+                    "worktable_file_folder": os.path.dirname(worktable_file_path),
+                    "compressed": True if compression_extension != '' else False,
+                    "compression_metadata": {
+                        "compression_extension": compression_extension,
+                    } if compression_extension != '' else None,
+                    "data_file_extension": file_extension
+                }
+
+                files_metadata.append(file_metadata)
+        return files_metadata
+    
+def get_ressource_data(files_metadata):
+    files_data = []
+    for file_metadata in files_metadata:
+        # Verify if every folders exist
+        if not os.path.exists(f"{os.curdir}/{file_metadata['worktable_file_folder']}"):
+            os.makedirs(f"{os.curdir}/{file_metadata['worktable_file_folder']}", exist_ok=True)
+        # Create Worktable
+        if file_metadata["compressed"] == True:
+            # Decompression Required
+            if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
+                # Use ZStandard Decompression Algorithm
+                SMBW_R.tools.zstandard.zstandard_tools.decompress(f"{file_metadata['romfs_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}", f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
+        else:
+            shutil.copy(f"{file_metadata['romfs_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
+        # Read Data from Worktable
+        data = None
+        if file_metadata['data_file_extension'] == ".byml" or file_metadata['data_file_extension'] == ".bgyml":
+            data = SMBW_R.tools.byml.byml_tools.dump(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
+        files_data.append({
+            "file_name": file_metadata['file_name'],
+            "ressource_type": file_metadata['worktable_file_folder'],
+            "file_data": data
+            }) 
+    return files_data
+
+def set_ressource_data(files_metadata, files_data, modified_files_list):
+    for file_metadata in files_metadata:
+        # Write Data to Worktable
+        for file_data in files_data:
+            if file_data["file_name"] == file_metadata["file_name"] and file_data["ressource_type"] == file_metadata["worktable_file_folder"]:
+                if file_metadata['data_file_extension'] == ".byml" or file_metadata['data_file_extension'] == ".bgyml":
+                    SMBW_R.tools.byml.byml_tools.restore(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}",file_data["file_data"])
+        # Copy Files to Output
+        if f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}" in modified_files_list:
+            if not os.path.exists(f"{os.curdir}/{file_metadata['output_file_folder']}"):
+                os.makedirs(f"{os.curdir}/{file_metadata['output_file_folder']}", exist_ok=True)
+            if file_metadata["compressed"] == True:
+                # Decompression Required
+                if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
+                    # Use ZStandard Decompression Algorithm
+                    SMBW_R.tools.zstandard.zstandard_tools.compress(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}")
+            else:
+                shutil.copy(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}") 
+    return files_data                
+    
 
 class SMBW_Randomizer:
     def __init__(self):
@@ -128,16 +210,19 @@ class SMBW_Randomizer:
         self.logger = logging.getLogger("SMBW_Randomizer")
         self.validate = {
             "Check config file": False,
+            "Data is dumped": False,
             "Randomizing game with selected modules and config": False,
-            "Merge output from modules": False,
+            "Data is restored": False,
             "Packaging as a mod for all platforms": False,
         }
+        self.ressources_metadata = {}
+        self.ressources_data = {}
+        self.modified_files_list = set()
 
     def check_config(self, config):
         self.logger.info("STEP 1 : Config Check")
         self.logger.info("Verify config and found potential module conflicts")
         config_is_checked = True
-        impacted_files = []
         active_module = 0
         if (not os.path.exists('output')):
             os.mkdir("output")
@@ -153,26 +238,8 @@ class SMBW_Randomizer:
                 active_module = active_module + 1
                 if module_name in modules:
                     module = modules[module_name]
-                    for file in module.get_ressources():
-                        module_file = {"module_name": module_name, "file_name": file['romfs']}
-                        # Vérifiez si le fichier est déjà utilisé par un autre module
-                        verify_pass = True
-                        for item in impacted_files:
-                            if item["file_name"] == file['romfs']:
-                                verify_pass = False
-                                self.logger.error(
-                                    f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file['romfs']}'"
-                                )
-                                print(f"Config Check: Module Conflict between {item['module_name']} and {module_file['module_name']} for '{file['romfs']}'")
-                                print(
-                                    "Two different modules need to edit the same file"
-                                )
-                                print("Please disable one of the concerned modules")
-                                config_is_checked = False
-                                break
-                        if verify_pass == True:
-                            self.logger.info(f"Adding '{file['romfs']}' to impacted_file_list")
-                            impacted_files.append(module_file)
+                    for ressource in module.get_ressources():
+                        self.ressources_metadata[ressource['romfs']] = get_resource_metadata(ressource)
         if active_module == 0:
             config_is_checked = False
             self.logger.error("All randomization modules are inactive")
@@ -182,60 +249,75 @@ class SMBW_Randomizer:
             )
         self.validate["Check config file"] = config_is_checked
         return config_is_checked
+    
+    def dump_data(self):
+        data_is_dumped = True
+        self.logger.info("STEP 2 : Dump Data")
+        self.logger.info("Starting Required Data Dump")
+        for ressource, metadata in self.ressources_metadata.items():
+            self.ressources_data[ressource] = get_ressource_data(metadata)
+        self.logger.info("Data Dumped Successfuly")
+        self.validate["Data is dumped"] = data_is_dumped
+        return data_is_dumped
 
     def starting_selected_modules(self, config, seed):
-        self.logger.info("STEP 2 : Randomizing game with selected modules and config")
+        self.logger.info("STEP 3 : Randomizing game with selected modules and config")
         print(f"Randomization will use Seed : '{seed}'")
         self.logger.info(f"Randomization will use Seed : {seed}")
         modules_process_ended_without_error = True
         for module_name in SMBW_R.tools.main.get_module_list():
             if config[module_name]["enable"] == True:
-                self.logger.info(
-                    f"Starting {module_name} module with method '{config[module_name]['method']}'"
-                )
                 if module_name in modules:
+                    self.logger.info(f"Starting {module_name} module with method '{config[module_name]['method']}'")
                     module = modules[module_name]
-                    if (module.start(config[module_name]["method"], seed) == False):
+                    module_data_input = []
+                    for name,metadata in self.ressources_data.items():
+                        module_data_input.extend(copy.deepcopy(metadata))
+                    module_result = module.start(config[module_name]["method"], seed, copy.deepcopy(module_data_input))  
+                    if module_result['result'] == False:
                         modules_process_ended_without_error = False
+                    else:
+                        for file_data in module_result['data'][0]:
+                            for file in self.ressources_data[file_data['ressource_type'].replace("worktable/", "")]:
+                                if file["file_name"] == file_data["file_name"]:
+                                    if file["file_data"] != file_data["file_data"]:
+                                        self.modified_files_list.add(f"{file['ressource_type']}/{file['file_name']}")
+                                        file["file_data"] = copy.deepcopy(file_data["file_data"])
+                                            
+        self.logger.info(f"Randomization Finished")
         self.validate[
             "Randomizing game with selected modules and config"
         ] = modules_process_ended_without_error
         return modules_process_ended_without_error
-
-    def merge_module_outputs(self, config):
-        self.logger.info("STEP 3 : Merge output from modules")
-        merged_with_success = True
-        for module_name in SMBW_R.tools.main.get_module_list():
-            if config[module_name]["enable"] == True:
-                self.logger.info("Starting Process for {module}")
-                try:
-                    self.logger.info(f"{ module_name} Starting Module Output Merging")
-                    module_merger(f"SMBW_R/modules/{module_name}/output/romfs")
-                    self.logger.info(f"{ module_name} Finished Module Output Merging")
-                    self.logger.info(f"{ module_name} Starting Module Output Cleaning")
-                    module_cleaner(f"SMBW_R/modules/{module_name}/output/romfs")
-                    self.logger.info(f"{module_name} Finished Module Output Cleaning")
-                except Exception as error:
-                    self.logger.error(f"Unable to copy folder : {error}")
-                    print(f"Unable to copy folder : {error}")
-                    merged_with_success = False
-                self.logger.info(f"End of process for {module_name}")
-        self.validate["Merge output from modules"] = merged_with_success
-        return merged_with_success
+    
+    def restore_data(self):
+        data_is_restored = True
+        self.logger.info("STEP 4 : Restore Data")
+        self.logger.info("Starting Data Restoration")
+        count = 0
+        ressource_number = len(self.ressources_metadata.items())
+        for ressource, metadata in self.ressources_metadata.items():
+            set_ressource_data(metadata, self.ressources_data[ressource], list(self.modified_files_list))
+        self.validate["Data is restored"] = data_is_restored
+        self.logger.info("Data Restored Successfuly")
+        return data_is_restored
 
     def packaging_output(self):
-        self.logger.info("STEP 4 : Packaging as a mod for all platforms")
+        self.logger.info("STEP 5 : Packaging as a mod for all platforms")
+        self.logger.info(f"Starting Data Packaging")
         for folder in self.path_list:
             shutil.copytree("output/romfs", folder)
         packaged_with_success = True
+        self.logger.info(f"Randomized data Packaged Successfuly")
         self.validate["Packaging as a mod for all platforms"] = packaged_with_success
         return packaged_with_success
 
     def main(self, config, seed):
         (
             self.check_config(config)
+            and self.dump_data()
             and self.starting_selected_modules(config, seed)
-            and self.merge_module_outputs(config)
+            and self.restore_data()
             and self.packaging_output()
         )
         print("\nSummary of randomization process:")

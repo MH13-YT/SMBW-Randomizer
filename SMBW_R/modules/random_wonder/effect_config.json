@@ -1,50 +1,30 @@
 {
-    "Effect1": {
+    "Perspective Change": {
         "id": 1,
         "enabled": false
     },
-    "Effect2": {
-        "id": 2,
-        "enabled": false
-    },
-    "Effect3": {
+    "Skydive Mode": {
         "id": 3,
         "enabled": false
     },
-    "Effect4": {
+    "Disable Badges": {
         "id": 4,
         "enabled": false
     },
-    "Effect5": {
+    "Slipery Surface": {
         "id": 5,
         "enabled": false
     },
-    "Effect6": {
+    "Invincible": {
         "id": 6,
         "enabled": false
     },
-    "Effect7": {
+    "Slower Zone": {
         "id": 7,
         "enabled": false
     },
-    "Effect8": {
-        "id": 8,
-        "enabled": false
-    },
-    "Effect9": {
-        "id": 9,
-        "enabled": false
-    },
-    "Effect10": {
-        "id": 10,
-        "enabled": false
-    },
-    "Effect11": {
+    "Metal Transformation": {
         "id": 11,
-        "enabled": false
-    },
-    "Effect12": {
-        "id": 12,
         "enabled": false
     },
     "No Effects": {

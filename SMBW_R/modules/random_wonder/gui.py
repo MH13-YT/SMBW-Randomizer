@@ -84,7 +84,7 @@ class custom_effect_gui:
         custom_effect_list_frame.pack()
 
         # Générez les cases dans une grille 8x3 à partir des clés du JSON
-        rows, cols = 2, 7
+        rows, cols = 1, 8
 
         # Utilisez les clés du JSON comme labels pour les cases
         json_keys = list(data.keys())
