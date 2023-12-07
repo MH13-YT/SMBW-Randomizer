@@ -9,7 +9,7 @@ class randomisation_functions:
             if (
                 "file_data" in data
                 and isinstance(data["file_data"], dict)
-                and "Stage/CourseInfo" in data["ressource_type"]
+                and "Stage/CourseInfo" in data["resource_type"]
             ):
                 course_type = ""
                 try:

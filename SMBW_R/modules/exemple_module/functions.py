@@ -2,8 +2,8 @@ import os
 import byml
 from .profiles import profiles
 
-ressources = [
-    # Please select only folders in ressources, you can filter files on randomization procedure
+resources = [
+    # Please select only folders in resources, you can filter files on randomization procedure
     {
         "romfs": "romfs/",
         "worktable": "worktable/",
@@ -13,8 +13,8 @@ ressources = [
 
 
 class file_converter:
-    def get_ressources():
-        return ressources
+    def get_resources():
+        return resources
 
 
 class data_manager:

@@ -8,7 +8,7 @@ class randomisation_scripts:
             if (
                 "file_data" in data
                 and isinstance(data["file_data"], dict)
-                and "Stage/WorldMapInfo" in data["ressource_type"]
+                and "Stage/WorldMapInfo" in data["resource_type"]
             ):
                 randomized_stagepath = []
                 for course in data["file_data"]["CourseTable"]:
@@ -35,7 +35,7 @@ class randomisation_scripts:
             if (
                 "file_data" in data
                 and isinstance(data["file_data"], dict)
-                and "Stage/WorldMapInfo" in data["ressource_type"]
+                and "Stage/WorldMapInfo" in data["resource_type"]
             ):
                 for course in data["file_data"]["CourseTable"]:
                     if (
@@ -49,7 +49,7 @@ class randomisation_scripts:
             if (
                 "file_data" in data
                 and isinstance(data["file_data"], dict)
-                and "Stage/WorldMapInfo" in data["ressource_type"]
+                and "Stage/WorldMapInfo" in data["resource_type"]
             ):
                 for course in data["file_data"]["CourseTable"]:
                     if (

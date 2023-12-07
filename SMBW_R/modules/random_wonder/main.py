@@ -54,5 +54,5 @@ class random_wonder_module:
     def list_method(self):
         return profiles.list()
 
-    def get_ressources(self):
-        return file_converter.get_ressources()
+    def get_resources(self):
+        return file_converter.get_resources()

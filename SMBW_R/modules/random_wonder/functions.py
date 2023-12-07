@@ -1,6 +1,6 @@
 from .profiles import profiles
 
-ressources = [
+resources = [
     {
 
         "romfs": "romfs/BancMapUnit",
@@ -16,8 +16,8 @@ ressources = [
 ]
 
 class file_converter:
-    def get_ressources():
-        return ressources
+    def get_resources():
+        return resources
 
 class data_manager:
     def shuffle(data_dump, method, seed):

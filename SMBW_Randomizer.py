@@ -106,8 +106,8 @@ class SMBW_Randomizer:
             "Packaging as a mod for all platforms": False,
             "Cleaning": False,
         }
-        self.ressources_metadata = {}
-        self.ressources_data = {}
+        self.resources_metadata = {}
+        self.resources_data = {}
         self.modified_files_list = set()
         self.RSTB_DUMP = {}
 
@@ -124,11 +124,11 @@ class SMBW_Randomizer:
                 active_module = active_module + 1
                 if module_name in modules:
                     module = modules[module_name]
-                    for ressource in module.get_ressources():
-                        self.ressources_metadata[
-                            ressource["romfs"]
-                        ] = SMBW_R.tools.main.get_resource_metadata(ressource)
-                        if not os.path.exists(ressource["romfs"]):
+                    for resource in module.get_resources():
+                        self.resources_metadata[
+                            resource["romfs"]
+                        ] = SMBW_R.tools.main.get_resource_metadata(resource)
+                        if not os.path.exists(resource["romfs"]):
                             self.logger.error(
                                 "Unable to find 'Super Mario Bros Wonder' romfs files"
                             )
@@ -166,8 +166,8 @@ class SMBW_Randomizer:
         data_is_dumped = True
         self.logger.info("STEP 2 : Dump Data")
         self.logger.info("Starting Required Data Dump")
-        for ressource, metadata in self.ressources_metadata.items():
-            self.ressources_data[ressource] = SMBW_R.tools.main.get_ressource_data(
+        for resource, metadata in self.resources_metadata.items():
+            self.resources_data[resource] = SMBW_R.tools.main.get_resource_data(
                 metadata
             )
         self.logger.info("Data Dumped Successfuly")
@@ -186,7 +186,7 @@ class SMBW_Randomizer:
                 )
                 module = modules[module_name]
                 module_data_input = []
-                for name, metadata in self.ressources_data.items():
+                for name, metadata in self.resources_data.items():
                     module_data_input.extend(copy.deepcopy(metadata))
                 module_result = module.start(
                     config[module_name]["method"],
@@ -197,15 +197,15 @@ class SMBW_Randomizer:
                     modules_process_ended_without_error = False
                 else:
                     for file_data in module_result["data"][0]:
-                        for file in self.ressources_data[
-                            file_data["ressource_type"].replace("worktable/", "")
+                        for file in self.resources_data[
+                            file_data["resource_type"].replace("worktable/", "")
                         ]:
                             if (
                                 file["file_name"] == file_data["file_name"]
                                 and file["file_data"] != file_data["file_data"]
                             ):
                                 self.modified_files_list.add(
-                                    f"{file['ressource_type']}/{file['file_name']}"
+                                    f"{file['resource_type']}/{file['file_name']}"
                                 )
                                 file["file_data"] = copy.deepcopy(
                                     file_data["file_data"]
@@ -221,10 +221,10 @@ class SMBW_Randomizer:
         self.logger.info("STEP 4 : Restoring Data and Adapt Resource Size Table")
         data_is_restored = True
         self.logger.info("Starting Data Restoration")
-        for ressource, metadata in self.ressources_metadata.items():
-            SMBW_R.tools.main.set_ressource_data(
+        for resource, metadata in self.resources_metadata.items():
+            SMBW_R.tools.main.set_resource_data(
                 metadata,
-                self.ressources_data[ressource],
+                self.resources_data[resource],
                 list(self.modified_files_list),
                 self.RSTB_DUMP,
             )

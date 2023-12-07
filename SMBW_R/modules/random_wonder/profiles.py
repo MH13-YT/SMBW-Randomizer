@@ -5,7 +5,7 @@ from .gui import custom_effect_gui, custom_morph_gui
 def morphs_filter(data_dump):
     morphs = {}
     for data in data_dump:
-        if "level_data" in data and isinstance(data["level_data"], dict) and "BancMapUnit" in data["ressource_type"]:
+        if "level_data" in data and isinstance(data["level_data"], dict) and "BancMapUnit" in data["resource_type"]:
             try:
                 if "Actors" in data["level_data"]:
                     for actors in data["level_data"]["Actors"]:
@@ -28,7 +28,7 @@ def morphs_filter(data_dump):
                                 pass
             except:
                 pass
-        if "level_data" in data and isinstance(data["level_data"], dict) and "CourseInfo" in data["ressource_type"]:
+        if "level_data" in data and isinstance(data["level_data"], dict) and "CourseInfo" in data["resource_type"]:
             try:
                 course_id = data["file_name"].split("_")[0]
                 # Créer une clé unique basée sur course_id et morph_name
