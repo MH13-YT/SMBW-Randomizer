@@ -6,13 +6,11 @@ def custom_badge_selector():
     try:
         with open('SMBW_R/modules/random_badges/config.json', 'r') as json_file:
             data = json.load(json_file)
-            badges = []
-
-            for badge_name, badge_data in data.items():
-                if badge_data.get('enabled', False):
-                    badges.append(badge_data['id'])
-
-            return badges
+            return [
+                badge_data['id']
+                for badge_name, badge_data in data.items()
+                if badge_data.get('enabled', False)
+            ]
     except FileNotFoundError:
         print("Le fichier JSON n'a pas été trouvé.")
         return []
@@ -21,13 +19,11 @@ def badge_filter(type):
     try:
         with open('SMBW_R/modules/random_badges/config.json', 'r') as json_file:
             data = json.load(json_file)
-            badges = []
-
-            for badge_name, badge_data in data.items():
-                if badge_data.get('type', "") == type or type == 'All':
-                    badges.append(badge_data['id'])
-
-            return badges
+            return [
+                badge_data['id']
+                for badge_name, badge_data in data.items()
+                if badge_data.get('type', "") == type or type == 'All'
+            ]
     except FileNotFoundError:
         print("Le fichier JSON n'a pas été trouvé.")
         return []

@@ -1,13 +1,19 @@
+import contextlib
 import copy
 import importlib
 import json
 import os
 import shutil
 from tkinter import ttk
+import traceback
+
 import uuid
 import logging
-import logging_config  # Importez la configuration de journalisation
 
+import zstandard
+
+import logging_config  # Importez la configuration de journalisation
+from restbl import ResourceSizeTable
 # Import CLI Tools
 import argparse
 
@@ -16,12 +22,10 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Import SMBW_R Tools
+
 import SMBW_R.tools.main
-import SMBW_R.tools.zstandard
-import SMBW_R.tools.byml
 
 # ------------------------------
-
 # Dictionnaire pour stocker les instances de modules
 modules = {}
 # Importez automatiquement les modules à partir de chaque dossier
@@ -44,12 +48,12 @@ def save_configuration(mode):
         for module_name in SMBW_R.tools.main.get_module_list():
             if hasattr(args, module_name) and getattr(args, module_name) != None:
                 print(f"Module : {module_name}")
-                print(f"        Enabled : {True}")
+                print('        Enabled : True')
                 print(f"        Method  : {getattr(args, module_name)}")
             else:
                 print(f"Module : {module_name}")
-                print(f"        Enabled : {False}")
-                print(f"        Method  : ''")
+                print('        Enabled : False')
+                print("        Method  : ''")
             if (
                 input(
                     "Do you want to continue and save the modifications in config file ? (Y/N) : "
@@ -94,110 +98,7 @@ def save_configuration(mode):
         messagebox.showinfo(
             "Sauvegarde", "La configuration a été enregistrée avec succès."
         )
-        fenetre.destroy()
-
-
-def module_merger(output_folder):
-    for root, dirs, files in os.walk(output_folder):
-        for file in files:
-            source_path = os.path.join(root, file)
-            destination_path = os.path.join(
-                "output/romfs", os.path.relpath(source_path, output_folder)
-            )
-            os.makedirs(os.path.dirname(destination_path), exist_ok=True)
-            shutil.copy2(source_path, destination_path)
-
-
-def module_cleaner(output_folder):
-    # Supprimez tous les fichiers et sous-répertoires du répertoire
-    for root, dirs, files in os.walk(output_folder, topdown=False):
-        for file in files:
-            fichier_path = os.path.join(root, file)
-            os.remove(fichier_path)
-        for rep in dirs:
-            rep_path = os.path.join(root, rep)
-            os.rmdir(rep_path)
-    # Supprimez le répertoire lui-même
-    os.rmdir(output_folder)
-
-def get_resource_metadata(ressource):
-    if os.path.isdir(ressource['romfs']):
-        files_metadata = []
-        for filename in os.listdir(ressource['romfs']):
-            romfs_file_path = os.path.join(ressource['romfs'], filename)
-            worktable_file_path = os.path.join(ressource['worktable'], filename)
-            output_file_path = os.path.join(ressource['output'], filename)
-            if os.path.isfile(romfs_file_path):
-                # Utiliser os.path.splitext pour séparer le nom du fichier et l'extension
-                file_name, file_extension = os.path.splitext(filename)
-                compression_extension = ""
-                if file_extension == '.zs':
-                    compression_extension = '.zs'
-                    file_name = os.path.splitext(os.path.splitext(os.path.basename(romfs_file_path))[0])[0]
-                    decompressed_file_name, file_extension = os.path.splitext(worktable_file_path.replace(".zs", ""))
-                
-                if compression_extension == "":
-                    file_name = os.path.splitext(os.path.basename(romfs_file_path))[0]
-
-                file_metadata = {
-                    "file_name":file_name,
-                    "romfs_file_folder": os.path.dirname(romfs_file_path),
-                    "output_file_folder": os.path.dirname(output_file_path),
-                    "worktable_file_folder": os.path.dirname(worktable_file_path),
-                    "compressed": True if compression_extension != '' else False,
-                    "compression_metadata": {
-                        "compression_extension": compression_extension,
-                    } if compression_extension != '' else None,
-                    "data_file_extension": file_extension
-                }
-
-                files_metadata.append(file_metadata)
-        return files_metadata
-    
-def get_ressource_data(files_metadata):
-    files_data = []
-    for file_metadata in files_metadata:
-        # Verify if every folders exist
-        if not os.path.exists(f"{os.curdir}/{file_metadata['worktable_file_folder']}"):
-            os.makedirs(f"{os.curdir}/{file_metadata['worktable_file_folder']}", exist_ok=True)
-        # Create Worktable
-        if file_metadata["compressed"] == True:
-            # Decompression Required
-            if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
-                # Use ZStandard Decompression Algorithm
-                SMBW_R.tools.zstandard.zstandard_tools.decompress(f"{file_metadata['romfs_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}", f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
-        else:
-            shutil.copy(f"{file_metadata['romfs_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
-        # Read Data from Worktable
-        data = None
-        if file_metadata['data_file_extension'] == ".byml" or file_metadata['data_file_extension'] == ".bgyml":
-            data = SMBW_R.tools.byml.byml_tools.dump(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}")
-        files_data.append({
-            "file_name": file_metadata['file_name'],
-            "ressource_type": file_metadata['worktable_file_folder'],
-            "file_data": data
-            }) 
-    return files_data
-
-def set_ressource_data(files_metadata, files_data, modified_files_list):
-    for file_metadata in files_metadata:
-        # Write Data to Worktable
-        for file_data in files_data:
-            if file_data["file_name"] == file_metadata["file_name"] and file_data["ressource_type"] == file_metadata["worktable_file_folder"]:
-                if file_metadata['data_file_extension'] == ".byml" or file_metadata['data_file_extension'] == ".bgyml":
-                    SMBW_R.tools.byml.byml_tools.restore(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}",file_data["file_data"])
-        # Copy Files to Output
-        if f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}" in modified_files_list:
-            if not os.path.exists(f"{os.curdir}/{file_metadata['output_file_folder']}"):
-                os.makedirs(f"{os.curdir}/{file_metadata['output_file_folder']}", exist_ok=True)
-            if file_metadata["compressed"] == True:
-                # Decompression Required
-                if file_metadata["compression_metadata"]["compression_extension"] == ".zs":
-                    # Use ZStandard Decompression Algorithm
-                    SMBW_R.tools.zstandard.zstandard_tools.compress(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}{file_metadata['compression_metadata']['compression_extension']}")
-            else:
-                shutil.copy(f"{file_metadata['worktable_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}", f"{file_metadata['output_file_folder']}/{file_metadata['file_name']}{file_metadata['data_file_extension']}") 
-    return files_data                
+        fenetre.destroy()           
     
 
 class SMBW_Randomizer:
@@ -214,32 +115,28 @@ class SMBW_Randomizer:
             "Randomizing game with selected modules and config": False,
             "Data is restored": False,
             "Packaging as a mod for all platforms": False,
+            "Cleaning": False
         }
         self.ressources_metadata = {}
         self.ressources_data = {}
         self.modified_files_list = set()
+        self.RSTB_DUMP = {}
 
     def check_config(self, config):
         self.logger.info("STEP 1 : Config Check")
         self.logger.info("Verify config and found potential module conflicts")
         config_is_checked = True
         active_module = 0
+        SMBW_R.tools.main.cleaner("output")
         if (not os.path.exists('output')):
             os.mkdir("output")
-        for root, dirs, files in os.walk("output", topdown=False):
-            for file in files:
-                fichier_path = os.path.join(root, file)
-                os.remove(fichier_path)
-            for rep in dirs:
-                rep_path = os.path.join(root, rep)
-                os.rmdir(rep_path)
         for module_name in SMBW_R.tools.main.get_module_list():
             if config[module_name]["enable"] == True:
                 active_module = active_module + 1
                 if module_name in modules:
                     module = modules[module_name]
                     for ressource in module.get_ressources():
-                        self.ressources_metadata[ressource['romfs']] = get_resource_metadata(ressource)
+                        self.ressources_metadata[ressource['romfs']] = SMBW_R.tools.main.get_resource_metadata(ressource)
                         if not os.path.exists(ressource['romfs']):
                             self.logger.error(f"Unable to find 'Super Mario Bros Wonder' romfs files")
                             input("Unable to find 'Super Mario Bros Wonder' romfs files, please place a valid romfs dump of 'Super Mario Bros Wonder' in the same location as the executable.")
@@ -257,11 +154,24 @@ class SMBW_Randomizer:
         return config_is_checked
     
     def dump_data(self):
+        self.logger.info("STEP 2 : Randomizing game with selected modules and config")
+        # RSTB Data
+        fichiers = os.listdir("romfs/System/Resource")
+        # Parcours de la liste des fichiers
+        for fichier in fichiers:
+            if not os.path.exists(f"{os.curdir}/worktable/romfs/System/Resource"):
+                os.makedirs(f"{os.curdir}/worktable/romfs/System/Resource", exist_ok=True)
+        shutil.copy(os.path.join("romfs/System/Resource", fichier), os.path.join("worktable/romfs/System/Resource", fichier))
+        worktable_rstb = os.path.join("worktable/romfs/System/Resource", fichier)
+        # Vérifie si le chemin est un fichier (et non un sous-dossier)
+        if os.path.isfile(worktable_rstb):
+            with open(worktable_rstb, "rb") as RSTB:
+                self.RSTB_DUMP[fichier] = ResourceSizeTable.from_binary(RSTB.read())
         data_is_dumped = True
         self.logger.info("STEP 2 : Dump Data")
         self.logger.info("Starting Required Data Dump")
         for ressource, metadata in self.ressources_metadata.items():
-            self.ressources_data[ressource] = get_ressource_data(metadata)
+            self.ressources_data[ressource] = SMBW_R.tools.main.get_ressource_data(metadata)
         self.logger.info("Data Dumped Successfuly")
         self.validate["Data is dumped"] = data_is_dumped
         return data_is_dumped
@@ -285,10 +195,9 @@ class SMBW_Randomizer:
                     else:
                         for file_data in module_result['data'][0]:
                             for file in self.ressources_data[file_data['ressource_type'].replace("worktable/", "")]:
-                                if file["file_name"] == file_data["file_name"]:
-                                    if file["file_data"] != file_data["file_data"]:
-                                        self.modified_files_list.add(f"{file['ressource_type']}/{file['file_name']}")
-                                        file["file_data"] = copy.deepcopy(file_data["file_data"])
+                                if file["file_name"] == file_data["file_name"] and file["file_data"] != file_data["file_data"]:
+                                    self.modified_files_list.add(f"{file['ressource_type']}/{file['file_name']}")
+                                    file["file_data"] = copy.deepcopy(file_data["file_data"])
                                             
         self.logger.info(f"Randomization Finished")
         self.validate[
@@ -297,13 +206,27 @@ class SMBW_Randomizer:
         return modules_process_ended_without_error
     
     def restore_data(self):
+        self.logger.info("STEP 4 : Restoring Data and Adapt RessourceSizeTable")
         data_is_restored = True
         self.logger.info("STEP 4 : Restore Data")
         self.logger.info("Starting Data Restoration")
         count = 0
         ressource_number = len(self.ressources_metadata.items())
         for ressource, metadata in self.ressources_metadata.items():
-            set_ressource_data(metadata, self.ressources_data[ressource], list(self.modified_files_list))
+            SMBW_R.tools.main.set_ressource_data(metadata, self.ressources_data[ressource], list(self.modified_files_list), self.RSTB_DUMP)
+        # RSTB Data
+        fichiers = os.listdir("worktable/romfs/System/Resource")
+        # Parcours de la liste des fichiers
+        for fichier in fichiers:
+            if not os.path.exists(f"{os.curdir}/output/romfs/System/Resource"):
+                os.makedirs(f"{os.curdir}/output/romfs/System/Resource", exist_ok=True)
+            worktable_rstb = os.path.join("worktable/romfs/System/Resource", fichier)
+            if os.path.isfile(worktable_rstb):
+                with open(worktable_rstb, "wb") as RSTB:
+                    data = self.RSTB_DUMP[fichier].to_binary(compress=False)
+                    cctx = zstandard.ZstdCompressor(level=16)
+                    RSTB.write(cctx.compress(data))
+                shutil.copy(os.path.join("worktable/romfs/System/Resource", fichier), os.path.join("output/romfs/System/Resource", fichier))
         self.validate["Data is restored"] = data_is_restored
         self.logger.info("Data Restored Successfuly")
         return data_is_restored
@@ -317,6 +240,13 @@ class SMBW_Randomizer:
         self.logger.info(f"Randomized data Packaged Successfuly")
         self.validate["Packaging as a mod for all platforms"] = packaged_with_success
         return packaged_with_success
+    
+    def cleaning(self):
+        self.logger.info("STEP 6 : Cleaning Residual Data")
+        SMBW_R.tools.main.cleaner("worktable")
+        cleaned = True
+        self.validate["Cleaning"] = cleaned
+        return cleaned
 
     def main(self, config, seed):
         (
@@ -325,6 +255,7 @@ class SMBW_Randomizer:
             and self.starting_selected_modules(config, seed)
             and self.restore_data()
             and self.packaging_output()
+            and self.cleaning()
         )
         print("\nSummary of randomization process:")
         for key, value in enumerate(self.validate):
