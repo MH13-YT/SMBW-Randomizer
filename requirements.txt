@@ -1,4 +1,4 @@
 PyYAML
 byml
 zstandard
-deepmerge
+restbl
