@@ -8,27 +8,29 @@ ressources = [
     },
 ]
 
+
 class file_converter:
     def get_ressources():
         return ressources
+
 
 class data_manager:
     def shuffle(data_dump, method, seed):
         shuffle = False
         method = str(method)
         if method == "lite":
-            data_dump = profiles.lite(data_dump,seed)
+            data_dump = profiles.lite(data_dump, seed)
             shuffle = True
         if method == "full":
-            data_dump = profiles.full(data_dump,seed)
+            data_dump = profiles.full(data_dump, seed)
             shuffle = True
         if method == "lite_secured":
-            data_dump = profiles.lite_secured(data_dump,seed)
+            data_dump = profiles.lite_secured(data_dump, seed)
             shuffle = True
         if method == "full_secured":
-            data_dump = profiles.full_secured(data_dump,seed)
+            data_dump = profiles.full_secured(data_dump, seed)
             shuffle = True
-        
+
         if shuffle == True:
             return data_dump
         else:

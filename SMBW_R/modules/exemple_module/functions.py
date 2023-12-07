@@ -11,9 +11,11 @@ ressources = [
     },
 ]
 
+
 class file_converter:
     def get_ressources():
         return ressources
+
 
 class data_manager:
     def shuffle(levels_dump, method, seed):
@@ -21,7 +23,7 @@ class data_manager:
         method = str(method)
         seed = str(seed)
         if method == "Full" or method == "full":
-            levels_dump = profiles.full(levels_dump,seed)
+            levels_dump = profiles.full(levels_dump, seed)
             shuffle = True
         if shuffle == True:
             return levels_dump

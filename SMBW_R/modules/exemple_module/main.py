@@ -2,7 +2,7 @@ import logging
 import os
 import json
 from SMBW_R.modules.exemple_module.profiles import profiles
-import logging_config  # Importez la configuration de journalisation
+import logging_config
 from .functions import data_manager, file_converter
 
 module_description = "Exemple Module (DO NOT USE FOR RANDOMIZING)"

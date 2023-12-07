@@ -2,23 +2,26 @@ import logging
 import os
 import json
 from SMBW_R.modules.random_badges.profiles import profiles
-import logging_config  # Importez la configuration de journalisation
+import logging_config
 from .functions import data_manager, file_converter
 
-module_description = "Choose a random badge at Level Start (You can change it but is cheating)"
+module_description = (
+    "Choose a random badge at Level Start (You can change it but is cheating)"
+)
+
+
 class random_badges_module:
     def __init__(self):
-        self.logger = logging.getLogger('SMBW_R Module : random_badges')
+        self.logger = logging.getLogger("SMBW_R Module : random_badges")
         self.validate = {
             "Randomize game data": False,
         }
 
-    def randomizing(self,method,seed):
-        
+    def randomizing(self, method, seed):
         game_is_randomized = True
         try:
             self.logger.info("Starting data randomisation")
-            self.data = data_manager.shuffle(self.data,method,seed),
+            self.data = (data_manager.shuffle(self.data, method, seed),)
             self.logger.info("Randomisation Complete")
         except Exception as error:
             self.logger.error(f"Error occured on file randomizing: {error}")
@@ -28,13 +31,11 @@ class random_badges_module:
         self.logger.info("")
         return game_is_randomized
 
-    def start(self,method,seed,data):
+    def start(self, method, seed, data):
         self.logger.info("Starting process")
         print("\n[random_badges]: Starting process")
         self.data = data
-        result = (
-            self.randomizing(method,seed)
-        )
+        result = self.randomizing(method, seed)
         self.logger.info("Summary of module process:")
         print("Summary of module process:")
         for key, value in enumerate(self.validate):
@@ -46,11 +47,13 @@ class random_badges_module:
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
         print("[random_badges]: End of process")
-        return {"result":result, "data":self.data}
-    def get_description(self):  
-        return(module_description)
+        return {"result": result, "data": self.data}
+
+    def get_description(self):
+        return module_description
+
     def list_method(self):
-        return(profiles.list())
+        return profiles.list()
+
     def get_ressources(self):
-        return(file_converter.get_ressources())
-    
+        return file_converter.get_ressources()
