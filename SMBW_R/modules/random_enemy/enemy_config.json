@@ -1,0 +1,246 @@
+{
+    "EnemyAnguri": {
+        "enabled": true,
+        "enemy_name": "EnemyAnguri"
+    },
+    "EnemyBalloonKiller": {
+        "enabled": true,
+        "enemy_name": "EnemyBalloonKiller"
+    },
+    "EnemyBalloonKillerBig": {
+        "enabled": true,
+        "enemy_name": "EnemyBalloonKillerBig"
+    },
+    "EnemyBase": {
+        "enabled": true,
+        "enemy_name": "EnemyBase"
+    },
+    "EnemyBigFirePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBigFirePackun"
+    },
+    "EnemyBigJumpUniPurple": {
+        "enabled": true,
+        "enemy_name": "EnemyBigJumpUniPurple"
+    },
+    "EnemyBigKakibo": {
+        "enabled": true,
+        "enemy_name": "EnemyBigKakibo"
+    },
+    "EnemyBigKuribo": {
+        "enabled": true,
+        "enemy_name": "EnemyBigKuribo"
+    },
+    "EnemyBigPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBigPackun"
+    },
+    "EnemyBigRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBigRunRunPackun"
+    },
+    "EnemyBigSlidon": {
+        "enabled": true,
+        "enemy_name": "EnemyBigSlidon"
+    },
+    "EnemyBigSlidonDynamic": {
+        "enabled": true,
+        "enemy_name": "EnemyBigSlidonDynamic"
+    },
+    "EnemyBigSnail": {
+        "enabled": true,
+        "enemy_name": "EnemyBigSnail"
+    },
+    "EnemyBigSnailShell": {
+        "enabled": true,
+        "enemy_name": "EnemyBigSnailShell"
+    },
+    "EnemyBigSoundRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBigSoundRunRunPackun"
+    },
+    "EnemyBiyon": {
+        "enabled": true,
+        "enemy_name": "EnemyBiyon"
+    },
+    "EnemyBlackPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBlackPackun"
+    },
+    "EnemyBlackPackunLight": {
+        "enabled": true,
+        "enemy_name": "EnemyBlackPackunLight"
+    },
+    "EnemyBlackPackunLightSet2": {
+        "enabled": true,
+        "enemy_name": "EnemyBlackPackunLightSet2"
+    },
+    "EnemyBlackPackunLightSet4": {
+        "enabled": true,
+        "enemy_name": "EnemyBlackPackunLightSet4"
+    },
+    "EnemyBlowgunhei": {
+        "enabled": true,
+        "enemy_name": "EnemyBlowgunhei"
+    },
+    "EnemyBlowgunheiBlowgun": {
+        "enabled": true,
+        "enemy_name": "EnemyBlowgunheiBlowgun"
+    },
+    "EnemyBombhei": {
+        "enabled": true,
+        "enemy_name": "EnemyBombhei"
+    },
+    "EnemyBombheiPlant": {
+        "enabled": true,
+        "enemy_name": "EnemyBombheiPlant"
+    },
+    "EnemyBoneKuribo": {
+        "enabled": true,
+        "enemy_name": "EnemyBoneKuribo"
+    },
+    "EnemyBonePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBonePackun"
+    },
+    "EnemyBoneRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyBoneRunRunPackun"
+    },
+    "EnemyBrosHammer": {
+        "enabled": true,
+        "enemy_name": "EnemyBrosHammer"
+    },
+    "EnemyBubble": {
+        "enabled": true,
+        "enemy_name": "EnemyBubble"
+    },
+    "EnemyCanChan": {
+        "enabled": true,
+        "enemy_name": "EnemyCanChan"
+    },
+    "EnemyCanChanRed": {
+        "enabled": true,
+        "enemy_name": "EnemyCanChanRed"
+    },
+    "EnemyChaseDoor": {
+        "enabled": true,
+        "enemy_name": "EnemyChaseDoor"
+    },
+    "EnemyChaseDoorWeak": {
+        "enabled": true,
+        "enemy_name": "EnemyChaseDoorWeak"
+    },
+    "EnemyChoroChu": {
+        "enabled": true,
+        "enemy_name": "EnemyChoroChu"
+    },
+    "EnemyDarkNokonoko": {
+        "enabled": true,
+        "enemy_name": "EnemyDarkNokonoko"
+    },
+    "EnemyDirectPutBigFirePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBigFirePackun"
+    },
+    "EnemyDirectPutBigPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBigPackun"
+    },
+    "EnemyDirectPutBigRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBigRunRunPackun"
+    },
+    "EnemyDirectPutBigSoundDancePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBigSoundDancePackun"
+    },
+    "EnemyDirectPutBigSoundRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBigSoundRunRunPackun"
+    },
+    "EnemyDirectPutBoneNobiNobiPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBoneNobiNobiPackun"
+    },
+    "EnemyDirectPutBoneNobiNobiRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBoneNobiNobiRunRunPackun"
+    },
+    "EnemyDirectPutBonePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBonePackun"
+    },
+    "EnemyDirectPutBoneRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutBoneRunRunPackun"
+    },
+    "EnemyDirectPutFirePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutFirePackun"
+    },
+    "EnemyDirectPutPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutPackun"
+    },
+    "EnemyDirectPutRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutRunRunPackun"
+    },
+    "EnemyDirectPutRunRunPackunKoopaJr": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutRunRunPackunKoopaJr"
+    },
+    "EnemyDirectPutSoundDancePackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutSoundDancePackun"
+    },
+    "EnemyDirectPutSoundRunRunPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutSoundRunRunPackun"
+    },
+    "EnemyDirectPutWatermelonPackun": {
+        "enabled": true,
+        "enemy_name": "EnemyDirectPutWatermelonPackun"
+    },
+    "EnemyDossun": {
+        "enabled": true,
+        "enemy_name": "EnemyDossun"
+    },
+    "EnemyDurian": {
+        "enabled": true,
+        "enemy_name": "EnemyDurian"
+    },
+    "EnemyEater": {
+        "enabled": true,
+        "enemy_name": "EnemyEater"
+    },
+    "EnemyEaterSimple": {
+        "enabled": true,
+        "enemy_name": "EnemyEaterSimple"
+    },
+    "EnemyEaterWonder": {
+        "enabled": true,
+        "enemy_name": "EnemyEaterWonder"
+    },
+    "EnemyElectricBubble": {
+        "enabled": true,
+        "enemy_name": "EnemyElectricBubble"
+    },
+    "EnemyErin": {
+        "enabled": true,
+        "enemy_name": "EnemyErin"
+    },
+    "EnemyErinRed": {
+        "enabled": true,
+        "enemy_name": "EnemyErinRed"
+    },
+    "EnemyFireGabon": {
+        "enabled": true,
+        "enemy_name": "EnemyFireGabon"
+    },
+    "EnemyFireGabonFireBall": {
+        "enabled": true,
+        "enemy_name": "EnemyFireGabonFireBall"
+    }
+}

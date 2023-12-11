@@ -1,4 +1,5 @@
 import random
+import re
 
 
 class randomisation_scripts:
@@ -14,16 +15,15 @@ class randomisation_scripts:
                 for course in data["file_data"]["CourseTable"]:
                     if (
                         not course["StagePath"] in ignored_stages_files
-                        and course["StagePath"]
-                        != "Work/Stage/StageParam/Course900_Course.game__stage__StageParam.gyml"
+                        and int(''.join(re.findall(r'\d+', course["StagePath"])))
+                        < 900
                     ):
                         randomized_stagepath.append(course["StagePath"])
                 random.shuffle(randomized_stagepath)
                 for course in data["file_data"]["CourseTable"]:
                     if (
                         not course["StagePath"] in ignored_stages_files
-                        and course["StagePath"]
-                        != "Work/Stage/StageParam/Course900_Course.game__stage__StageParam.gyml"
+                        and int(''.join(re.findall(r'\d+', course["StagePath"]))) < 900
                     ):
                         course["StagePath"] = randomized_stagepath.pop(0)
         return data_dump
@@ -40,8 +40,7 @@ class randomisation_scripts:
                 for course in data["file_data"]["CourseTable"]:
                     if (
                         not course["StagePath"] in ignored_stages_files
-                        and course["StagePath"]
-                        != "Work/Stage/StageParam/Course900_Course.game__stage__StageParam.gyml"
+                        and int(''.join(re.findall(r'\d+', course["StagePath"]))) < 900
                     ):
                         randomized_stagepath.append(course["StagePath"])
         random.shuffle(randomized_stagepath)
@@ -54,8 +53,7 @@ class randomisation_scripts:
                 for course in data["file_data"]["CourseTable"]:
                     if (
                         not course["StagePath"] in ignored_stages_files
-                        and course["StagePath"]
-                        != "Work/Stage/StageParam/Course900_Course.game__stage__StageParam.gyml"
+                        and int(''.join(re.findall(r'\d+', course["StagePath"]))) < 900
                     ):
                         course["StagePath"] = randomized_stagepath.pop(0)
         return data_dump

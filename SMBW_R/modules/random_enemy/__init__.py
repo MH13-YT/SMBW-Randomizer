@@ -1,0 +1,1 @@
+from .main import random_enemy_module

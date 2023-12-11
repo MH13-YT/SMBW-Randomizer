@@ -18,7 +18,7 @@ class profiles:
             "Work/Stage/StageParam/Course152_Course.game__stage__StageParam.gyml",  # W4
             "Work/Stage/StageParam/Course551_Course.game__stage__StageParam.gyml",  # W5
             "Work/Stage/StageParam/Course153_Course.game__stage__StageParam.gyml",  # W6
-            # "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
+            "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
         ]
 
         return randomisation_scripts.full(data, seed, ignored_stages_files)
@@ -35,7 +35,7 @@ class profiles:
             "Work/Stage/StageParam/Course152_Course.game__stage__StageParam.gyml",  # W4
             "Work/Stage/StageParam/Course551_Course.game__stage__StageParam.gyml",  # W5
             "Work/Stage/StageParam/Course153_Course.game__stage__StageParam.gyml",  # W6
-            # "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
+            "Work/Stage/StageParam/Course290_Course.game__stage__StageParam.gyml", # Final Boss
         ]
         return randomisation_scripts.lite(data, seed, ignored_stages_files)
 

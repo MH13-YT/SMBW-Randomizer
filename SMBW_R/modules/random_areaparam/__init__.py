@@ -1,0 +1,1 @@
+from .main import random_areaparam_module

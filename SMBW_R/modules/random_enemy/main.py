@@ -1,20 +1,22 @@
 import logging
 import os
 import json
-from SMBW_R.modules.exemple_module.profiles import profiles
+import traceback
+from SMBW_R.modules.random_enemy.profiles import profiles
 import logging_config
 from .functions import data_manager, file_converter
 
-module_description = "Exemple Module (DO NOT USE FOR RANDOMIZING)"
-class exemple_module:
+module_description = "Each enemy are randomized."
+
+
+class random_enemy_module:
     def __init__(self):
-        self.logger = logging.getLogger('SMBW_R Module : exemple_module')
+        self.logger = logging.getLogger("SMBW_R Module : random_enemy")
         self.validate = {
             "Randomize game data": False,
         }
 
-    def randomizing(self,method,seed): #DO NOT EDIT, These script are preconfigured
-        
+    def randomizing(self, method, seed):
         game_is_randomized = True
         try:
             self.logger.info("Starting data randomisation")
@@ -28,9 +30,9 @@ class exemple_module:
         self.logger.info("")
         return game_is_randomized
 
-    def start(self,method,seed,data): #DO NOT EDIT, These script are preconfigured
+    def start(self, method, seed, data):
         self.logger.info("Starting process")
-        print("\n[exemple_module]: Starting process")
+        print("\n[random_enemy]: Starting process")
         self.data = data
         result = self.randomizing(method, seed)
         self.logger.info("Summary of module process:")
@@ -43,12 +45,14 @@ class exemple_module:
                 self.logger.warn(f"Step {key + 1}: {value} => FAIL")
                 print(f"Step {key + 1}: {value} => FAIL")
         self.logger.info("End of process")
-        print("[exemple_module]: End of process")
-        return {"result":result, "data":self.data}
-    def get_description(self):  
-        return(module_description)
+        print("[random_enemy]: End of process")
+        return {"result": result, "data": self.data}
+
+    def get_description(self):
+        return module_description
+
     def list_method(self):
-        return(profiles.list())
+        return profiles.list()
+
     def get_resources(self):
         return file_converter.get_resources()
-    
