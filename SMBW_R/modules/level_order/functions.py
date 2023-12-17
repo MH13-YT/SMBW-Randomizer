@@ -19,16 +19,16 @@ class data_manager:
         shuffle = False
         method = str(method)
         if method == "lite":
-            data_dump = profiles.lite(data_dump, seed)
+            data_dump = profiles.lite(data_dump, seed,False)
             shuffle = True
         if method == "full":
-            data_dump = profiles.full(data_dump, seed)
+            data_dump = profiles.full(data_dump, seed,False)
             shuffle = True
         if method == "lite_secured":
-            data_dump = profiles.lite_secured(data_dump, seed)
+            data_dump = profiles.lite(data_dump, seed,True)
             shuffle = True
         if method == "full_secured":
-            data_dump = profiles.full_secured(data_dump, seed)
+            data_dump = profiles.full(data_dump, seed,True)
             shuffle = True
 
         if shuffle == True:

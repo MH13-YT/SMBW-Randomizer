@@ -35,17 +35,17 @@ def custom_enemy_selector():
 
 class profiles:
     def list():
-        return ["all", "custom"]
+        return ["all","all_secured", "custom","custom_secured"]
 
-    def all(data_dump, seed):
+    def all(data_dump, seed,security):
         enemy_dump = enemys_filter("All")
-        data_dump = randomisation_functions.enemy_shuffler(data_dump, enemy_dump, seed)
+        data_dump = randomisation_functions.enemy_shuffler(data_dump, enemy_dump, seed,security)
         return data_dump
 
-    def custom(data_dump, seed):
+    def custom(data_dump, seed,security):
         custom_enemy_gui.custom_enemy_list_configurator()
         if len(custom_enemy_selector()) > 0:
             data_dump = randomisation_functions.enemy_shuffler(
-                data_dump, custom_enemy_selector(), seed
+                data_dump, custom_enemy_selector(), seed ,security
             )
         return data_dump

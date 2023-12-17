@@ -1,0 +1,574 @@
+{
+    "Course001": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course002": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course003": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course004": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course005": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course006": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course007": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course008": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course009": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course010": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course012": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course013": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course014": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course015": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course016": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course017": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course018": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course019": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course020": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course021": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course022": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course023": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course024": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course025": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course026": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course027": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course030": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course031": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course032": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course033": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course034": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course035": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course036": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course037": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course038": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course039": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course040": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course041": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course042": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course043": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course044": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course046": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course047": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course048": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course049": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course050": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course051": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course052": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course053": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course054": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course055": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course056": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course057": {
+        "enabled": true,
+        "hasSecretExit": true
+    },
+    "Course058": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course059": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course061": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course062": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course063": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course064": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course100": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course101": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course102": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course150": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course151": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course152": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course153": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course200": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course201": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course202": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course250": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course251": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course252": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course253": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course254": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course255": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course290": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course300": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course301": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course302": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course303": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course304": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course305": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course306": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course307": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course308": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course309": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course310": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course311": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course312": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course313": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course314": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course315": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course316": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course317": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course318": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course319": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course400": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course401": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course402": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course403": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course404": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course405": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course406": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course407": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course408": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course409": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course410": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course411": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course412": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course413": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course414": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course415": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course416": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course417": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course418": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course450": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course451": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course452": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course453": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course460": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course500": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course510": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course520": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course530": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course531": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course540": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course550": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course551": {
+        "enabled": false,
+        "hasSecretExit": false
+    },
+    "Course560": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course561": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course562": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course563": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course590": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course850": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course851": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course852": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course853": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course854": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course855": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course856": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course857": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course858": {
+        "enabled": true,
+        "hasSecretExit": false
+    },
+    "Course859": {
+        "enabled": true,
+        "hasSecretExit": false
+    }
+}

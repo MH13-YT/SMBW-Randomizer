@@ -150,57 +150,71 @@ class profiles:
     def list():
         return [
             "all",
+            "all_secured",
             "all_exclude_goomba",
+            "all_exclude_goomba_secured",
             "morph_only",
+            "morph_only_secured",
             "morph_only_exclude_goomba",
+            "morph_only_exclude_goomba_secured",
             "effect_only",
+            "effect_only_secured",
             "custom",
+            "custom_secured",
         ]
 
-    def all(data_dump, seed):
+    def all(data_dump, seed, security):
         morph_dump = morphs_filter("All")
         effect_dump = effects_filter(data_dump)
-        data_dump = randomisation_functions.morph_shuffler(data_dump, morph_dump, seed)
+        data_dump = randomisation_functions.morph_shuffler(
+            data_dump, morph_dump, seed, security
+        )
         data_dump = randomisation_functions.effect_shuffler(
-            data_dump, effect_dump, seed
+            data_dump, effect_dump, seed, security
         )
         return data_dump
 
-    def all_exclude_goomba(data_dump, seed):
+    def all_exclude_goomba(data_dump, seed, security):
         morph_dump = morphs_filter("Kuribo")
         effect_dump = effects_filter("All")
-        data_dump = randomisation_functions.morph_shuffler(data_dump, morph_dump, seed)
+        data_dump = randomisation_functions.morph_shuffler(
+            data_dump, morph_dump, seed, security
+        )
         data_dump = randomisation_functions.effect_shuffler(
-            data_dump, effect_dump, seed
+            data_dump, effect_dump, seed, security
         )
         return data_dump
 
-    def morph_only(data_dump, seed):
+    def morph_only(data_dump, seed, security):
         morph_dump = morphs_filter("All")
-        data_dump = randomisation_functions.morph_shuffler(data_dump, morph_dump, seed)
-        return data_dump
-
-    def morph_only_exclude_goomba(data_dump, seed):
-        morph_dump = morphs_filter("Kuribo")
-        data_dump = randomisation_functions.morph_shuffler(data_dump, morph_dump, seed)
-        return data_dump
-
-    def effect_only(data_dump, seed):
-        effect_dump = effects_filter("All")
-        data_dump = randomisation_functions.effect_shuffler(
-            data_dump, effect_dump, seed
+        data_dump = randomisation_functions.morph_shuffler(
+            data_dump, morph_dump, seed, security
         )
         return data_dump
 
-    def custom(data_dump, seed):
+    def morph_only_exclude_goomba(data_dump, seed, security):
+        morph_dump = morphs_filter("Kuribo")
+        data_dump = randomisation_functions.morph_shuffler(
+            data_dump, morph_dump, seed, security
+        )
+        return data_dump
+
+    def effect_only(data_dump, seed, security):
+        effect_dump = effects_filter("All")
+        data_dump = randomisation_functions.effect_shuffler(
+            data_dump, effect_dump, seed, security
+        )
+        return data_dump
+
+    def custom(data_dump, seed, security):
         custom_morph_gui.custom_morph_list_configurator()
         custom_effect_gui.custom_effect_list_configurator()
         if len(custom_morph_selector()) > 0:
             data_dump = randomisation_functions.morph_shuffler(
-                data_dump, custom_morph_selector(), seed
+                data_dump, custom_morph_selector(), seed, security
             )
         if len(custom_effect_selector()) > 0:
             data_dump = randomisation_functions.effect_shuffler(
-                data_dump, custom_effect_selector(), seed
+                data_dump, custom_effect_selector(), seed, security
             )
         return data_dump

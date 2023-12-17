@@ -1,0 +1,250 @@
+{
+    "Course001": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course002": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course003": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course004": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course005": {
+        "Effect": true,
+        "Morph": false
+    },
+    "Course007": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course008": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course009": {
+        "Effect": true,
+        "Morph": false
+    },
+    "Course010": {
+        "Effect": true,
+        "Morph": false
+    },
+    "Course012": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course013": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course014": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course015": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course016": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course017": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course019": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course020": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course022": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course023": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course024": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course025": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course026": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course027": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course032": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course034": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course035": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course036": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course037": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course038": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course039": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course040": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course042": {
+        "Effect": false,
+        "Morph": false
+    },
+    "Course043": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course044": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course046": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course047": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course048": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course049": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course052": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course053": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course054": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course055": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course056": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course058": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course059": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course061": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course062": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course063": {
+        "Effect": false,
+        "Morph": true
+    },
+    "Course064": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course100": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course101": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course102": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course150": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course152": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course290": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course850": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course851": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course852": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course853": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course854": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course857": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course858": {
+        "Effect": true,
+        "Morph": true
+    }
+}

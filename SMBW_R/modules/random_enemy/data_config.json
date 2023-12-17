@@ -1,0 +1,287 @@
+{
+    "Course001": {
+        "enabled": true
+    },
+    "Course002": {
+        "enabled": true
+    },
+    "Course003": {
+        "enabled": true
+    },
+    "Course004": {
+        "enabled": true
+    },
+    "Course005": {
+        "enabled": false
+    },
+    "Course006": {
+        "enabled": true
+    },
+    "Course007": {
+        "enabled": true
+    },
+    "Course008": {
+        "enabled": true
+    },
+    "Course009": {
+        "enabled": false
+    },
+    "Course010": {
+        "enabled": false
+    },
+    "Course012": {
+        "enabled": true
+    },
+    "Course013": {
+        "enabled": true
+    },
+    "Course014": {
+        "enabled": true
+    },
+    "Course015": {
+        "enabled": true
+    },
+    "Course016": {
+        "enabled": true
+    },
+    "Course017": {
+        "enabled": true
+    },
+    "Course018": {
+        "enabled": true
+    },
+    "Course019": {
+        "enabled": true
+    },
+    "Course020": {
+        "enabled": true
+    },
+    "Course021": {
+        "enabled": true
+    },
+    "Course022": {
+        "enabled": true
+    },
+    "Course023": {
+        "enabled": true
+    },
+    "Course024": {
+        "enabled": true
+    },
+    "Course025": {
+        "enabled": true
+    },
+    "Course026": {
+        "enabled": true
+    },
+    "Course027": {
+        "enabled": true
+    },
+    "Course030": {
+        "enabled": true
+    },
+    "Course031": {
+        "enabled": true
+    },
+    "Course032": {
+        "enabled": true
+    },
+    "Course033": {
+        "enabled": true
+    },
+    "Course034": {
+        "enabled": true
+    },
+    "Course035": {
+        "enabled": true
+    },
+    "Course036": {
+        "enabled": true
+    },
+    "Course037": {
+        "enabled": true
+    },
+    "Course038": {
+        "enabled": true
+    },
+    "Course039": {
+        "enabled": true
+    },
+    "Course040": {
+        "enabled": true
+    },
+    "Course041": {
+        "enabled": true
+    },
+    "Course042": {
+        "enabled": true
+    },
+    "Course043": {
+        "enabled": true
+    },
+    "Course044": {
+        "enabled": true
+    },
+    "Course046": {
+        "enabled": true
+    },
+    "Course047": {
+        "enabled": true
+    },
+    "Course048": {
+        "enabled": true
+    },
+    "Course049": {
+        "enabled": true
+    },
+    "Course050": {
+        "enabled": true
+    },
+    "Course051": {
+        "enabled": true
+    },
+    "Course052": {
+        "enabled": true
+    },
+    "Course053": {
+        "enabled": true
+    },
+    "Course054": {
+        "enabled": true
+    },
+    "Course055": {
+        "enabled": true
+    },
+    "Course056": {
+        "enabled": true
+    },
+    "Course057": {
+        "enabled": true
+    },
+    "Course058": {
+        "enabled": true
+    },
+    "Course059": {
+        "enabled": true
+    },
+    "Course061": {
+        "enabled": true
+    },
+    "Course062": {
+        "enabled": true
+    },
+    "Course063": {
+        "enabled": true
+    },
+    "Course064": {
+        "enabled": true
+    },
+    "Course100": {
+        "enabled": true
+    },
+    "Course101": {
+        "enabled": true
+    },
+    "Course102": {
+        "enabled": true
+    },
+    "Course150": {
+        "enabled": true
+    },
+    "Course151": {
+        "enabled": true
+    },
+    "Course152": {
+        "enabled": true
+    },
+    "Course153": {
+        "enabled": true
+    },
+    "Course250": {
+        "enabled": true
+    },
+    "Course251": {
+        "enabled": true
+    },
+    "Course252": {
+        "enabled": true
+    },
+    "Course253": {
+        "enabled": true
+    },
+    "Course254": {
+        "enabled": true
+    },
+    "Course255": {
+        "enabled": true
+    },
+    "Course290": {
+        "enabled": true
+    },
+    "Course300": {
+        "enabled": true
+    },
+    "Course302": {
+        "enabled": true
+    },
+    "Course310": {
+        "enabled": true
+    },
+    "Course311": {
+        "enabled": true
+    },
+    "Course317": {
+        "enabled": true
+    },
+    "Course404": {
+        "enabled": true
+    },
+    "Course409": {
+        "enabled": true
+    },
+    "Course450": {
+        "enabled": true
+    },
+    "Course451": {
+        "enabled": true
+    },
+    "Course500": {
+        "enabled": true
+    },
+    "Course540": {
+        "enabled": true
+    },
+    "Course560": {
+        "enabled": true
+    },
+    "Course850": {
+        "enabled": true
+    },
+    "Course851": {
+        "enabled": true
+    },
+    "Course852": {
+        "enabled": true
+    },
+    "Course853": {
+        "enabled": true
+    },
+    "Course854": {
+        "enabled": true
+    },
+    "Course855": {
+        "enabled": true
+    },
+    "Course856": {
+        "enabled": true
+    },
+    "Course857": {
+        "enabled": true
+    },
+    "Course858": {
+        "enabled": true
+    },
+    "Course859": {
+        "enabled": true
+    }
+}

@@ -27,7 +27,10 @@ class data_manager:
         ) as json_file:
             areaparam_data = json.load(json_file)
         if method == "All" or method == "all":
-            levels_dump = profiles.all(levels_dump, seed, areaparam_data)
+            levels_dump = profiles.all(levels_dump, seed, areaparam_data ,False)
+            shuffle = True
+        if method == "All_secured" or method == "all_secured":
+            levels_dump = profiles.all(levels_dump, seed, areaparam_data, True)
             shuffle = True
         if shuffle == True:
             return levels_dump

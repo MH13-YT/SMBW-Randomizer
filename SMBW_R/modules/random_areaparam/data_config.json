@@ -1,0 +1,3542 @@
+{
+    "Course001_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course001_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course001_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course001_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course002_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course002_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course002_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course003_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course003_Sub.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course004_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course004_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course005_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course005_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course006_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course007_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course007_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course007_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course007_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course008_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course008_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course008_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course009_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course009_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course009_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course009_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course010_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course010_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course012_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course012_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course012_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course013_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course013_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course014_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course014_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course014_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course014_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course015_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course015_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course015_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course015_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course015_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course016_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course016_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course016_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course017_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course017_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course017_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course017_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course018_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course018_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course019_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course019_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course020_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course021_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course021_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course022_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course022_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course023_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course023_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course023_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course024_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course024_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course024_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course025_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course025_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course025_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course026_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course026_Sub.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course027_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course027_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course030_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course031_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course031_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course031_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course031_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course032_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course032_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course032_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course033_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course034_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course034_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course034_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course034_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course035_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course036_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course036_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course037_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course037_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course037_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course038_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course038_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course038_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course039_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course039_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course040_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course040_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course040_Sub6.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course041_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub02.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub03.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub05.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub06.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub07.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub09.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub10.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course042_Sub11.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course043_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course044_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course044_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course044_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course046_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course046_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course046_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course046_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course047_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course047_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course047_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course047_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course048_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course048_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course048_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course049_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course049_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course049_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course049_Sub3.game__stage__AreaParam": {
+        "BgmType": false,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course049_Sub4.game__stage__AreaParam": {
+        "BgmType": false,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course050_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course050_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course050_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course050_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course050_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course051_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course051_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course051_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course052_Sub6.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course053_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course053_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course053_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course054_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course054_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course054_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course055_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course055_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course055_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course056_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course056_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course056_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course056_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course057_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course057_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course057_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course057_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course057_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course058_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course058_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course059_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course059_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course061_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course061_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course061_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course061_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course061_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course062_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course062_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course062_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course063_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course063_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course064_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course064_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course064_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course100_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course100_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course100_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course100_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course101_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course101_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course101_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course102_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course102_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course102_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course150_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course150_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course150_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course150_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course151_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course151_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course151_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course152_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course152_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course152_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course153_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course153_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course153_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course200_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course201_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course202_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course250_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course250_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course250_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course250_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course250_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course251_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course251_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course251_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course251_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course251_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course252_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course253_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course254_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course254_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course254_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course254_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course254_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub3.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub4.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub5.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course255_Sub6.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course290_Main.game__stage__AreaParam": {
+        "BgmType": false,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course290_Sub.game__stage__AreaParam": {
+        "BgmType": false,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course300_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course301_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course302_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course303_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course304_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course305_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course306_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course307_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course308_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course309_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course310_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course310_Sub.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course311_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course311_Sub.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course312_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course313_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course314_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course315_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course316_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course317_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course317_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course317_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course318_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course319_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course400_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course401_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course402_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course403_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course404_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course404_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course404_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course405_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course406_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course407_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course408_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course409_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course409_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course409_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course409_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course410_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course411_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course412_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course413_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course414_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course415_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course416_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course417_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course418_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course450_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course450_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course451_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course451_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course452_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course453_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course460_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": false,
+        "EnvironmentSoundEfx": false,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course500_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course500_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course500_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course510_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course520_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course530_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course531_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course540_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course540_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course550_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course551_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course560_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course560_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course561_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course562_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course563_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course590_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course850_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course850_Sub01.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course851_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course852_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course852_Sub01.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course853_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course854_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course854_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course855_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course856_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course857_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course858_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": false
+    },
+    "Course859_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Mian.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub01.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub02.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub03.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub04.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub05.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub06.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub07.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub08.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course859_Sub09.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course900_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course900_Sub1.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course900_Sub2.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course901_Main.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course902_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course903_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course904_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course905_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course906_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "Course907_Course.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World001.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World002.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World003.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World004.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World005.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World006.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World007.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World008.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "World009.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
+    "WorldEnding.game__stage__AreaParam": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    }
+}
