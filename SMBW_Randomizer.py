@@ -8,6 +8,7 @@ import uuid
 import zstandard
 
 import logging
+from SMBW_R.tools.mod_manager import get_mods_list, patch_game, restore_romfs
 import logging_config
 from restbl import ResourceSizeTable
 import argparse
@@ -27,6 +28,13 @@ for module_name in SMBW_R.tools.main.get_module_list():
         print(f"Module '{module_name}' importé avec succès.")
     except (ImportError, AttributeError) as e:
         print(f"Impossible d'importer le module '{module_name}': {e}")
+
+def select_mods(modlist):
+    patch_game(modlist)
+    messagebox.showinfo(
+        "Mods Sélectionné", "Les mods ont été selectionné avec succés, et le jeu a été patché avec succés"
+    )
+    mod_manager_gui.destroy()
 
 
 def save_configuration(mode):
@@ -155,14 +163,14 @@ class SMBW_Randomizer:
                 os.makedirs(
                     f"{os.curdir}/worktable/romfs/System/Resource", exist_ok=True
                 )
-        shutil.copy(
-            os.path.join("romfs/System/Resource", RSTB_file),
-            os.path.join("worktable/romfs/System/Resource", RSTB_file),
-        )
-        worktable_rstb = os.path.join("worktable/romfs/System/Resource", RSTB_file)
-        if os.path.isfile(worktable_rstb):
-            with open(worktable_rstb, "rb") as RSTB:
-                self.RSTB_DUMP[RSTB_file] = ResourceSizeTable.from_binary(RSTB.read())
+            shutil.copy(
+                os.path.join("romfs/System/Resource", RSTB_file),
+                os.path.join("worktable/romfs/System/Resource", RSTB_file),
+            )
+            worktable_rstb = os.path.join("worktable/romfs/System/Resource", RSTB_file)
+            if os.path.isfile(worktable_rstb):
+                with open(worktable_rstb, "rb") as RSTB:
+                    self.RSTB_DUMP[RSTB_file] = ResourceSizeTable.from_binary(RSTB.read())
         data_is_dumped = True
         self.logger.info("STEP 2 : Dump Data")
         self.logger.info("Starting Required Data Dump")
@@ -293,6 +301,7 @@ parser.add_argument("--seed", help="Choisir une Seed a utiliser pour la randomiz
 parser.add_argument(
     "--configure", action="store_true", help="Configurer le randomiseur avec la GUI"
 )
+parser.add_argument("--mods", action="store_true", help="Ajouter des Mods externe avant la randomisation")
 parser.add_argument(
     "--configure_cli",
     action="store_true",
@@ -333,7 +342,7 @@ if args.configure:
     config_gui = tk.Tk()
     config_gui.title("SMBW_Randomizer : Configuration")
 
-    config_gui.minsize(400, 25 + 25 * len(module_list))
+    config_gui.minsize(400, 25 + 25 + 25 * len(module_list))
 
     try:
         with open("config.json", "r") as config_file:
@@ -387,12 +396,89 @@ if args.configure:
 
             description_label = tk.Label(module_frame, text=module.get_description())
             description_label.grid(row=row, column=0, columnspan=4, sticky="w")
+    mods_button = tk.Button(
+        config_gui,
+        text="Save configuration and open mod selector",
+        command=lambda: (save_configuration("GUI"), setattr(config_gui, 'open_mod_selector', True))
+    )
+    mods_button.grid(row=row, column=0, columnspan=3, sticky="we")
+    row += 1
     save_button = tk.Button(
         config_gui,
         text="Save configuration and exit",
-        command=lambda: save_configuration("GUI"),
+        command=lambda: (save_configuration("GUI"), setattr(config_gui, 'open_mod_selector', False))
     )
     save_button.grid(row=row, column=0, columnspan=3, sticky="we")
     config_gui.mainloop()
+    if config_gui.open_mod_selector:
+        args.mods = True
+
+if args.mods:
+    # Création de l'interface graphique
+    mod_manager_gui = tk.Tk()
+    mod_manager_gui.title("Sélection des mods")
+
+    # Votre tableau de données
+    mods_data = get_mods_list()
+    used_mod_files = []
+
+    def update_checkbox_state(*args):
+        global used_mod_files
+
+        # Réinitialiser la liste des fichiers utilisés
+        used_mod_files.clear()
+
+        # Parcourir les cases à cocher pour vérifier les mods sélectionnés et leurs fichiers associés
+        for mod_name, var in checkbox_var.items():
+            if var.get():
+                for mod_info in mods_data:
+                    if mod_info["mod_name"] == mod_name:
+                        for file_info in mod_info["mod_file_list"]:
+                            used_mod_files.append(file_info["filename"])
+
+        # Mettre à jour l'état des cases à cocher en fonction des fichiers utilisés
+        for mod_name, var in checkbox_var.items():
+            if not var.get():
+                conflict = False
+                for mod_info in mods_data:
+                    if mod_info["mod_name"] == mod_name:
+                        for file_info in mod_info["mod_file_list"]:
+                            if file_info["filename"] in used_mod_files:
+                                conflict = True
+        
+                if conflict:
+                    checkbox_dict[mod_name].config(state=tk.DISABLED)
+                else:
+                    checkbox_dict[mod_name].config(state=tk.NORMAL)
+
+
+
+    # Dictionnaire pour stocker les variables des cases à cocher
+    checkbox_var = {}
+    checkbox_dict = {}
+
+    # Création des cases à cocher pour chaque mod
+    for mod_info in mods_data:
+        mod_name = mod_info["mod_name"]
+    
+        # Création de la variable de case à cocher
+        checkbox_var[mod_name] = tk.BooleanVar()
+    
+        # Création de la case à cocher
+        checkbox = tk.Checkbutton(mod_manager_gui, text=mod_name, variable=checkbox_var[mod_name], command=update_checkbox_state)
+        checkbox.pack(anchor=tk.W)
+    
+        # Ajout de la case à cocher au dictionnaire pour une référence ultérieure
+        checkbox_dict[mod_name] = checkbox
+    # Bouton de validation
+    validate_button = tk.Button(mod_manager_gui, text="Valider", command=lambda:select_mods([mod_name for mod_name, var in checkbox_var.items() if var.get()]))
+    validate_button.pack()
+
+    mod_manager_gui.mainloop()
+
 
 randomise.main(data, args.seed)
+
+if args.mods:
+    print("Mods Argument Detected : Restoring Romfs from backup before exit : DO NOT QUIT APP")
+    restore_romfs()

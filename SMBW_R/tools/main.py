@@ -1,6 +1,8 @@
 import contextlib
 import os
 import shutil
+
+from SMBW_R.tools.mod_manager import get_modded_file_list
 from . import zstandard
 from . import byml
 
@@ -107,6 +109,26 @@ def get_resource_data(files_metadata):
 
 
 def set_resource_data(files_metadata, files_data, modified_files_list, RSTB_DUMP):
+    for modded_file in get_modded_file_list():
+        with contextlib.suppress(Exception):
+            for name, RSTB in RSTB_DUMP.items():
+                RSTB.delete_entry(
+                    os.path.normpath(
+                        modded_file
+                    )
+                    .replace(os.sep, "/")
+                    .replace("romfs/", "")
+                )
+                if RSTB.get_size(os.path.normpath(modded_file).replace(os.sep, "/").replace("romfs/", "")) != None:
+                    print("Warning : Modded File on RSTB")
+                    print(os.path.normpath(modded_file).replace(os.sep, "/").replace("romfs/", ""))
+                    print(f'Size: {os.path.normpath(modded_file).replace(os.sep, "/").replace("romfs/", "")}')
+                    
+        os.makedirs(os.path.dirname(os.path.join("output",modded_file)), exist_ok=True)
+        shutil.copyfile(os.path.join(modded_file), os.path.join("output",modded_file))
+    print("Modded Files Copied")
+    input()
+            
     for file_metadata in files_metadata:
         for file_data in files_data:
             if (
