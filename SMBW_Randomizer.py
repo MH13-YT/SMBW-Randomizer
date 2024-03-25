@@ -32,7 +32,7 @@ for module_name in SMBW_R.tools.main.get_module_list():
 def select_mods(modlist):
     patch_game(modlist)
     messagebox.showinfo(
-        "Mods Sélectionné", "Les mods ont été selectionné avec succés, et le jeu a été patché avec succés"
+        "Mods Selected and RomFS Patched", "The selected mods has been installed on your romfs folder (don't worry SMBW_Randomizer created a backup for you)"
     )
     mod_manager_gui.destroy()
 
@@ -229,6 +229,7 @@ class SMBW_Randomizer:
         self.logger.info("STEP 4 : Restoring Data and Adapt Resource Size Table")
         data_is_restored = True
         self.logger.info("Starting Data Restoration")
+        SMBW_R.tools.main.save_modded_files(self.RSTB_DUMP)
         for resource, metadata in self.resources_metadata.items():
             SMBW_R.tools.main.set_resource_data(
                 metadata,
@@ -297,15 +298,15 @@ parser = argparse.ArgumentParser(
     description="Description générale de votre programme",
     formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=100),
 )
-parser.add_argument("--seed", help="Choisir une Seed a utiliser pour la randomization")
+parser.add_argument("--seed", help="Choose a Seed (Used as base for randomization)")
 parser.add_argument(
-    "--configure", action="store_true", help="Configurer le randomiseur avec la GUI"
+    "--configure", action="store_true", help="Configure the Randomizer (Use Graphical Interface)"
 )
-parser.add_argument("--mods", action="store_true", help="Ajouter des Mods externe avant la randomisation")
+parser.add_argument("--mods", action="store_true", help="Add Mods to your ROMFS Before Randomization (Automatic ROMFS Backup Managment) (Need a mods folder on SMBW_Randomizer)")
 parser.add_argument(
     "--configure_cli",
     action="store_true",
-    help="Configurer le randomiseur avant de le lancer",
+    help="Configure Randomizer with Command Line Interface",
 )
 dependant_group = parser.add_argument_group("--configure_cli : Available modules")
 for module_name in SMBW_R.tools.main.get_module_list():
@@ -314,7 +315,7 @@ for module_name in SMBW_R.tools.main.get_module_list():
         dependant_group.add_argument(
             f"--{module_name}",
             choices=module.list_method(),
-            help=f"Activer le module {module_name} avec la methode choisie",
+            help=f"Enable the module: {module_name} and choose the selected method",
         )
 args = parser.parse_args()
 module_list = SMBW_R.tools.main.get_module_list()
@@ -416,12 +417,36 @@ if args.configure:
 if args.mods:
     # Création de l'interface graphique
     mod_manager_gui = tk.Tk()
-    mod_manager_gui.title("Sélection des mods")
+    mod_manager_gui.title("Mods Selector")
+    mod_manager_gui.minsize(400, 300)  # Taille minimale définie
+    
+    # Frame pour contenir le canevas et la barre de défilement
+    canvas_frame = tk.Frame(mod_manager_gui)
+    canvas_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+    # Création du Canvas pour la liste des mods avec barre de défilement
+    mods_canvas = tk.Canvas(canvas_frame)
+    mods_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    # Ajout d'une barre de défilement verticale
+    scrollbar = tk.Scrollbar(canvas_frame, command=mods_canvas.yview)
+    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+    mods_canvas.configure(yscrollcommand=scrollbar.set)
+
+    # Frame pour contenir la liste des mods
+    mods_frame = tk.Frame(mods_canvas)
+    mods_canvas.create_window((0, 0), window=mods_frame, anchor=tk.NW)
 
     # Votre tableau de données
     mods_data = get_mods_list()
     used_mod_files = []
 
+    if len(mods_data) == 0:
+        # Création du label pour afficher le texte
+        no_mod_label = tk.Label(mods_frame, text="Cannot Find Mods, Maybe a Structure Error ?")
+        no_mod_label.pack()
+        hint = tk.Label(mods_frame, text="Please Ensure Your Mods Respect This Structure : <Mod Name>/romfs/")
+        hint.pack()
     def update_checkbox_state(*args):
         global used_mod_files
 
@@ -443,15 +468,13 @@ if args.mods:
                 for mod_info in mods_data:
                     if mod_info["mod_name"] == mod_name:
                         for file_info in mod_info["mod_file_list"]:
-                            if file_info["filename"] in used_mod_files:
+                            if file_info["filename"] in used_mod_files and "Mals" not in file_info["path"]:
                                 conflict = True
         
                 if conflict:
                     checkbox_dict[mod_name].config(state=tk.DISABLED)
                 else:
                     checkbox_dict[mod_name].config(state=tk.NORMAL)
-
-
 
     # Dictionnaire pour stocker les variables des cases à cocher
     checkbox_var = {}
@@ -465,14 +488,23 @@ if args.mods:
         checkbox_var[mod_name] = tk.BooleanVar()
     
         # Création de la case à cocher
-        checkbox = tk.Checkbutton(mod_manager_gui, text=mod_name, variable=checkbox_var[mod_name], command=update_checkbox_state)
+        checkbox = tk.Checkbutton(mods_frame, text=mod_name, variable=checkbox_var[mod_name], command=update_checkbox_state)
         checkbox.pack(anchor=tk.W)
     
         # Ajout de la case à cocher au dictionnaire pour une référence ultérieure
         checkbox_dict[mod_name] = checkbox
+
+    # Frame pour contenir le bouton Valider
+    bottom_frame = tk.Frame(mod_manager_gui)
+    bottom_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
     # Bouton de validation
-    validate_button = tk.Button(mod_manager_gui, text="Valider", command=lambda:select_mods([mod_name for mod_name, var in checkbox_var.items() if var.get()]))
-    validate_button.pack()
+
+    validate_button = tk.Button(bottom_frame, text="Valider", command=lambda:select_mods([mod_name for mod_name, var in checkbox_var.items() if var.get()]))
+    validate_button.pack(fill=tk.X)  # Utiliser fill=tk.X pour remplir horizontalement
+
+    # Lier la fonction de mise à jour de la zone de défilement à la modification de la taille du cadre intérieur
+    mods_frame.bind("<Configure>", lambda event, canvas=mods_canvas: mods_canvas.configure(scrollregion=mods_canvas.bbox("all")))
 
     mod_manager_gui.mainloop()
 
@@ -480,5 +512,5 @@ if args.mods:
 randomise.main(data, args.seed)
 
 if args.mods:
-    print("Mods Argument Detected : Restoring Romfs from backup before exit : DO NOT QUIT APP")
+    print("SMBW Randomizer Started with Mod Support : Restoring ROMFS from backup before exit : DO NOT QUIT APP")
     restore_romfs()

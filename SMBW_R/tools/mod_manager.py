@@ -52,6 +52,8 @@ def synchronize_romfs():
 def get_mods_list():
     mods_list = []
     mod_file_list = []
+    if not os.path.exists(mods_folder):
+        os.makedirs(mods_folder)
     for mod in os.listdir(mods_folder):
         mod_path = os.path.join(mods_folder, mod)
         mod_romfs_path = os.path.join(mod_path, "romfs")
@@ -72,7 +74,6 @@ def backup_romfs():
         print("Removing Old Backup")
         shutil.rmtree("romfs_backup")
         print("Old Backup Removed")
-        input()
     print("Starting RomFS Backup")
     shutil.copytree("romfs", "romfs_backup")
     print("RomFS Backup Complete")
@@ -82,24 +83,20 @@ def restore_romfs():
     print("Removing Patched RomFS")
     shutil.rmtree("romfs")
     print("Patched RomFS Removed")
-    input()
     print("Recreating RomFS Folder From Backup")
     shutil.copytree("romfs_backup", "romfs")
     print("RomFS Restore Complete")
 
 def patch_game(selected_mod_list):
-    print(selected_mod_list)
-    input()
     synchronize_romfs()
     mod_list = get_mods_list()
     for mod_name in selected_mod_list:
-        print(f"Processing : {mod_name}")
+        print(f"Processing Mod: {mod_name}")
         for mod in mod_list:
             if mod["mod_name"] == mod_name:
                 for mod_file in mod["mod_file_list"]:
-                    print(f'Processing File : {os.path.join(mod_file["path"])}')
                     shutil.copyfile(mod_file["path"], os.path.join(*mod_file["path"].split(os.sep)[2:]))
                     modded_file_list.append(os.path.join(*mod_file["path"].split(os.sep)[2:]))
-        print(f"Processed : {mod_name}")
+        print(f"Mod Processed: {mod_name}")
     return
     
