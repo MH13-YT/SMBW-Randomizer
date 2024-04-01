@@ -16,7 +16,7 @@ def enemy_update_checkboxes_with_json():
 
     with open("SMBW_R/modules/random_enemy/enemy_config.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
-    messagebox.showinfo("enemys Selected", "enemys are selected successfuly")
+    messagebox.showinfo("Enemys Selected", "enemys are selected successfuly")
 
 
 class custom_enemy_gui:
@@ -31,7 +31,7 @@ class custom_enemy_gui:
         custom_enemy_list_frame = tk.Frame(custom_enemy_list)
         custom_enemy_list_frame.pack()
 
-        rows, cols = 11, 6
+        rows, cols = 17, 10
 
         json_keys = list(data.keys())
 
@@ -48,7 +48,7 @@ class custom_enemy_gui:
 
         update_button = tk.Button(
             custom_enemy_list,
-            text="Set Custom enemy",
+            text="Choose Selected Enemy",
             command=lambda: {
                 enemy_update_checkboxes_with_json(),
                 custom_enemy_list.destroy(),

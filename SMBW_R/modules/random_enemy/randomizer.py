@@ -19,7 +19,9 @@ class randomisation_functions:
                 if data_config[f"Course{course_id}"]["enabled"] or security == False:
                     for actors in data["file_data"]["Actors"]:
                         try:
-                            if actors["Gyaml"].startswith("Enemy") and "Hanachan" not in actors["Gyaml"]:
+                            if not actors["Gyaml"].startswith("Enemy") or "Hanachan" in actors["Gyaml"]: continue
+
+                            if any(enemy["enemy_name"] == actors["Gyaml"] for enemy in enemy_list):
                                 random.shuffle(enemy_list)
                                 actors["Gyaml"] = enemy_list[0]["enemy_name"]
                                 choose_enemy_list[data["file_name"].split('_')[0]] = {"BancMapUnit":False, "data":copy.deepcopy(enemy_list[0])}

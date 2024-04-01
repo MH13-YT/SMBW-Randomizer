@@ -16,7 +16,7 @@
         "Morph": true
     },
     "Course005": {
-        "Effect": true,
+        "Effect": false,
         "Morph": false
     },
     "Course007": {
@@ -28,7 +28,7 @@
         "Morph": true
     },
     "Course009": {
-        "Effect": true,
+        "Effect": false,
         "Morph": false
     },
     "Course010": {
@@ -116,8 +116,8 @@
         "Morph": true
     },
     "Course039": {
-        "Effect": true,
-        "Morph": true
+        "Effect": false,
+        "Morph": false
     },
     "Course040": {
         "Effect": true,
@@ -148,6 +148,10 @@
         "Morph": true
     },
     "Course049": {
+        "Effect": true,
+        "Morph": true
+    },
+    "Course051": {
         "Effect": true,
         "Morph": true
     },

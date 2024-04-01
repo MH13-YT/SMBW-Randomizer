@@ -108,7 +108,8 @@ def get_resource_data(files_metadata):
     return files_data
 
 def save_modded_files(RSTB_DUMP):
-    for modded_file in get_modded_file_list():
+    modded_file_list = get_modded_file_list()
+    for modded_file in modded_file_list:
         with contextlib.suppress(Exception):
             for name, RSTB in RSTB_DUMP.items():
                 RSTB.delete_entry(
@@ -125,7 +126,7 @@ def save_modded_files(RSTB_DUMP):
                     
         os.makedirs(os.path.dirname(os.path.join("output",modded_file)), exist_ok=True)
         shutil.copyfile(os.path.join(modded_file), os.path.join("output",modded_file))
-    print("Mods Files Copied Successfuly")
+    if (len(modded_file_list) != 0): print("Mods Files Copied Successfuly")
     return
 
 def set_resource_data(files_metadata, files_data, modified_files_list, RSTB_DUMP):         

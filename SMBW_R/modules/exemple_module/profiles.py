@@ -1,4 +1,4 @@
-from .randomizer import randomisation_functions
+from .randomizer import randomisation_scripts
 
 
 class profiles:
@@ -8,9 +8,9 @@ class profiles:
             'full',
             ]
 
-    def full(levels_dump, seed):
+    def full(data_dump, seed):
         ignored_files = [
         ]
 
         # Randomise Data and add ignored_files if is necessary
-        return randomisation_functions.exemple(levels_dump,seed)
+        return randomisation_scripts.exemple(data_dump,seed)

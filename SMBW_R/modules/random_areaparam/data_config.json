@@ -49,6 +49,16 @@
         "Object": true,
         "WonderBgmType": false
     },
+    "Course002_Main.game__stage__AreaParam.bgyml": {
+        "BgmType": true,
+        "EnvPaletteSetting": true,
+        "EnvironmentSound": true,
+        "EnvironmentSoundEfx": true,
+        "FieldA": true,
+        "FieldB": true,
+        "Object": true,
+        "WonderBgmType": true
+    },
     "Course002_Sub1.game__stage__AreaParam": {
         "BgmType": true,
         "EnvPaletteSetting": true,

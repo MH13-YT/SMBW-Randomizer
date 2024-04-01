@@ -1,6 +1,4 @@
 import logging
-import os
-import json
 from SMBW_R.modules.exemple_module.profiles import profiles
 import logging_config
 from .functions import data_manager, file_converter

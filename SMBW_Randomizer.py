@@ -8,8 +8,8 @@ import uuid
 import zstandard
 
 import logging
-from SMBW_R.tools.mod_manager import get_mods_list, patch_game, restore_romfs
 import logging_config
+
 from restbl import ResourceSizeTable
 import argparse
 
@@ -17,6 +17,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 import SMBW_R.tools.main
+from SMBW_R.tools.mod_manager import get_mods_list, patch_game, restore_romfs
 
 modules = {}
 for module_name in SMBW_R.tools.main.get_module_list():
@@ -25,9 +26,9 @@ for module_name in SMBW_R.tools.main.get_module_list():
         module = importlib.import_module(module_path)
         module_instance = getattr(module, f"{module_name}_module")()
         modules[module_name] = module_instance
-        print(f"Module '{module_name}' importé avec succès.")
+        print(f"'{module_name}' imported successfully.")
     except (ImportError, AttributeError) as e:
-        print(f"Impossible d'importer le module '{module_name}': {e}")
+        print(f"Unable to import '{module_name}': {e}")
 
 def select_mods(modlist):
     patch_game(modlist)

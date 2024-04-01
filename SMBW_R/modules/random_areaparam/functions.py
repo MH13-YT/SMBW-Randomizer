@@ -1,6 +1,4 @@
 import json
-import os
-import byml
 from .profiles import profiles
 
 resources = [

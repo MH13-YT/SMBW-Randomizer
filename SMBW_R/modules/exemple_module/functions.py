@@ -1,5 +1,3 @@
-import os
-import byml
 from .profiles import profiles
 
 resources = [
@@ -18,14 +16,14 @@ class file_converter:
 
 
 class data_manager:
-    def shuffle(levels_dump, method, seed):
+    def shuffle(data_dump, method, seed):
         shuffle = False
         method = str(method)
         seed = str(seed)
         if method == "Full" or method == "full":
-            levels_dump = profiles.full(levels_dump, seed)
+            data_dump = profiles.full(data_dump, seed)
             shuffle = True
         if shuffle == True:
-            return levels_dump
+            return data_dump
         else:
             raise Exception("Unknown Randomisation Method")

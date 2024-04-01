@@ -3,7 +3,7 @@ from .randomizer import randomisation_functions
 from .gui import custom_enemy_gui, custom_enemy_gui
 
 
-def enemys_filter(ignore):
+def enemys_filter(ignore,secured):
     try:
         with open("SMBW_R/modules/random_enemy/enemy_config.json", "r") as json_file:
             data = json.load(json_file)
@@ -11,7 +11,8 @@ def enemys_filter(ignore):
 
             for enemy_name, enemy_data in data.items():
                 if enemy_name != ignore or ignore == "All":
-                    enemys.append({"enemy_name": enemy_data["enemy_name"]})
+                    if secured == False or enemy_data["blacklisted"] == False:
+                        enemys.append({"enemy_name": enemy_data["enemy_name"]})
             return enemys
     except FileNotFoundError:
         print("Le fichier JSON n'a pas été trouvé.")
@@ -38,7 +39,7 @@ class profiles:
         return ["all","all_secured", "custom","custom_secured"]
 
     def all(data_dump, seed,security):
-        enemy_dump = enemys_filter("All")
+        enemy_dump = enemys_filter("All",security)
         data_dump = randomisation_functions.enemy_shuffler(data_dump, enemy_dump, seed,security)
         return data_dump
 

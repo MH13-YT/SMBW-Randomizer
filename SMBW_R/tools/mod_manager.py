@@ -2,8 +2,6 @@ import os
 import shutil
 import hashlib
 
-from tqdm import tqdm
-
 modded_file_list = []
 
 def generate_folder_hash(folder):
