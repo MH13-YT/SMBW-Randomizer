@@ -25,12 +25,12 @@ Ce projet est un programme python permettant a partir de la ROMFS du jeu de rend
 
 ## Comment sa fonctionne ?
 
-{% content-ref url="overview/elements-techniques.md" %}
-[elements-techniques.md](overview/elements-techniques.md)
+{% content-ref url="presentation/elements-techniques.md" %}
+[elements-techniques.md](presentation/elements-techniques.md)
 {% endcontent-ref %}
 
-{% content-ref url="overview/fonctionnalites.md" %}
-[fonctionnalites.md](overview/fonctionnalites.md)
+{% content-ref url="presentation/fonctionnalites.md" %}
+[fonctionnalites.md](presentation/fonctionnalites.md)
 {% endcontent-ref %}
 
 ## Installation et Utilisation

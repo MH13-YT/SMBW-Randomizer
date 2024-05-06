@@ -2,10 +2,10 @@
 
 * [👋 Bienvenue](README.md)
 
-## Overview
+## Présentation
 
-* [✨ Fonctionnalités](overview/fonctionnalites.md)
-* [⚙️ Eléments Techniques](overview/elements-techniques.md)
+* [✨ Fonctionnalités](presentation/fonctionnalites.md)
+* [⚙️ Eléments Techniques](presentation/elements-techniques.md)
 
 ## Installation et Utilisation
 
