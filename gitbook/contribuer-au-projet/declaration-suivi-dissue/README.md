@@ -9,8 +9,8 @@ Vous avez découvert un bug, vous avez une suggestion ou une question le systeme
 Pour cela il suffit d'aller dans la catégorie issue et cliquer sur new issue pour afficher la liste des formulaires\
 
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Catégorie issue du github de SMBW_Randomizer</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Catégorie issue du github de SMBW_Randomizer</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Liste des formulaire actuel</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Liste des formulaire actuel</p></figcaption></figure>
 
 Chaque formulaire contient differente question auquel vous devrez répondre, veuillez bien répondre aux question pour permettre au contributeur d'y répondre plus facilement

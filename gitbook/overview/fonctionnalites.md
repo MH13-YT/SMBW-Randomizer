@@ -26,6 +26,8 @@ level\_order permet de randomiser l'ordre des niveaux dans la carte du jeu
 {% endtab %}
 
 {% tab title="Random Badges" %}
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Changement automatique du Badges sur le Niveau Palais du Volcan Vegetal </p></figcaption></figure>
+
 #### Description
 
 Sélectionne un badge aléatoire pour chaque niveau \
@@ -46,6 +48,8 @@ Remplace le badge actuel par le badge sélectionné au lancement du dit niveau\
 {% endtab %}
 
 {% tab title="Random Wonder" %}
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Effet du Module Random Wonder sur un Niveau</p></figcaption></figure>
+
 #### Description
 
 Modifie les effets des fleurs wonder de maniere aléatoire\
@@ -62,6 +66,8 @@ Les fleurs wonder ont deux type d'effets : Les effet et les transformations\
 * effect\_only : Randomise uniquement avec les effets
 * custom : Randomise uniquement avec les effets et les transformation souhaité par le joueur
 
+Le goomba peut etre exclu car ce dernier empeche de sauter ce qui peut rendre les niveau injouable
+
 #### Interfaces Custom
 
 <figure><img src="../.gitbook/assets/Capture d&#x27;écran 2024-04-01 061701.png" alt=""><figcaption><p>Interface de selection des effets pour le profil custom</p></figcaption></figure>
@@ -74,11 +80,46 @@ Permet de forcer la désactivation de la randomisation des effet et/ou transform
 {% endtab %}
 
 {% tab title="Random Enemy" %}
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Exemple d'impact du module random_enemy sur un niveau</p></figcaption></figure>
 
+#### Description
+
+Modifie les ennemis dispersé sur les niveaux de manière aléatoire (Ne remplace pas les boss)
+
+#### Profiles
+
+* all : Randomise tout les ennemis
+* custom : Randomise uniquement certains ennemis
+
+#### Interfaces Custom
+
+<div data-full-width="true">
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Interface de selection des ennemis (profil custom)<br>Vous pouvez utiliser fushigi ou le wiki de mario wonder pour associer les identifiants au ennemis concernés</p></figcaption></figure>
+
+</div>
+
+#### Effets des profils sécurisé (\_secured)
+
+Permet de bloquer la randomisation de certains ennemis précis et bloque la randomisation dans les niveaux trop problématique
 {% endtab %}
 
 {% tab title="Random Areaparam" %}
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Effet du module random_areaparam sur le niveau "Badge Challenge Coup du Dauphin 1"</p></figcaption></figure>
 
+#### Description
+
+Modifie les ressources relatives a l'areaparam de maniere aléatoire\
+\
+L'areaparam gere toutes les ressources relatif au niveau (Arriere plan, Theme, Musique ...) y compris lors des effets wonder
+
+#### Profiles
+
+* all : Randomise l'intégralité de l'areaparam
+
+#### Effets des profils sécurisé (\_secured)
+
+Permet de forcer la désactivation de la randomisation des element précis de l'areaparam dans un niveau précis
 {% endtab %}
 {% endtabs %}
 
