@@ -137,9 +137,8 @@ body:
     attributes:
       label: Impacted Ressource
       description: >-
-        What is the impacted ressource : Write Level Name or World Name (For
-        level name use english wonder level name)
-      placeholder: 'Level : {Level Name} or World : 1/2/3/4/5/6/Petal Isles/Bowser/Secret'
+        What is the impacted ressource : Write Level Name (use english wonder level name) or World id (1/2/3/4/5/6/Petal Isles/Bowser/Secret)
+      placeholder: 'Level : {Level Name} or World : {World Name}'
     validations:
       required: true
   - type: textarea
