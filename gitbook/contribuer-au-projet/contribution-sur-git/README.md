@@ -8,9 +8,17 @@ description: >-
 
 Le développement de SMBW Randomizer est communautaire mais pour maintenir un ordre dans le repo github j'ai crée une procedure a suivre (résumé avec le schema suivant)
 
-<img src="../../.gitbook/assets/file.excalidraw.svg" alt="Schema représentant les cycles de développement de SMBW Randomizer" class="gitbook-drawing">
+SMBW Randomizer en plus des branches relatif au développement possède un lot de branches relative a la documentation
 
-SMBW Randomizer possede 4 types de branches
+## Les Branche de documentation "gitbook"
+
+La branche Gitbook est la branche qui contient la documentation du projet, toute les branches initié a partir de cette derniere sont relatif a gitbook et sont controlé par l'intégration gitbook github sync
+
+## Les branches de Développements
+
+Voici les Branches relatives au développement, ils y'en a 4 types
+
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="Schema représentant les cycles et branches de développement de SMBW Randomizer" class="gitbook-drawing">
 
 ### La branche "Main"
 
