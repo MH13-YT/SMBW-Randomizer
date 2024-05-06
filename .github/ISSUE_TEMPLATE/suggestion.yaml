@@ -1,0 +1,29 @@
+name: Suggestion
+description: if you are a player and have an idea for a feature to add, fill in this form and a contributor will think about it.
+labels:
+  - '(1) : waiting'
+  - (T) proposal for improvement
+body:
+  - type: dropdown
+    id: related_module
+    attributes:
+      label: Related Module
+      description: Please select related module if a module is concerned
+      options:
+        - level_order
+        - random_badges
+        - random_wonder
+        - random_enemy
+        - random_areaparam
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: Please describe the suggestion
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)

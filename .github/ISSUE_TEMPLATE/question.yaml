@@ -1,0 +1,29 @@
+name: Question
+description: If you have a question, you can fill in this form and a contributor will get back to you.
+labels:
+  - '(1) : waiting'
+  - (T) question
+body:
+  - type: dropdown
+    id: related_module
+    attributes:
+      label: Related Module
+      description: Please select related module if a module is concerned
+      options:
+        - level_order
+        - random_badges
+        - random_wonder
+        - random_enemy
+        - random_areaparam
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Ask your question
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
