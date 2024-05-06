@@ -1,0 +1,174 @@
+name: Bug report
+description: you are a player and you found a bug during a randomized game with SMBW_Randomizer, you can report the bug with this form
+labels:
+  - '(1) : waiting'
+  - (T) bug report
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        By filling in a bug report you certify that the contents of the bug
+        report are true, that the logs have not been altered if sent and that
+        you have not used any mods in the randomizer.
+
+
+        Please do not send a bug report if you have used mods in the randomizer,
+        to avoid wasting the contributor's time.
+  - type: markdown
+    attributes:
+      value: '# Randomisation Settings'
+  - type: markdown
+    attributes:
+      value: '## General Settings'
+  - type: input
+    id: seed
+    attributes:
+      label: Seed
+      description: >-
+        The seed used for randomize game (can be found in logs if
+        SMBW_Randomizer has not been restarted)
+      placeholder: 'seed  (default usage exemple : 01da2fb1-e49b-4891-985b-747e6c5186da)'
+    validations:
+      required: true
+  - type: checkboxes
+    id: active_modules
+    attributes:
+      label: Active Modules *
+      description: Please list all active modules in your session
+      options:
+        - label: level_order
+          required: false
+        - label: random_badges
+          required: false
+        - label: random_wonder
+          required: false
+        - label: random_enemy
+          required: false
+        - label: random_areaparam
+          required: false
+  - type: markdown
+    attributes:
+      value: '## Module Profiles'
+  - type: markdown
+    attributes:
+      value: >-
+        Only profiles listed in the form are supported by the bug-reporting
+        program: this list excludes
+
+
+        - Custom profiles are not supported
+
+        - Non-secure profiles are not supported either.
+
+        - Unofficially installed profiles (not deployed by a randomizer update)
+  - type: dropdown
+    id: level_order_profile
+    attributes:
+      label: 'level_order module : method/profile used'
+      description: >-
+        Please select the method / profile used for level_order module if this
+        module has been selected on Active Module
+      options:
+        - None (Not Used)
+        - full_secured
+        - lite_secured
+    validations:
+      required: true
+  - type: dropdown
+    id: random_badges_profile
+    attributes:
+      label: 'random_badges module : method/profile used'
+      description: >-
+        Please select the method / profile used for random_badges module if this
+        module has been selected on Active Module
+      options:
+        - None (Not Used)
+        - all
+        - action_only
+        - bonus_only
+        - expert_only
+    validations:
+      required: true
+  - type: dropdown
+    id: random_wonder_profile
+    attributes:
+      label: 'random_wonder module : method/profile used'
+      description: >-
+        Please select the method / profile used for random_wonder module if this
+        module has been selected on Active Module
+      options:
+        - None (Not Used)
+        - all_secured
+        - all_exclude_goomba_secured
+        - morph_only_secured
+        - morph_only_exclude_goomba_secured
+        - effect_only_secured
+    validations:
+      required: true
+  - type: dropdown
+    id: random_enemy_module
+    attributes:
+      label: 'random_enemy module : method/profile used'
+      description: >-
+        Please select the method / profile used for random_enemy module if this
+        module has been selected on Active Module
+      options:
+        - None (Not Used)
+        - all_secured
+    validations:
+      required: true
+  - type: dropdown
+    id: random_areaparam_module
+    attributes:
+      label: 'random_areaparam module : method/profile used'
+      description: >-
+        Please select the method / profile used for random_areaparam module if
+        this module has been selected on Active Module
+      options:
+        - None (Not Used)
+        - all_secured
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '# Bug description'
+  - type: input
+    id: impacted_ressource
+    attributes:
+      label: Impacted Ressource
+      description: >-
+        What is the impacted ressource : Write Level Name or World Name (For
+        level name use english wonder level name)
+      placeholder: 'Level : {Level Name} or World : 1/2/3/4/5/6/Petal Isles/Bowser/Secret'
+    validations:
+      required: true
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Description
+      description: >-
+        Please describe the bug you have encounter, please be as precise as
+        possible
+    validations:
+      required: true
+  - type: textarea
+    id: log_file
+    attributes:
+      label: Log File
+      description: >-
+        Please copy paste the content of the log file if you didn't restart
+        SMBW_Randomizer (It can be found on the latest.log)
+  - type: textarea
+    id: video_links
+    attributes:
+      label: Video Links
+      description: >-
+        To illustrate your bug report, you can record a video of your bug and
+        upload it as a link only on youtube so that you can send it to us.  This
+        will greatly help contributors to identify the problem.
+      placeholder: https://www.youtube.com/watch?v={video_id}
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
