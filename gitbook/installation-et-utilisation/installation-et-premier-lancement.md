@@ -166,7 +166,7 @@ atmosphere/contents/010015100B514000/romfs\
 
 Une fois toute ces procédures accompli il suffit&#x20;
 
-* D'activer ou de réactiver le mod si vous êtes un Utilisateur de Simple Mod Manager ou d'un Emulateur&#x20;
+* De désactiver (si necessaire) et réactiver le mod si vous êtes un Utilisateur de Simple Mod Manager ou d'un Emulateur&#x20;
 * Lancer votre jeu et commencer a jouer\
 
 
