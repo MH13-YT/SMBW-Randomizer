@@ -10,7 +10,7 @@ Le développement de SMBW Randomizer est communautaire mais pour maintenir un or
 
 SMBW Randomizer en plus des branches relatif au développement possède un lot de branches relative a la documentation
 
-## Les Branche de documentation "gitbook"
+## Les Branches de documentation "gitbook"
 
 La branche Gitbook est la branche qui contient la documentation du projet, toute les branches initié a partir de cette derniere sont relatif a gitbook et sont controlé par l'intégration gitbook github sync
 
