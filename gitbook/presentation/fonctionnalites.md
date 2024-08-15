@@ -12,7 +12,7 @@ description: Présentation des fonctionnalités de SMBW_Randomizer
 
 level\_order permet de randomiser l'ordre des niveaux dans la carte du jeu
 
-<figure><img src="../.gitbook/assets/Capture d&#x27;écran 2024-04-01 054309.png" alt=""><figcaption><p>Level Order Randomization Result (Left : Original Game : Right Randomizer)<br>(Configuration : Full)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d&#x27;écran 2024-04-01 054309.png" alt=""><figcaption><p>Résultat de la randomisation des niveaux (Gauche : Jeu d'origine : Droite Jeu Randomisé en mode Full)</p></figcaption></figure>
 
 #### Profiles
 
